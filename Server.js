@@ -38,14 +38,14 @@ app.get("/", function (req, res) {
   
   function gotData(data) {
     console.log(data);
+    res.render("landingpage");
   }
   
   function gotErr(err) {
     console.log(err);
   }
   
-  
-  
+
   
   
   
