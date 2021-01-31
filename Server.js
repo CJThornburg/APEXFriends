@@ -3,6 +3,7 @@ const express = require("express");
 const https = require("https");
 const request = require("request");
 const bodyParser = require("body-parser");
+const fetch = require('node-fetch');
 const {
     json
 } = require("express");
@@ -31,40 +32,22 @@ app.get("/", function (req, res) {
   
   
   
-  
-  const kingRothgard = new Promise(resolve => {
-    
-    //  make the https request
-    console.log("hi kingrothgard");
+  const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
 
-
-
-// the data you want to send to promise.all to use
-    resolve({kingRothgardData :["x ", "y ", "z"] });
-  });
+  fetch(url).then(gotData).catch(gotErr);
+  
+  function gotData(data) {
+    console.log(data);
+  }
+  
+  function gotErr(err) {
+    console.log(err);
+  }
   
   
   
   
   
-  
-  const minaXpotato = new Promise(resolve => {
-    
-    //  make the https request
-    console.log("hi minaXpotato");
-
-
-
-// the data you want to send to promise.all to use
-    resolve({minaXpotatoData :["x ", "y ", "z"] });
-  });
-  
-  
-  
-  
-  
-  Promise.all([kingRothgard,minaXpotato] )
-  .then(result=> console.log (result));
   
   
   
