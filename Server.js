@@ -33,17 +33,41 @@ app.get("/", function (req, res) {
   
   
   const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  let rothgard = {
+    lifeTimeKills : "",
+   lifeTimeDamage : "",
+    level : "",
+    rank : "",
+     legends: [],
+    main : "",
+   mainName : '',
+    mainUrl: ' ',
 
-  fetch(url).then(gotData).catch(gotErr);
+
+  };
+
+
   
-  function gotData(data) {
-    console.log(data);
-    res.render("landingpage");
-  }
+  fetch(url)
+  .then(response =>
+    {return response.json();
+     })
+  .then(json => console.log(json.data))
+  // this error will send error if there is any erros on the .then chain
+  .catch(err => console.log(err));
   
-  function gotErr(err) {
-    console.log(err);
-  }
+  
+    
+  res.render("landingpage");
+    //             nameKey: name,
+    //             lifeTimeKillsKey: lifeTimeKills,
+    //             lifeTimeDamageKey: lifeTimeDamage,
+    //             levelKey: level,
+    //             rankKey: rank,
+    //             mainNameKey: mainName,
+    //             mainUrlKey: mainUrl
+  
+  
   
 
   
