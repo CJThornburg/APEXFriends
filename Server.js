@@ -73,7 +73,7 @@ app.get("/", function (req, res) {
 
 
    };
-   console.log(kingRothgardOJ);
+   
 
 
 
@@ -87,7 +87,7 @@ app.get("/", function (req, res) {
     let mdata = (json.data);
     console.log (mdata);
   //   datat processing for mina 
-
+  console.log(kingRothgardOJ);
 
 
 
