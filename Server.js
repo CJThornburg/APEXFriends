@@ -33,12 +33,13 @@ app.get("/", function (req, res) {
   
   
   const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
-  let rothgard = {
+  let kingRothgardOJ = {
+    name:  "",
     lifeTimeKills : "",
    lifeTimeDamage : "",
     level : "",
     rank : "",
-     legends: [],
+    
     main : "",
    mainName : '',
     mainUrl: ' ',
@@ -52,11 +53,32 @@ app.get("/", function (req, res) {
   .then(response =>
     {return response.json();
      })
-  .then(json => console.log(json.data))
+  .then(json => {
+    let kdata = (json.data);
+    
+   
+   kingRothgardOJ = {
+     name: kdata. platformInfo.platformUserId,
+    lifeTimeKills : kdata.segments[0].stats.kills.value,
+   lifeTimeDamage : kdata.segments[0].stats.damage.value,
+    level : kdata.segments[0].stats.level.value,
+    rank : kdata.segments[0].stats.rankScore.metadata.rankName,
+     
+    main : "",
+   mainName : '',
+    mainUrl: ' ',
+
+
+
+   };
+   
+   
+   
+  })
   // this error will send error if there is any erros on the .then chain
   .catch(err => console.log(err));
   
-  
+  console.log(kingRothgardOJ);
     
   res.render("landingpage");
     //             nameKey: name,
