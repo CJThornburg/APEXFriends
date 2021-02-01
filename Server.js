@@ -33,6 +33,8 @@ app.get("/", function (req, res) {
   
   
   const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url2 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/minaXpotato?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url3 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/mellaka?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
   let kingRothgardOJ = {
     name:  "",
     lifeTimeKills : "",
@@ -71,15 +73,52 @@ app.get("/", function (req, res) {
 
 
    };
-   
+   console.log(kingRothgardOJ);
+
+
+
+  //  2nd DATA CALL MINAXPotato 
+   return fetch (url2);
    
    
   })
-  // this error will send error if there is any erros on the .then chain
+  .then(response => response.json())
+  .then(json => {
+    let mdata = (json.data);
+    console.log (mdata);
+  //   datat processing for mina 
+
+
+
+
+
+  return fetch (url3);
+  })
+  .then(response => response.json())
+  .then(json => {
+    let gildata = (json.data);
+    console.log (gildata);
+  //   datat processing for gil 
+
+
+
+
+
+  })
+//  .then the rest of the requst 
+ 
+
+
+
+
+
+
+
+
+  // .then res.render after you have called everyones info
   .catch(err => console.log(err));
-  
-  console.log(kingRothgardOJ);
-    
+   // this error will send error if there is any erros on the .then chain
+
   res.render("landingpage");
     //             nameKey: name,
     //             lifeTimeKillsKey: lifeTimeKills,
