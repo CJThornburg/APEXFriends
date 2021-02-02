@@ -8,7 +8,7 @@ const {
     json
 } = require("express");
 const ejs = require('ejs');
-
+var _ = require('lodash');
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -34,44 +34,116 @@ app.get("/", function (req, res) {
   
   const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
   const url2 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/minaXpotato?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
-  const url3 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/mellaka?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
-  let kingRothgardOJ = {
-    name:  "",
-    lifeTimeKills : "",
-   lifeTimeDamage : "",
-    level : "",
-    rank : "",
-    
+  const url3 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/m3llakka?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url4 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/SHBWAA?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url5 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Hed_Is_Tilted?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url6 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Fixer_RC-1140?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url7 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/MahaloMerky?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  const url8 = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/SystolicFrame48?" + process.env.API + "&Accept=json&Accept-Encoding=gzip"; 
+
+  
+let kingRothgardOJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+     
     main : "",
    mainName : '',
     mainUrl: ' ',
-
-
-  };
-
-
+};
+let minaXpotatoOJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+     
+    main : "",
+   mainName : '',
+    mainUrl: ' '
+};
+let m3llakkaOJ = { 
+   name: "n/a",
+lifeTimeKills : "n/a",
+ lifeTimeDamage : "n/a",
+  level : "n/a",
+  rank : "n/a",   
+  main : "",
+ mainName : '',
+  mainUrl: ' '};
+let sHBWAAOJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+    main : "",
+   mainName : '',
+    mainUrl: ' '
+};
+let hed_Is_TiltedOJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+     
+    main : "",
+   mainName : '',
+    mainUrl: ' '
+};
+let xariusOJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+     
+    main : "",
+   mainName : '',
+    mainUrl: ' '
+};
+let mahaloMerkyOJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+     
+    main : "",
+   mainName : '',
+    mainUrl: ' '
+};
+let systolicFrame48OJ = {
+  name: "n/a",
+  lifeTimeKills : "n/a",
+   lifeTimeDamage : "n/a",
+    level : "n/a",
+    rank : "n/a",
+     
+    main : "",
+   mainName : '',
+    mainUrl: ' '
+};
   
   fetch(url)
   .then(response =>
     {return response.json();
      })
   .then(json => {
-    let kdata = (json.data);
-    
+    let kdata = (json.data); 
    
-   kingRothgardOJ = {
+    kingRothgardOJ = {
      name: kdata. platformInfo.platformUserId,
-    lifeTimeKills : kdata.segments[0].stats.kills.value,
-   lifeTimeDamage : kdata.segments[0].stats.damage.value,
-    level : kdata.segments[0].stats.level.value,
-    rank : kdata.segments[0].stats.rankScore.metadata.rankName,
-     
+    lifeTimeKills : _.get (kdata, 'kdata.segments[0].stats.kills.value', "n/a"),
+   lifeTimeDamage :_.get (kdata, "kdata.segments[0].stats.damage.value" ,  "n/a"),
+    level :_.get (kdata, "kdata.segments[0].stats.level.value", "n/a"),
+    rank :_.get (kdata, "kdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),     
     main : "",
    mainName : '',
     mainUrl: ' ',
-
-
-
    };
    
 
@@ -84,10 +156,24 @@ app.get("/", function (req, res) {
   })
   .then(response => response.json())
   .then(json => {
-    let mdata = (json.data);
-    console.log (mdata);
-  //   datat processing for mina 
-  console.log(kingRothgardOJ);
+    let mdata = (json.data); 
+
+
+
+
+      minaXpotatoOJ = {
+      name: mdata. platformInfo.platformUserId,
+      lifeTimeKills : _.get (mdata, 'mdata.segments[0].stats.kills.value', "n/a"),
+      lifeTimeDamage :_.get (mdata, "mdata.segments[0].stats.damage.value" ,  "n/a"),
+       level :_.get         (mdata, "mdata.segments[0].stats.level.value", "n/a"),
+       rank :_.get          (mdata, "mdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+     main : "",
+    mainName : '',
+     mainUrl: ' ',
+    };
+
+    console.log(minaXpotatoOJ);
+  
 
 
 
@@ -96,21 +182,126 @@ app.get("/", function (req, res) {
   })
   .then(response => response.json())
   .then(json => {
-    let gildata = (json.data);
-    console.log (gildata);
-  //   datat processing for gil 
+    let gdata = (json.data);
+
+  m3llakkaOJ = {
+    name: gdata. platformInfo.platformUserId,
+    lifeTimeKills : _.get (gdata, 'gdata.segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (gdata, "gdata.segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (gdata, "gdata.segments[0].stats.level.value", "n/a"),
+     rank :_.get          (gdata, "gdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+   main : "",
+   main : "",
+  mainName : '',
+   mainUrl: ' ',
+  };
+
+
+
+    return fetch (url4);
+  })
+  .then(response => response.json())
+  .then(json => {
+    let sdata = (json.data);
+ 
+  sHBWAAOJ = {
+    name: sdata. platformInfo.platformUserId,
+    lifeTimeKills : _.get (sdata, 'sdata.segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (sdata, "sdata.segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (sdata, "sdata.segments[0].stats.level.value", "n/a"),
+     rank :_.get          (sdata, "sdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+   main : "",
+    
+   main : "",
+  mainName : '',
+   mainUrl: ' ',
+  };
 
 
 
 
 
+    return fetch (url5);
+  })
+  .then(response => response.json())
+  .then(json => {
+    let hdata = (json.data);
+  
+  hed_Is_TiltedOJ = {
+    name: hdata. platformInfo.platformUserId,
+    lifeTimeKills : _.get (hdata, 'hdata.segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (hdata, "hdata.segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (hdata, "hdata.segments[0].stats.level.value", "n/a"),
+     rank :_.get          (hdata, "hdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+   main : "",
+    
+   main : "",
+  mainName : '',
+   mainUrl: ' ',
+  };
+
+
+
+    return fetch (url6);
+  })
+  .then(response => response.json())
+  .then(json => {
+    let xdata = (json.data);
+
+  xariusOJ = {
+    name: xdata. platformInfo.platformUserId,
+    lifeTimeKills : _.get (xdata, 'xdata.segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (xdata, "xdata.segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (xdata, "xdata.segments[0].stats.level.value", "n/a"),
+     rank :_.get          (xdata, "xdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+   main : "",
+   main : "",
+  mainName : '',
+   mainUrl: ' ',
+  };
+
+
+  return fetch(url7);
+    
   })
 //  .then the rest of the requst 
- 
+.then(response => response.json())
+.then(json => {
+  let rdata = (json.data);
 
+mahaloMerkyOJ = {
+  name: rdata. platformInfo.platformUserId,
+  lifeTimeKills : _.get (rdata, 'rdata.segments[0].stats.kills.value', "n/a"),
+  lifeTimeDamage :_.get (rdata, "rdata.segments[0].stats.damage.value" ,  "n/a"),
+   level :_.get         (rdata, "rdata.segments[0].stats.level.value", "n/a"),
+   rank :_.get          (rdata, "rdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+ main : "",
+  
+ main : "",
+mainName : '',
+ mainUrl: ' ',
+};
 
+return fetch (url8);
+})
 
+.then(response => response.json())
+  .then(json => {
+    let sfdata = (json.data);
+  
+  systolicFrame48OJ = {
+    lifeTimeKills : _.get (sfdata, 'sfdata.segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (sfdata, "sfdata.segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (sfdata, "sfdata.segments[0].stats.level.value", "n/a"),
+     rank :_.get          (sfdata, "sfdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+   main : "",
+   main : "",
+  mainName : '',
+   mainUrl: ' ',
+  };
 
+  res.render ("landingpage", {});
+  })
 
 
 
@@ -119,7 +310,7 @@ app.get("/", function (req, res) {
   .catch(err => console.log(err));
    // this error will send error if there is any erros on the .then chain
 
-  res.render("landingpage");
+
     //             nameKey: name,
     //             lifeTimeKillsKey: lifeTimeKills,
     //             lifeTimeDamageKey: lifeTimeDamage,
