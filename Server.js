@@ -187,7 +187,7 @@ let systolicFrame48OJ = {
 
 
 
-Console.log("hi");
+
 
 
 
@@ -581,7 +581,17 @@ return fetch (url8);
 
   console.log(kingRothgardOJ);
   res.render ("landingpage", {
-    kingRothgardOJ: kingRothgardOJ
+    kingRothgardOJ: kingRothgardOJ,
+    minaXpotatoOJ: minaXpotatoOJ,
+    mahaloMerkyOJ: mahaloMerkyOJ,
+    sHBWAAOJ: sHBWAAOJ,
+    Hed: hed_Is_TiltedOJ,
+    m3llakkaOJ: m3llakkaOJ,
+    xariusOJ: xariusOJ,
+    systolicFrame48OJ: systolicFrame48OJ
+
+
+
   });
   })
 
