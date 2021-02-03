@@ -9,6 +9,7 @@ const {
 } = require("express");
 const ejs = require('ejs');
 var _ = require('lodash');
+const { Console } = require('console');
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -186,7 +187,7 @@ let systolicFrame48OJ = {
 
 
 
-
+Console.log("hi");
 
 
 
