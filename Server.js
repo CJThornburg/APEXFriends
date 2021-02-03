@@ -122,8 +122,6 @@ let systolicFrame48OJ = {
    lifeTimeDamage : "n/a",
     level : "n/a",
     rank : "n/a",
-     
-    main : "",
    mainName : '',
     mainUrl: ' '
 };
@@ -137,16 +135,69 @@ let systolicFrame48OJ = {
    
     kingRothgardOJ = {
      name: kdata. platformInfo.platformUserId,
-    lifeTimeKills : _.get (kdata, 'kdata.segments[0].stats.kills.value', "n/a"),
-   lifeTimeDamage :_.get (kdata, "kdata.segments[0].stats.damage.value" ,  "n/a"),
-    level :_.get (kdata, "kdata.segments[0].stats.level.value", "n/a"),
-    rank :_.get (kdata, "kdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),     
-    main : "",
+    lifeTimeKills : _.get (kdata, 'segments[0].stats.kills.value', "n/a"),
+   lifeTimeDamage :_.get (kdata, 'segments[0].stats.damage.value' ,  "n/a"),
+    level : _.get (kdata , 'segments[0].stats.level.value' , "n/a"),
+    rank : _.get (kdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),     
    mainName : '',
     mainUrl: ' ',
    };
    
+   
 
+   let legends=[];
+
+
+   var i;
+
+           for (i = 1; i <kdata.segments.length; i++) {
+
+            // if segments[i].stats.kills.value does not exist make it equal 0
+           const kills = _.get (kdata, 'segments[' + i + '].stats.kills.value', 0 );
+           const name = kdata.segments[i].metadata.name;
+           const imgUrl = kdata.segments[i].metadata.bgImageUrl;
+           const legend = {kills, name, imgUrl};
+           legends.push(legend);
+           
+           }
+          
+  
+           var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
+
+   //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+           main = legends.find(function(o){ return o.kills == topKills; })
+
+        
+
+   //         // display name and img as background
+   kingRothgardOJ.mainName = main.name;
+   kingRothgardOJ.mainUrl = main.imgUrl;
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+  //  end of data processing 
 
 
   //  2nd DATA CALL MINAXPotato 
@@ -163,17 +214,59 @@ let systolicFrame48OJ = {
 
       minaXpotatoOJ = {
       name: mdata. platformInfo.platformUserId,
-      lifeTimeKills : _.get (mdata, 'mdata.segments[0].stats.kills.value', "n/a"),
-      lifeTimeDamage :_.get (mdata, "mdata.segments[0].stats.damage.value" ,  "n/a"),
-       level :_.get         (mdata, "mdata.segments[0].stats.level.value", "n/a"),
-       rank :_.get          (mdata, "mdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+      lifeTimeKills : _.get (mdata, 'segments[0].stats.kills.value', "n/a"),
+      lifeTimeDamage :_.get (mdata, "segments[0].stats.damage.value" ,  "n/a"),
+       level :_.get         (mdata, "segments[0].stats.level.value", "n/a"),
+       rank :_.get          (mdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
      main : "",
     mainName : '',
      mainUrl: ' ',
     };
 
-    console.log(minaXpotatoOJ);
+   
+
+    let legends=[];
+
+
+   var i;
+
+           for (i = 1; i <mdata.segments.length; i++) {
+
+            // if segments[i].stats.kills.value does not exist make it equal 0
+           const kills = _.get (mdata, 'segments[' + i + '].stats.kills.value', 0 );
+           const name =         mdata.segments[i].metadata.name;
+           const imgUrl =       mdata.segments[i].metadata.bgImageUrl;
+           const legend = {kills, name, imgUrl};
+           legends.push(legend);
+           
+           }
+          
   
+           var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
+
+   //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+           main = legends.find(function(o){ return o.kills == topKills; })
+
+        
+
+   //         // display name and img as background
+   minaXpotatoOJ.mainName = main.name;
+   minaXpotatoOJ.mainUrl = main.imgUrl;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -186,10 +279,10 @@ let systolicFrame48OJ = {
 
   m3llakkaOJ = {
     name: gdata. platformInfo.platformUserId,
-    lifeTimeKills : _.get (gdata, 'gdata.segments[0].stats.kills.value', "n/a"),
-    lifeTimeDamage :_.get (gdata, "gdata.segments[0].stats.damage.value" ,  "n/a"),
-     level :_.get         (gdata, "gdata.segments[0].stats.level.value", "n/a"),
-     rank :_.get          (gdata, "gdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+    lifeTimeKills : _.get (gdata, 'segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (gdata, "segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (gdata, "segments[0].stats.level.value", "n/a"),
+     rank :_.get          (gdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
    main : "",
    main : "",
   mainName : '',
@@ -206,16 +299,72 @@ let systolicFrame48OJ = {
  
   sHBWAAOJ = {
     name: sdata. platformInfo.platformUserId,
-    lifeTimeKills : _.get (sdata, 'sdata.segments[0].stats.kills.value', "n/a"),
-    lifeTimeDamage :_.get (sdata, "sdata.segments[0].stats.damage.value" ,  "n/a"),
-     level :_.get         (sdata, "sdata.segments[0].stats.level.value", "n/a"),
-     rank :_.get          (sdata, "sdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+    lifeTimeKills : _.get (sdata, 'segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (sdata, "segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (sdata, "segments[0].stats.level.value", "n/a"),
+     rank :_.get          (sdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
    main : "",
     
    main : "",
   mainName : '',
    mainUrl: ' ',
   };
+
+
+
+
+
+  let legends=[];
+
+
+  var i;
+
+          for (i = 1; i <sdata.segments.length; i++) {
+
+           // if segments[i].stats.kills.value does not exist make it equal 0
+          const kills = _.get (sdata, 'segments[' + i + '].stats.kills.value', 0 );
+          const name =         sdata.segments[i].metadata.name;
+          const imgUrl =       sdata.segments[i].metadata.bgImageUrl;
+          const legend = {kills, name, imgUrl};
+          legends.push(legend);
+          
+          }
+         
+ 
+          var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
+
+  //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+          main = legends.find(function(o){ return o.kills == topKills; })
+
+       
+
+  //         // display name and img as background
+  sHBWAAOJ.mainName = main.name;
+  sHBWAAOJ.mainUrl = main.imgUrl;
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -229,10 +378,10 @@ let systolicFrame48OJ = {
   
   hed_Is_TiltedOJ = {
     name: hdata. platformInfo.platformUserId,
-    lifeTimeKills : _.get (hdata, 'hdata.segments[0].stats.kills.value', "n/a"),
-    lifeTimeDamage :_.get (hdata, "hdata.segments[0].stats.damage.value" ,  "n/a"),
-     level :_.get         (hdata, "hdata.segments[0].stats.level.value", "n/a"),
-     rank :_.get          (hdata, "hdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+    lifeTimeKills : _.get (hdata, 'segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (hdata, "segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (hdata, "segments[0].stats.level.value", "n/a"),
+     rank :_.get          (hdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
    main : "",
     
    main : "",
@@ -250,15 +399,65 @@ let systolicFrame48OJ = {
 
   xariusOJ = {
     name: xdata. platformInfo.platformUserId,
-    lifeTimeKills : _.get (xdata, 'xdata.segments[0].stats.kills.value', "n/a"),
-    lifeTimeDamage :_.get (xdata, "xdata.segments[0].stats.damage.value" ,  "n/a"),
-     level :_.get         (xdata, "xdata.segments[0].stats.level.value", "n/a"),
-     rank :_.get          (xdata, "xdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+    lifeTimeKills : _.get (xdata, 'segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (xdata, "segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (xdata, "segments[0].stats.level.value", "n/a"),
+     rank :_.get          (xdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
    main : "",
    main : "",
   mainName : '',
    mainUrl: ' ',
   };
+
+
+
+
+
+
+  let legends=[];
+
+
+  var i;
+
+          for (i = 1; i <xdata.segments.length; i++) {
+
+           // if segments[i].stats.kills.value does not exist make it equal 0
+          const kills = _.get (xdata, 'segments[' + i + '].stats.kills.value', 0 );
+          const name =         xdata.segments[i].metadata.name;
+          const imgUrl =       xdata.segments[i].metadata.bgImageUrl;
+          const legend = {kills, name, imgUrl};
+          legends.push(legend);
+          
+          }
+         
+ 
+          var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
+
+  //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+          main = legends.find(function(o){ return o.kills == topKills; })
+
+       
+
+  //         // display name and img as background
+  xariusOJ.mainName = main.name;
+  xariusOJ.mainUrl = main.imgUrl;
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   return fetch(url7);
@@ -271,16 +470,59 @@ let systolicFrame48OJ = {
 
 mahaloMerkyOJ = {
   name: rdata. platformInfo.platformUserId,
-  lifeTimeKills : _.get (rdata, 'rdata.segments[0].stats.kills.value', "n/a"),
-  lifeTimeDamage :_.get (rdata, "rdata.segments[0].stats.damage.value" ,  "n/a"),
-   level :_.get         (rdata, "rdata.segments[0].stats.level.value", "n/a"),
-   rank :_.get          (rdata, "rdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+  lifeTimeKills : _.get (rdata, 'segments[0].stats.kills.value', "n/a"),
+  lifeTimeDamage :_.get (rdata, "segments[0].stats.damage.value" ,  "n/a"),
+   level :_.get         (rdata, "segments[0].stats.level.value", "n/a"),
+   rank :_.get          (rdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
  main : "",
   
  main : "",
 mainName : '',
  mainUrl: ' ',
 };
+
+
+
+let legends=[];
+
+
+var i;
+
+        for (i = 1; i <rdata.segments.length; i++) {
+
+         // if segments[i].stats.kills.value does not exist make it equal 0
+        const kills = _.get (rdata, 'segments[' + i + '].stats.kills.value', 0 );
+        const name =         rdata.segments[i].metadata.name;
+        const imgUrl =       rdata.segments[i].metadata.bgImageUrl;
+        const legend = {kills, name, imgUrl};
+        legends.push(legend);
+        
+        }
+       
+
+        var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
+
+//         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+        main = legends.find(function(o){ return o.kills == topKills; })
+
+     
+
+//         // display name and img as background
+mahaloMerkyOJ.mainName = main.name;
+mahaloMerkyOJ.mainUrl = main.imgUrl;
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 return fetch (url8);
 })
@@ -290,17 +532,56 @@ return fetch (url8);
     let sfdata = (json.data);
   
   systolicFrame48OJ = {
-    lifeTimeKills : _.get (sfdata, 'sfdata.segments[0].stats.kills.value', "n/a"),
-    lifeTimeDamage :_.get (sfdata, "sfdata.segments[0].stats.damage.value" ,  "n/a"),
-     level :_.get         (sfdata, "sfdata.segments[0].stats.level.value", "n/a"),
-     rank :_.get          (sfdata, "sfdata.segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
+    lifeTimeKills : _.get (sfdata, 'segments[0].stats.kills.value', "n/a"),
+    lifeTimeDamage :_.get (sfdata, "segments[0].stats.damage.value" ,  "n/a"),
+     level :_.get         (sfdata, "segments[0].stats.level.value", "n/a"),
+     rank :_.get          (sfdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
    main : "",
    main : "",
   mainName : '',
    mainUrl: ' ',
   };
 
-  res.render ("landingpage", {});
+
+
+  let legends=[];
+
+
+  var i;
+
+          for (i = 1; i <sfdata.segments.length; i++) {
+
+           // if segments[i].stats.kills.value does not exist make it equal 0
+          const kills = _.get (sfdata, 'segments[' + i + '].stats.kills.value', 0 );
+          const name =         sfdata.segments[i].metadata.name;
+          const imgUrl =       sfdata.segments[i].metadata.bgImageUrl;
+          const legend = {kills, name, imgUrl};
+          legends.push(legend);
+          
+          }
+         
+ 
+          var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
+
+  //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+          main = legends.find(function(o){ return o.kills == topKills; })
+
+       
+
+  //         // display name and img as background
+  systolicFrame48OJ.mainName = main.name;
+  systolicFrame48OJ.mainUrl = main.imgUrl;
+   
+
+
+
+
+
+
+  console.log(kingRothgardOJ);
+  res.render ("landingpage", {
+    kingRothgardOJ: kingRothgardOJ
+  });
   })
 
 
