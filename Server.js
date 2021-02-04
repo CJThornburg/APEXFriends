@@ -139,7 +139,9 @@ let systolicFrame48OJ = {
     lifeTimeKills : _.get (kdata, 'segments[0].stats.kills.value', "n/a"),
    lifeTimeDamage :_.get (kdata, 'segments[0].stats.damage.value' ,  "n/a"),
     level : _.get (kdata , 'segments[0].stats.level.value' , "n/a"),
-    rank : _.get (kdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),     
+    rank : _.get (kdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),  
+    rankImg: kdata.segments[0].stats.rankScore.metadata.iconUrl,  
+    main: " ", 
    mainName : '',
     mainUrl: ' ',
    };
@@ -219,7 +221,8 @@ let systolicFrame48OJ = {
       lifeTimeDamage :_.get (mdata, "segments[0].stats.damage.value" ,  "n/a"),
        level :_.get         (mdata, "segments[0].stats.level.value", "n/a"),
        rank :_.get          (mdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
-     main : "",
+       rankImg: mdata.segments[0].stats.rankScore.metadata.iconUrl,
+       main: "",
     mainName : '',
      mainUrl: ' ',
     };
@@ -284,7 +287,7 @@ let systolicFrame48OJ = {
     lifeTimeDamage :_.get (gdata, "segments[0].stats.damage.value" ,  "n/a"),
      level :_.get         (gdata, "segments[0].stats.level.value", "n/a"),
      rank :_.get          (gdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
-   main : "",
+     rankImg: gdata.segments[0].stats.rankScore.metadata.iconUrl,
    main : "",
   mainName : '',
    mainUrl: ' ',
@@ -304,8 +307,7 @@ let systolicFrame48OJ = {
     lifeTimeDamage :_.get (sdata, "segments[0].stats.damage.value" ,  "n/a"),
      level :_.get         (sdata, "segments[0].stats.level.value", "n/a"),
      rank :_.get          (sdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
-   main : "",
-    
+      rankImg: sdata.segments[0].stats.rankScore.metadata.iconUrl,
    main : "",
   mainName : '',
    mainUrl: ' ',
@@ -346,31 +348,6 @@ let systolicFrame48OJ = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return fetch (url5);
   })
   .then(response => response.json())
@@ -384,8 +361,7 @@ let systolicFrame48OJ = {
      level :_.get         (hdata, "segments[0].stats.level.value", "n/a"),
      rank :_.get          (hdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
    main : "",
-    
-   main : "",
+       rankImg: hdata.segments[0].stats.rankScore.metadata.iconUrl,
   mainName : '',
    mainUrl: ' ',
   };
@@ -404,7 +380,7 @@ let systolicFrame48OJ = {
     lifeTimeDamage :_.get (xdata, "segments[0].stats.damage.value" ,  "n/a"),
      level :_.get         (xdata, "segments[0].stats.level.value", "n/a"),
      rank :_.get          (xdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
-   main : "",
+     rankImg: xdata.segments[0].stats.rankScore.metadata.iconUrl,
    main : "",
   mainName : '',
    mainUrl: ' ',
@@ -476,8 +452,7 @@ mahaloMerkyOJ = {
    level :_.get         (rdata, "segments[0].stats.level.value", "n/a"),
    rank :_.get          (rdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
  main : "",
-  
- main : "",
+   rankImg: rdata.segments[0].stats.rankScore.metadata.iconUrl,
 mainName : '',
  mainUrl: ' ',
 };
@@ -537,7 +512,7 @@ return fetch (url8);
     lifeTimeDamage :_.get (sfdata, "segments[0].stats.damage.value" ,  "n/a"),
      level :_.get         (sfdata, "segments[0].stats.level.value", "n/a"),
      rank :_.get          (sfdata, "segments[0].stats.rankScore.metadata.rankName" , "n/a"),   
-   main : "",
+   rankImg: sfdata.segments[0].stats.rankScore.metadata.iconUrl,
    main : "",
   mainName : '',
    mainUrl: ' ',
