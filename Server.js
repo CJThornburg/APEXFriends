@@ -682,7 +682,50 @@ app.get("/:user", function (req, res) {
       serverPromise
         .json()
         .then(function (j) {
-          console.log(j);
+          // if statment because level is going higer than 500
+          let userData = j.data;
+          let pulledLevel = _.get(
+            userData,
+            "segments[0].stats.level.value",
+            ""
+          );
+          if (pulledLevel !== "") {
+            if (pulledLevel > 500) {
+              let fixedLevel = 500;
+            } else {
+              let fixedLevel = pulledLevel;
+            }
+          }
+          if (pulledLevel === "") {
+            let fixedLevel = "N/A";
+          }
+
+          let data = {
+            percentile: _.get(
+              userData,
+              "segments[0].stats.level.percentile",
+              ""
+            ),
+            // percentile: j.data.segments[0].stats.level.percentile,
+            kills: _.get(userData, "segments[0].stats.kills.value", ""),
+            // kills: j.data.segments[0].stats.kills.value,
+            damage: _.get(userData, "segments[0].stats.damage.value", ""),
+
+            headshots: _.get(userData, "segments[0].stats.headshots.value"),
+            // headshots: j.data.segments[0].stats.headshots.value,
+            // fixedLevel: fixedLevel,
+            matchesPlayed: _.get(
+              userData,
+              "segments[0].stats.matchesPlayed.value",
+              ""
+            ),
+            // matchesPlayed: j.data.segments[0].stats.matchesPlayed.value || "",
+            LastPlayed: _.get(userData, "segments[1].metadata.name", ""),
+            // lastPlayed: j.data.segments[1].metadata.name,
+            lastKilled: _.get(userData, "segments[1].stats.kills", ""),
+            // lastKilled: j.data.segments[1].stats.kills.value,
+          };
+
           res.render("playerprofile", {
             name: requestedPlayer,
           });
