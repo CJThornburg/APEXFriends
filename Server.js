@@ -660,22 +660,59 @@ app.get("/", function (req, res) {
 
 app.get("/:user", function (req, res) {
   let requestedPlayer = req.params.user;
-  let name = "hi";
-
-  let player = "hi";
-  console.log(requestedPlayer);
 
   //  do https request with requestedPlayer
   let url =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/5/" +
     requestedPlayer +
     "?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
 
-  res.render("playerprofile", {
-    name: name,
-  });
+  //   async function userData(url) {
+  //     let response = await fetch(url);
+  //     console.log(1 + response); // Logs the response
+  //     return response;
+  //  )
+
+  //  console.log(userData(url)); // Returns Promise
+
+  fetch(url)
+    .then(function (serverPromise) {
+      serverPromise
+        .json()
+        .then(function (j) {
+          console.log(j);
+          res.render("playerprofile", {
+            name: requestedPlayer,
+          });
+        })
+        .catch(function (e) {
+          console.log(e);
+        });
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
+  // async function userData() {
+  //   let response = await fetch(url);
+  //   let data = await response.json();
+  //   return data;
+  // }
+
+  // let user = userData();
+
+  // console.log(user);
+  // fetch(url)
+  //   .then((response) => {
+  //     response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((err) => console.log(err));
+  // .then((json) => {
+  //   let data = json.data;))
 });
 
 app.listen(2000, function () {
