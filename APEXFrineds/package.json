@@ -1,0 +1,12 @@
+{
+  "name": "apexfriends",
+  "version": "1.0.1",
+  "description": "Website to gather data about friedns and I whom are avid players of APEX Legends",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Chris Thornburg",
+  "license": "ISC"
+}
