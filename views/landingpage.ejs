@@ -3,72 +3,285 @@
 
 <body>
 
-   <div class="player-card player-card1">
+  
     
-       <div class= 'name-plate'>
-        <h1 class="username"><%= nameKey %>  </h1>
-        <img class="online"    src="../img/rec.png" />
+      
+   <div id="outer" class="player-card player-card1 ">
+    <img class='main-background img-wrapper' src=<%=kingRothgardOJ.mainUrl  %>>
+        
+  
+    <div class= 'name-plate'>
+        
+        <h1 class="username"><%= kingRothgardOJ.name %>  </h1>
+        
         <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-        <img class="rank" src=<%=rankKey%> > 
+        
       
         </div>
-
+   
     <div class="data">
-
-        <p>Lifetime kills: <%=lifeTimeKillsKey  %> </p>
-        <p>Lifetime damage: <%=lifeTimeDamageKey  %></p>
-        <p>Level: <%=levelKey  %></p>
+   
+        <p>Lifetime kills: <%= kingRothgardOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= kingRothgardOJ.lifeTimeDamage  %></p>
+        <p>Level: <%= kingRothgardOJ.level  %></p>
         
-        <p>Main: <%=mainNameKey  %></p>
+        <p>Main: <%= kingRothgardOJ.mainName  %></p>
         
-
-        <a href="/<%=nameKey%>"> more </a>
-    </div>
-
-
-
-
-    
+   
+        <a href="/<%= kingRothgardOJ.name %>"> Player stats > </a>
+        
+        
+  </div>
 
 
 
 
-<!-- <img class='main-background' src=<%=mainUrlKey  %>> -->
+  
+
+  
+
+
+
 </div>
-    
+  
+ 
 
 
-    <div class="player-card player-card2">
+ <div class="player-card player-card2">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= minaXpotatoOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+       
       
-        <div class= 'name-plate'>
-         <h1>minaXpotato </h1>
-         <img class="online-staus" href="green/red" >
- 
-         </div>
- 
-     <div>
- 
-         <p>Lifetime kills: <%=lifeTimeKillsKey  %> </p>
-         <p>Lifetime damage: <%=lifeTimeDamageKey  %></p>
-         <p>Level: <%=levelKey  %></p>
-         <img src=<%=rankKey%> > 
-         <p>Main: <%=mainNameKey  %></p>
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= minaXpotatoOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= minaXpotatoOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=minaXpotatoOJ.level  %></p>
+        
+        <p>Main: <%= minaXpotatoOJ.mainName  %></p>
+        
+   
+        <a href="/<%= minaXpotatoOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=minaXpotatoOJ.mainUrl  %>>
+</div>
+  
+
+<div class="player-card player-card3">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= m3llakkaOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+        
+      
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= m3llakkaOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= m3llakkaOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=m3llakkaOJ.level  %></p>
+        
+        <p>Main: <%= m3llakkaOJ.mainName  %></p>
+        
+   
+        <a href="/<%= m3llakkaOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=m3llakkaOJ.mainUrl  %>>
+</div>
+  
+<div class="player-card player-card4">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= sHBWAAOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+      
+      
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= sHBWAAOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= sHBWAAOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=sHBWAAOJ.level  %></p>
+        
+        <p>Main: <%= sHBWAAOJ.mainName  %></p>
+        
+   
+        <a href="/<%= sHBWAAOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=sHBWAAOJ.mainUrl  %>>
+</div>
+  
+<div class="player-card player-card5">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= sHBWAAOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
          
+      
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= sHBWAAOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= sHBWAAOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=sHBWAAOJ.level  %></p>
+        
+        <p>Main: <%= sHBWAAOJ.mainName  %></p>
+        
+   
+        <a href="/<%= sHBWAAOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=sHBWAAOJ.mainUrl  %>>
+</div>
+  
+<div class="player-card player-card6">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= hed_Is_TiltedOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+      
+      
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= hed_Is_TiltedOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= hed_Is_TiltedOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=hed_Is_TiltedOJ.level  %></p>
+        
+        <p>Main: <%= hed_Is_TiltedOJ.mainName  %></p>
+        
+   
+        <a href="/<%= hed_Is_TiltedOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=hed_Is_TiltedOJ.mainUrl  %>>
+</div>
+  
+<div class="player-card player-card7">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= xariusOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+        
+      
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= xariusOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= xariusOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=xariusOJ.level  %></p>
+        
+        <p>Main: <%= xariusOJ.mainName  %></p>
+        
+   
+        <a href="/<%= xariusOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=xariusOJ.mainUrl  %>>
+</div>
+  
+<div class="player-card player-card8">
+   
+    <div class= 'name-plate'>
+        <h1 class="username"><%= mahaloMerkyOJ.name %>  </h1>
+        
+        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+       
+      
+        </div>
+   
+    <div class="data">
+   
+        <p>Lifetime kills: <%= mahaloMerkyOJ.lifeTimeKills  %> </p>
+        <p>Lifetime damage: <%= mahaloMerkyOJ.lifeTimeDamage  %></p>
+        <p>Level: <%=mahaloMerkyOJ.level  %></p>
+        
+        <p>Main: <%= mahaloMerkyOJ.mainName  %></p>
+        
+   
+        <a href="/<%= mahaloMerkyOJ.name %>"> Player stats > </a>
+  </div>
+
+
+
+
+  
+
+
+
+
+  <img class='main-background' src=<%=mahaloMerkyOJ.mainUrl  %>>
+</div>
+  
  
-         <a href="/<%=nameKey%>"> more </a>
-     </div>
- 
- 
- 
- 
-     
- 
- 
- 
- 
- <img class='main-background' src=<%=mainUrlKey  %>>
- </div>
-     
+
+   
     
     
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -77,4 +290,3 @@
 
 </body>
 </html>
-
