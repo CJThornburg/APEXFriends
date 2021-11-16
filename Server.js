@@ -678,61 +678,77 @@ app.get("/:user", function (req, res) {
   //  console.log(userData(url)); // Returns Promise
 
   fetch(url)
-    .then(function (serverPromise) {
-      serverPromise
-        .json()
-        .then(function (j) {
-          // if statment because level is going higer than 500
-          let userData = j.data;
-          let pulledLevel = _.get(
-            userData,
-            "segments[0].stats.level.value",
-            ""
-          );
-          if (pulledLevel !== "") {
-            if (pulledLevel > 500) {
-              let fixedLevel = 500;
-            } else {
-              let fixedLevel = pulledLevel;
-            }
-          }
-          if (pulledLevel === "") {
-            let fixedLevel = "N/A";
-          }
+    .then((response) => response.json())
+    .then((json) => {
+      // .then(function (serverPromise) {
+      // serverPromise.json().then(function (j) {
+      // if statment because level is going higer than 500
+      let userData = json.data;
+      // let userData = j.data;
+      let pulledLevel = _.get(userData, "segments[0].stats.level.value", "n/a");
+      console.log(userData);
+      // let fixedlevel = "";
+      // console.log(fixedlevel + " nothing");
+      // if (pulledLevel !== "n/a") {
+      //   if (pulledLevel > 500) {
+      //     let fixedLevel = 500;
+      //     console.log(fixedlevel + " greated than 500");
+      //   } else {
+      //     let fixedLevel = pulledLevel;
+      //     console.log(fixedLevel + " less than 500");
+      //   }
+      // }
+      // console.log("finale:" + fixedlevel);
+      // if (pulledLevel === "n/a") {
+      //   const fixedLevel = "N/A";
+      //   console.log(fixedLevel + "level was not pulled");
+      // } else {
+      // }
 
-          let data = {
-            percentile: _.get(
-              userData,
-              "segments[0].stats.level.percentile",
-              ""
-            ),
-            // percentile: j.data.segments[0].stats.level.percentile,
-            kills: _.get(userData, "segments[0].stats.kills.value", ""),
-            // kills: j.data.segments[0].stats.kills.value,
-            damage: _.get(userData, "segments[0].stats.damage.value", ""),
+      let data = {
+        percentile: _.get(
+          userData,
+          "segments[0].stats.level.percentile",
+          "Not available"
+        ),
+        // percentile: j.data.segments[0].stats.level.percentile,
+        // data.data.segments[1].stats.kills.value
+        kills: _.get(userData, "segments[1].stats.kills.value", ""),
+        // kills: j.data.segments[0].stats.kills.value,
+        damage: _.get(userData, "segments[0].stats.damage.value", ""),
 
-            headshots: _.get(userData, "segments[0].stats.headshots.value"),
-            // headshots: j.data.segments[0].stats.headshots.value,
-            // fixedLevel: fixedLevel,
-            matchesPlayed: _.get(
-              userData,
-              "segments[0].stats.matchesPlayed.value",
-              ""
-            ),
-            // matchesPlayed: j.data.segments[0].stats.matchesPlayed.value || "",
-            LastPlayed: _.get(userData, "segments[1].metadata.name", ""),
-            // lastPlayed: j.data.segments[1].metadata.name,
-            lastKilled: _.get(userData, "segments[1].stats.kills", ""),
-            // lastKilled: j.data.segments[1].stats.kills.value,
-          };
+        headshots: _.get(userData, "segments[0].stats.headshots.value", ""),
+        // headshots: j.data.segments[0].stats.headshots.value,
+        // fixedLevel: fixedLevel,
+        matchesPlayed: _.get(
+          userData,
+          "segments[0].stats.matchesPlayed.value",
+          ""
+        ),
+        // matchesPlayed: j.data.segments[0].stats.matchesPlayed.value || "",
+        lastPlayed: _.get(userData, "segments[1].metadata.name", ""),
+        // lastPlayed: j.data.segments[1].metadata.name,
+        lastKilled: _.get(userData, "segments[1].stats.kills.values", ""),
 
-          res.render("playerprofile", {
-            name: requestedPlayer,
-          });
-        })
-        .catch(function (e) {
-          console.log(e);
-        });
+        estimateLevel: _.get(userData, "segments[0].stats.level.value", ""),
+        // lastKilled: j.data.segments[1].stats.kills.value,
+      };
+
+      res.render("playerprofile", {
+        name: requestedPlayer,
+        percentile: data.percentile,
+        kills: data.kills,
+        damage: data.damage,
+        headshots: data.headshots,
+        matchesPlayed: data.matchesPlayed,
+        lastPlayed: data.lastPlayed,
+        lastKilled: data.lastKilled,
+        estimateLevel: data.estimateLevel,
+      });
+      // });
+      // .catch(function (e) {
+      //   console.log(e);
+      // });
     })
     .catch(function (e) {
       console.log(e);

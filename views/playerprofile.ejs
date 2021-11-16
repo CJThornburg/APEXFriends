@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual user</title>
-</head>
+<%- include("header"); -%>
+
 <body>
     <div>
         <div class="player-card">
@@ -15,38 +10,28 @@
          </div>
      
          <div>
-             <p>Lifetime kills:  </p>
-                <P>percentile</P>
-             <p>Lifetime damage:</p>
-                <p>percentile:</p>
-             <P>Lifetime headshots:</P>
-                <p>percentile</p>
-             <p>rank img  </p>
-             
+             <p>Lifetime kills: <%= kills %>  </p>
+                <P>Kills percentile: <%=  percentile %>%</P>
+             <p>Lifetime damage: <%= damage %></p>
+             <P>Lifetime headshots: <%= headshots %></P>
+                         
          </div>
 
          <div>
-            <h4>main</h4>
-            <p>kills</p>
-            <p>percentile</p>
+
+            <h4>Last Played Legend: <%=  lastPlayed %> </h4>
+            <p>Kills: <%= lastKilled %></p>
+            
 
          </div>
 
 
-         <div>
-
-            <h4>
-                <p>Sessions overview </p>
-                <p>avegage length of matches</p>
-                <p>longest session</p>
-                <p>highest kill game </p>
-                <p>lowest kill game </p>
-                <p>highest damage game </p>
-                <p>number of 0 damage games kekw</p>
-                <p>average time alive </p>
-            </h4>
-         </div>
+         
 
     </div>
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
