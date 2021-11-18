@@ -658,7 +658,14 @@ app.get("/", function (req, res) {
   // end of  get "/" root request
 });
 
-app.get("/:user", function (req, res) {
+app.post("/", (req, res) => {
+  const username = req.body.username;
+  //...
+  res.redirect("/:user", username);
+});
+
+app.get("/:user", function (req, res, username) {
+  console.log(username + 2);
   let requestedPlayer = req.params.user;
 
   //  do https request with requestedPlayer
