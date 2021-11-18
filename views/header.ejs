@@ -52,8 +52,8 @@
              
         </div>
         
-        <form class="d-flex" method="POST" action="/userNameSearch">
-          <input name="username" class="form-control me-2" type="search" placeholder="Origin Username" aria-label="Search">
+        <form class="d-flex" onsubmit="location.href='/' + document.getElementById('userName').value; return false;">
+          <input name="username" id=userName class="form-control me-2" type="search" placeholder="Origin Username" aria-label="Search">
           <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
     
