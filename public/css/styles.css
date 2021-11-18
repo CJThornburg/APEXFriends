@@ -8,13 +8,18 @@ nav {
 body {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 56px 250px 250px 250px 250px;
+  grid-template-rows: 56px 250px 250px 250px 250px 150px;
   grid-template-areas:
     "nav nav"
     "player1 player2"
     "player3 player4"
     "player5 player6"
-    "player7 player8";
+    "player7 player8"
+    "footer footer";
+}
+
+.form {
+  justify-content: center;
 }
 
 .player-card1 {
