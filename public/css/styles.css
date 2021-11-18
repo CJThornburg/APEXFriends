@@ -8,7 +8,7 @@ nav {
 body {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 56px 250px 250px 250px 250px 150px;
+  grid-template-rows: 60px 270px 270px 270px 270px 150px;
   grid-template-areas:
     "nav nav"
     "player1 player2"
@@ -56,13 +56,18 @@ body {
   grid-template-rows: 100%;
 }
 
+.footer {
+  grid-area: footer;
+  padding-bottom: 20px;
+}
+
 .main-background {
   pointer-events: none;
   position: absolute;
   z-index: -1;
   opacity: 0.2;
   width: 50%;
-  height: 250px;
+  height: 270px;
   object-fit: cover;
 }
 

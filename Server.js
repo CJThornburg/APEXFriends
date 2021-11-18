@@ -146,7 +146,8 @@ app.get("/", function (req, res) {
       let kdata = json.data;
 
       kingRothgardOJ = {
-        name: kdata.platformInfo.platformUserId,
+        name: "kingRothgard",
+        // name: kdata.platformInfo.platformUserId,
         lifeTimeKills: _.get(kdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(kdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(kdata, "segments[0].stats.level.value", "n/a"),
@@ -155,7 +156,7 @@ app.get("/", function (req, res) {
           "segments[0].stats.rankScore.metadata.rankName",
           "n/a"
         ),
-        rankImg: kdata.segments[0].stats.rankScore.metadata.iconUrl,
+
         main: " ",
         mainName: "",
         mainUrl: " ",
@@ -204,12 +205,7 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(mdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(mdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(mdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          mdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
-        rankImg: mdata.segments[0].stats.rankScore.metadata.iconUrl,
+
         main: "",
         mainName: "",
         mainUrl: " ",
@@ -255,12 +251,7 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(gdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(gdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(gdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          gdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
-        rankImg: gdata.segments[0].stats.rankScore.metadata.iconUrl,
+
         main: "",
         mainName: "",
         mainUrl: " ",
@@ -306,12 +297,7 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(sdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(sdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(sdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          sdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
-        rankImg: sdata.segments[0].stats.rankScore.metadata.iconUrl,
+
         main: "",
         mainName: "",
         mainUrl: " ",
@@ -357,13 +343,7 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(hdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(hdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(hdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          hdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
-        main: "",
-        rankImg: hdata.segments[0].stats.rankScore.metadata.iconUrl,
+
         mainName: "",
         mainUrl: " ",
       };
@@ -408,12 +388,7 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(xdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(xdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(xdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          xdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
-        rankImg: xdata.segments[0].stats.rankScore.metadata.iconUrl,
+
         main: "",
         mainName: "",
         mainUrl: " ",
@@ -460,13 +435,8 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(rdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(rdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(rdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          rdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
+
         main: "",
-        rankImg: rdata.segments[0].stats.rankScore.metadata.iconUrl,
         mainName: "",
         mainUrl: " ",
       };
@@ -511,13 +481,7 @@ app.get("/", function (req, res) {
         lifeTimeKills: _.get(sfdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(sfdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(sfdata, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          sfdata,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
-        rankImg: sfdata.segments[0].stats.rankScore.metadata.iconUrl,
-        main: "",
+
         mainName: "",
         mainUrl: " ",
       };
