@@ -5,7 +5,7 @@ nav {
 }
 
 /* main container for content  */
-body {
+body.main {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 60px 270px 270px 270px 270px 150px;
@@ -108,4 +108,10 @@ body {
 .rank {
   grid-area: rank;
   justify-self: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
 }
