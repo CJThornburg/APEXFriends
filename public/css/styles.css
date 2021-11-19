@@ -115,3 +115,12 @@ body.main {
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
 }
+
+.player {
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.center {
+  text-align: center;
+}
