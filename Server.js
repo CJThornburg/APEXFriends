@@ -384,7 +384,7 @@ app.get("/", function (req, res) {
       let xdata = json.data;
 
       xariusOJ = {
-        name: xdata.platformInfo.platformUserId,
+        name:  _.get(xdata, "platformInfo.platformUserId", "n/a"),
         lifeTimeKills: _.get(xdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(xdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(xdata, "segments[0].stats.level.value", "n/a"),
