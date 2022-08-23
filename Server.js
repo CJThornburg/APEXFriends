@@ -67,7 +67,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let CGK0OJ = {
+  let Cgk0OJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
