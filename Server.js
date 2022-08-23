@@ -21,39 +21,39 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
   const url =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/Naff?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url2 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/minaXpotato?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/Aeriu?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url3 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/m3llakka?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/CGK0?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url4 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/SHBWAA?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/CamThings?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url5 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Hed_Is_Tilted?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/ddyAshley?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url6 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Fixer_RC-1140?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/rKahzi?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url7 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/MahaloMerky?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/AGL%20WolveZ?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
   const url8 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/origin/SystolicFrame48?" +
+    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/Parkesss?" +
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
 
-  let kingRothgardOJ = {
+  let Naff = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -64,7 +64,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let minaXpotatoOJ = {
+  let AeriuOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -75,7 +75,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let m3llakkaOJ = {
+  let CGK0OJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -85,7 +85,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let sHBWAAOJ = {
+  let CamThingsOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -95,18 +95,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let hed_Is_TiltedOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
-
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let xariusOJ = {
+  let ddyAshleyOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -117,7 +106,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let mahaloMerkyOJ = {
+  let rKahziOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -128,7 +117,18 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let systolicFrame48OJ = {
+  let AGLWolveZOJ = {
+    name: "n/a",
+    lifeTimeKills: "n/a",
+    lifeTimeDamage: "n/a",
+    level: "n/a",
+    rank: "n/a",
+
+    main: "",
+    mainName: "",
+    mainUrl: " ",
+  };
+  let ParkesssOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -144,10 +144,10 @@ app.get("/", function (req, res) {
     })
     .then((json) => {
       let kdata = json.data;
-
-      kingRothgardOJ = {
-        name: "kingRothgard",
-        // name: kdata.platformInfo.platformUserId,
+      console.log(kdata.segments)
+      NaffOJ = {
+        // name: "Naff",
+        name: _.get(kdata, "platformInfo.platformUserId ", "Naff"),
         lifeTimeKills: _.get(kdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(kdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(kdata, "segments[0].stats.level.value", "n/a"),
@@ -188,20 +188,20 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      kingRothgardOJ.mainName = main.name;
-      kingRothgardOJ.mainUrl = main.imgUrl;
+      NaffOJ.mainName = main.name;
+      NaffOJ.mainUrl = main.imgUrl;
 
       //  end of data processing
 
-      //  2nd DATA CALL MINAXPotato
+      //  2nd DATA CALL Aeriu
       return fetch(url2);
     })
     .then((response) => response.json())
     .then((json) => {
       let mdata = json.data;
 
-      minaXpotatoOJ = {
-        name: mdata.platformInfo.platformUserId,
+      AeriuOJ = {
+        name: _.get(mdata, "platformInfo.platformUserId ", "Aeriu"),
         lifeTimeKills: _.get(mdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(mdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(mdata, "segments[0].stats.level.value", "n/a"),
@@ -237,8 +237,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      minaXpotatoOJ.mainName = main.name;
-      minaXpotatoOJ.mainUrl = main.imgUrl;
+      AeriuOJ.mainName = main.name;
+      AeriuOJ.mainUrl = main.imgUrl;
 
       return fetch(url3);
     })
@@ -246,8 +246,8 @@ app.get("/", function (req, res) {
     .then((json) => {
       let gdata = json.data;
 
-      m3llakkaOJ = {
-        name: gdata.platformInfo.platformUserId,
+      CGK0OJ = {
+        name: _.get(gdata, "platformInfo.platformUserId", "CGK0"),
         lifeTimeKills: _.get(gdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(gdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(gdata, "segments[0].stats.level.value", "n/a"),
@@ -283,8 +283,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      m3llakkaOJ.mainName = main.name;
-      m3llakkaOJ.mainUrl = main.imgUrl;
+      CGK0OJ.mainName = main.name;
+      CGK0OJ.mainUrl = main.imgUrl;
 
       return fetch(url4);
     })
@@ -292,8 +292,8 @@ app.get("/", function (req, res) {
     .then((json) => {
       let sdata = json.data;
 
-      sHBWAAOJ = {
-        name: sdata.platformInfo.platformUserId,
+      CamThingsOJ = {
+        name: _.get(sdata, "platformInfo.platformUserId", "CamThings"),
         lifeTimeKills: _.get(sdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(sdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(sdata, "segments[0].stats.level.value", "n/a"),
@@ -329,8 +329,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      sHBWAAOJ.mainName = main.name;
-      sHBWAAOJ.mainUrl = main.imgUrl;
+      CamThingsOJ.mainName = main.name;
+      CamThingsOJ.mainUrl = main.imgUrl;
 
       return fetch(url5);
     })
@@ -338,8 +338,8 @@ app.get("/", function (req, res) {
     .then((json) => {
       let hdata = json.data;
 
-      hed_Is_TiltedOJ = {
-        name: hdata.platformInfo.platformUserId,
+      ddyAshleyOJ = {
+        name: _.get(hdata, "platformInfo.platformUserId", "ddyAshleyOJ"),
         lifeTimeKills: _.get(hdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(hdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(hdata, "segments[0].stats.level.value", "n/a"),
@@ -374,8 +374,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      hed_Is_TiltedOJ.mainName = main.name;
-      hed_Is_TiltedOJ.mainUrl = main.imgUrl;
+      ddyAshleyOJ.mainName = main.name;
+      ddyAshleyOJ.mainUrl = main.imgUrl;
 
       return fetch(url6);
     })
@@ -383,7 +383,7 @@ app.get("/", function (req, res) {
     .then((json) => {
       let xdata = json.data;
 
-      xariusOJ = {
+      rKahziOJ = {
         name:  _.get(xdata, "platformInfo.platformUserId", "n/a"),
         lifeTimeKills: _.get(xdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(xdata, "segments[0].stats.damage.value", "n/a"),
@@ -420,8 +420,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      xariusOJ.mainName = main.name;
-      xariusOJ.mainUrl = main.imgUrl;
+      rKahziOJ.mainName = main.name;
+      rKahziOJ.mainUrl = main.imgUrl;
 
       return fetch(url7);
     })
@@ -429,9 +429,9 @@ app.get("/", function (req, res) {
     .then((response) => response.json())
     .then((json) => {
       let rdata = json.data;
-
-      mahaloMerkyOJ = {
-        name: rdata.platformInfo.platformUserId,
+      console.log(rdata.segments);
+      AGLWolveZOJ = {
+        name: _.get( rdata, "platformInfo.platformUserId" ,"AGLWolveZ"),
         lifeTimeKills: _.get(rdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(rdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(rdata, "segments[0].stats.level.value", "n/a"),
@@ -444,7 +444,7 @@ app.get("/", function (req, res) {
       let legends = [];
 
       var i;
-
+      console.log(rdata);
       for (i = 1; i < rdata.segments.length; i++) {
         // if segments[i].stats.kills.value does not exist make it equal 0
         const kills = _.get(rdata, "segments[" + i + "].stats.kills.value", 0);
@@ -467,8 +467,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      mahaloMerkyOJ.mainName = main.name;
-      mahaloMerkyOJ.mainUrl = main.imgUrl;
+      AGLWolveZOJ.mainName = main.name;
+      AGLWolveZOJ.mainUrl = main.imgUrl;
 
       return fetch(url8);
     })
@@ -477,7 +477,7 @@ app.get("/", function (req, res) {
     .then((json) => {
       let sfdata = json.data;
 
-      systolicFrame48OJ = {
+      ParkesssOJ = {
         lifeTimeKills: _.get(sfdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(sfdata, "segments[0].stats.damage.value", "n/a"),
         level: _.get(sfdata, "segments[0].stats.level.value", "n/a"),
@@ -489,7 +489,7 @@ app.get("/", function (req, res) {
       let legends = [];
 
       var i;
-
+      console.log(sfdata.segments)
       for (i = 1; i < sfdata.segments.length; i++) {
         // if segments[i].stats.kills.value does not exist make it equal 0
         const kills = _.get(sfdata, "segments[" + i + "].stats.kills.value", 0);
@@ -512,19 +512,19 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      systolicFrame48OJ.mainName = main.name;
-      systolicFrame48OJ.mainUrl = main.imgUrl;
+      ParkesssOJ.mainName = main.name;
+      ParkesssOJ.mainUrl = main.imgUrl;
 
-      console.log(kingRothgardOJ);
+      // console.log(NaffOJ);
       res.render("landingpage", {
-        kingRothgardOJ: kingRothgardOJ,
-        minaXpotatoOJ: minaXpotatoOJ,
-        mahaloMerkyOJ: mahaloMerkyOJ,
-        sHBWAAOJ: sHBWAAOJ,
-        hed_Is_TiltedOJ: hed_Is_TiltedOJ,
-        m3llakkaOJ: m3llakkaOJ,
-        xariusOJ: xariusOJ,
-        systolicFrame48OJ: systolicFrame48OJ,
+       NaffOJ: NaffOJ,
+        AeriuOJ: AeriuOJ,
+        AGLWolveZOJ: AGLWolveZOJ,
+        CamThingsOJ: CamThingsOJ,
+        ddyAshleyOJ: ddyAshleyOJ,
+        CGK0OJ: CGK0OJ,
+        rKahziOJ: rKahziOJ,
+        ParkesssOJ: ParkesssOJ,
       });
     })
 
@@ -542,9 +542,9 @@ app.get("/", function (req, res) {
 
   // let name = "";
 
-  // // KingRothgard   Origin
+  // // Naff   Origin
 
-  // const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+  // const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
 
   // https.get(url, function (response) {
 
@@ -564,26 +564,26 @@ app.get("/", function (req, res) {
   //     }).on('end', function () {
 
   //         let data = Buffer.concat(chunks);
-  //         let kingRothgard = JSON.parse(data);
+  //         let Naff = JSON.parse(data);
 
   //         // putting into varible
-  //         name = kingRothgard.data.platformInfo.platformUserId;
+  //         name = Naff.data.platformInfo.platformUserId;
 
-  //         lifeTimeKills = kingRothgard.data.segments[0].stats.kills.value;
+  //         lifeTimeKills = Naff.data.segments[0].stats.kills.value;
 
-  //         lifeTimeDamage = kingRothgard.data.segments[0].stats.damage.value;
+  //         lifeTimeDamage = Naff.data.segments[0].stats.damage.value;
 
-  //         level =kingRothgard.data.segments[0].stats.level.value;
+  //         level =Naff.data.segments[0].stats.level.value;
 
-  //         rank = kingRothgard.data.segments[0].stats.rankScore.metadata.iconUrl;
+  //         rank = Naff.data.segments[0].stats.rankScore.metadata.iconUrl;
 
   //         var i;
 
   //         for (i = 1; i <13; i++) {
 
-  //         const kills = kingRothgard.data.segments[i].stats.kills.value;
-  //         const name = kingRothgard.data.segments[i].metadata.name;
-  //         const imgUrl = kingRothgard.data.segments[i].metadata.bgImageUrl;
+  //         const kills = Naff.data.segments[i].stats.kills.value;
+  //         const name = Naff.data.segments[i].metadata.name;
+  //         const imgUrl = Naff.data.segments[i].metadata.bgImageUrl;
   //         const legend = {kills, name, imgUrl};
   //         legends.push(legend);
 
