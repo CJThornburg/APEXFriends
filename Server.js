@@ -21,39 +21,31 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
   const url =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/Naff?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+    "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Naff&platform=X1";
   const url2 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/Aeriu?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Aeriu&platform=X1";
   const url3 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/CGK0?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CGK0&platform=X1";
   const url4 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/CamThings?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
+   
   const url5 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/ddyAshley?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=ddyAshley&platform=X1";
+    
+  
   const url6 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/rKahzi?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
+   
+   
   const url7 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/AGL%20WolveZ?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=AGL%20WolveZ&platform=X1";
+   
+   
   const url8 =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/Parkesss?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Parkesss&platform=X1";
+    
 
-  let Naff = {
+  let NaffOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -143,16 +135,16 @@ app.get("/", function (req, res) {
       return response.json();
     })
     .then((json) => {
-      let kdata = json.data;
-      console.log(kdata.segments)
+      let naffData = json.data;
+      console.log(naffData.segments)
       NaffOJ = {
         // name: "Naff",
-        name: _.get(kdata, "platformInfo.platformUserId ", "Naff"),
-        lifeTimeKills: _.get(kdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(kdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(kdata, "segments[0].stats.level.value", "n/a"),
+        name: _.get(data, "platformInfo.platformUserId ", "Naff"),
+        lifeTimeKills: _.get(naffData, "segments[0].stats.kills.value", "n/a"),
+        lifeTimeDamage: _.get(naffData, "segments[0].stats.damage.value", "n/a"),
+        level: _.get(naffData, "segments[0].stats.level.value", "n/a"),
         rank: _.get(
-          kdata,
+          naffData,
           "segments[0].stats.rankScore.metadata.rankName",
           "n/a"
         ),
@@ -166,11 +158,11 @@ app.get("/", function (req, res) {
 
       var i;
 
-      for (i = 1; i < kdata.segments.length; i++) {
+      for (i = 1; i < naffData.segments.length; i++) {
         // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(kdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = kdata.segments[i].metadata.name;
-        const imgUrl = kdata.segments[i].metadata.bgImageUrl;
+        const kills = _.get(naffData, "segments[" + i + "].stats.kills.value", 0);
+        const name = naffData.segments[i].metadata.name;
+        const imgUrl = naffData.segments[i].metadata.bgImageUrl;
         const legend = { kills, name, imgUrl };
         legends.push(legend);
       }
