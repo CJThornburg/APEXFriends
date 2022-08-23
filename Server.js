@@ -53,7 +53,7 @@ app.get("/", function (req, res) {
     process.env.API +
     "&Accept=json&Accept-Encoding=gzip";
 
-  let Naff = {
+  let NaffOJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -75,7 +75,7 @@ app.get("/", function (req, res) {
     mainName: "",
     mainUrl: " ",
   };
-  let CGK0OJ = {
+  let Cgk0OJ = {
     name: "n/a",
     lifeTimeKills: "n/a",
     lifeTimeDamage: "n/a",
@@ -143,16 +143,16 @@ app.get("/", function (req, res) {
       return response.json();
     })
     .then((json) => {
-      let kdata = json.data;
-      console.log(kdata.segments)
+      let naffData = json.data;
+      console.log(naffData.segments)
       NaffOJ = {
         // name: "Naff",
-        name: _.get(kdata, "platformInfo.platformUserId ", "Naff"),
-        lifeTimeKills: _.get(kdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(kdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(kdata, "segments[0].stats.level.value", "n/a"),
+        name: _.get(naffData, "platformInfo.platformUserId ", "Naff"),
+        lifeTimeKills: _.get(naffData, "segments[0].stats.kills.value", "n/a"),
+        lifeTimeDamage: _.get(naffData, "segments[0].stats.damage.value", "n/a"),
+        level: _.get(naffData, "segments[0].stats.level.value", "n/a"),
         rank: _.get(
-          kdata,
+          naffData,
           "segments[0].stats.rankScore.metadata.rankName",
           "n/a"
         ),
@@ -166,11 +166,11 @@ app.get("/", function (req, res) {
 
       var i;
 
-      for (i = 1; i < kdata.segments.length; i++) {
+      for (i = 1; i < naffData.segments.length; i++) {
         // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(kdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = kdata.segments[i].metadata.name;
-        const imgUrl = kdata.segments[i].metadata.bgImageUrl;
+        const kills = _.get(naffData, "segments[" + i + "].stats.kills.value", 0);
+        const name = naffData.segments[i].metadata.name;
+        const imgUrl = naffData.segments[i].metadata.bgImageUrl;
         const legend = { kills, name, imgUrl };
         legends.push(legend);
       }
@@ -246,7 +246,7 @@ app.get("/", function (req, res) {
     .then((json) => {
       let gdata = json.data;
 
-      CGK0OJ = {
+      Cgk0OJ = {
         name: _.get(gdata, "platformInfo.platformUserId", "CGK0"),
         lifeTimeKills: _.get(gdata, "segments[0].stats.kills.value", "n/a"),
         lifeTimeDamage: _.get(gdata, "segments[0].stats.damage.value", "n/a"),
@@ -283,8 +283,8 @@ app.get("/", function (req, res) {
       });
 
       //         // display name and img as background
-      CGK0OJ.mainName = main.name;
-      CGK0OJ.mainUrl = main.imgUrl;
+      Cgk0OJ.mainName = main.name;
+      Cgk0OJ.mainUrl = main.imgUrl;
 
       return fetch(url4);
     })
@@ -522,7 +522,7 @@ app.get("/", function (req, res) {
         AGLWolveZOJ: AGLWolveZOJ,
         CamThingsOJ: CamThingsOJ,
         ddyAshleyOJ: ddyAshleyOJ,
-        CGK0OJ: CGK0OJ,
+        Cgk0OJ: CGK0OJ,
         rKahziOJ: rKahziOJ,
         ParkesssOJ: ParkesssOJ,
       });
