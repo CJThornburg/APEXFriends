@@ -20,7 +20,7 @@ app.use(express.static("public"));
 // might be able to make an array of all the usernames and then rund a for loop, this would be a refactor step do not try to do it right off the bat
 
 app.get("/", function (req, res) {
-  const url =
+  const url1 =
     "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Naff&platform=X1";
   const url2 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Aeriu&platform=X1";
@@ -130,398 +130,429 @@ app.get("/", function (req, res) {
     mainUrl: " ",
   };
 
-  fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((json) => {
-      let naffData = json.data;
-      console.log(naffData.segments)
-      NaffOJ = {
-        // name: "Naff",
-        name: _.get(data, "platformInfo.platformUserId ", "Naff"),
-        lifeTimeKills: _.get(naffData, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(naffData, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(naffData, "segments[0].stats.level.value", "n/a"),
-        rank: _.get(
-          naffData,
-          "segments[0].stats.rankScore.metadata.rankName",
-          "n/a"
-        ),
 
-        main: " ",
-        mainName: "",
-        mainUrl: " ",
-      };
+  
+  // fetch(url)
+  // .then((response) => response.json())
+  // .then((data) => console.log(data));
+  // // .then ()
+  // .then (
 
-      let legends = [];
+  // fetch(url)
+  // .then((response) => {
+  //   return response.json();
+  // })
+  // .then((json) => {
+  //   let naffData = json.data;
+  //   console.log(naffData)
 
-      var i;
 
-      for (i = 1; i < naffData.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(naffData, "segments[" + i + "].stats.kills.value", 0);
-        const name = naffData.segments[i].metadata.name;
-        const imgUrl = naffData.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
 
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
+  
+https.get(url2, (res) => {
+
+  console.log(res)
+});
+
+// fetch(url1)
+// .then((res) => res.text())
+// .then(data => console.log(data))
+
+
+  // fetch(url)
+  //   .then((response) => {
+  //     return response.json();
+  //   })
+  //   .then((json) => {
+  //     let naffData = json.data;
+  //     console.log(naffData.segments)
+
+  //     NaffOJ = {
+  //       // name: "Naff",
+  //       name: _.get(data, "platformInfo.platformUserId ", "Naff"),
+  //       lifeTimeKills: _.get(naffData, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(naffData, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(naffData, "segments[0].stats.level.value", "n/a"),
+  //       rank: _.get(
+  //         naffData,
+  //         "segments[0].stats.rankScore.metadata.rankName",
+  //         "n/a"
+  //       ),
+
+  //       main: " ",
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+
+  //     for (i = 1; i < naffData.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(naffData, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = naffData.segments[i].metadata.name;
+  //       const imgUrl = naffData.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     NaffOJ.mainName = main.name;
+  //     NaffOJ.mainUrl = main.imgUrl;
+
+  //     //  end of data processing
+
+  //     //  2nd DATA CALL Aeriu
+  //     return fetch(url2);
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let mdata = json.data;
+
+  //     AeriuOJ = {
+  //       name: _.get(mdata, "platformInfo.platformUserId ", "Aeriu"),
+  //       lifeTimeKills: _.get(mdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(mdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(mdata, "segments[0].stats.level.value", "n/a"),
+
+  //       main: "",
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+
+  //     for (i = 1; i < mdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(mdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = mdata.segments[i].metadata.name;
+  //       const imgUrl = mdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     AeriuOJ.mainName = main.name;
+  //     AeriuOJ.mainUrl = main.imgUrl;
+
+  //     return fetch(url3);
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let gdata = json.data;
+
+  //     CGK0OJ = {
+  //       name: _.get(gdata, "platformInfo.platformUserId", "CGK0"),
+  //       lifeTimeKills: _.get(gdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(gdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(gdata, "segments[0].stats.level.value", "n/a"),
+
+  //       main: "",
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+
+  //     for (i = 1; i < gdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(gdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = gdata.segments[i].metadata.name;
+  //       const imgUrl = gdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     CGK0OJ.mainName = main.name;
+  //     CGK0OJ.mainUrl = main.imgUrl;
+
+  //     return fetch(url4);
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let sdata = json.data;
+
+  //     CamThingsOJ = {
+  //       name: _.get(sdata, "platformInfo.platformUserId", "CamThings"),
+  //       lifeTimeKills: _.get(sdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(sdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(sdata, "segments[0].stats.level.value", "n/a"),
+
+  //       main: "",
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+
+  //     for (i = 1; i < sdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(sdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = sdata.segments[i].metadata.name;
+  //       const imgUrl = sdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     CamThingsOJ.mainName = main.name;
+  //     CamThingsOJ.mainUrl = main.imgUrl;
+
+  //     return fetch(url5);
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let hdata = json.data;
+
+  //     ddyAshleyOJ = {
+  //       name: _.get(hdata, "platformInfo.platformUserId", "ddyAshleyOJ"),
+  //       lifeTimeKills: _.get(hdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(hdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(hdata, "segments[0].stats.level.value", "n/a"),
+
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+
+  //     for (i = 1; i < hdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(hdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = hdata.segments[i].metadata.name;
+  //       const imgUrl = hdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     ddyAshleyOJ.mainName = main.name;
+  //     ddyAshleyOJ.mainUrl = main.imgUrl;
+
+  //     return fetch(url6);
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let xdata = json.data;
+
+  //     rKahziOJ = {
+  //       name:  _.get(xdata, "platformInfo.platformUserId", "n/a"),
+  //       lifeTimeKills: _.get(xdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(xdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(xdata, "segments[0].stats.level.value", "n/a"),
+
+  //       main: "",
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+
+  //     for (i = 1; i < xdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(xdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = xdata.segments[i].metadata.name;
+  //       const imgUrl = xdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     rKahziOJ.mainName = main.name;
+  //     rKahziOJ.mainUrl = main.imgUrl;
+
+  //     return fetch(url7);
+  //   })
+  //   //  .then the rest of the requst
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let rdata = json.data;
+  //     console.log(rdata.segments);
+  //     AGLWolveZOJ = {
+  //       name: _.get( rdata, "platformInfo.platformUserId" ,"AGLWolveZ"),
+  //       lifeTimeKills: _.get(rdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(rdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(rdata, "segments[0].stats.level.value", "n/a"),
+
+  //       main: "",
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+  //     console.log(rdata);
+  //     for (i = 1; i < rdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(rdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = rdata.segments[i].metadata.name;
+  //       const imgUrl = rdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     AGLWolveZOJ.mainName = main.name;
+  //     AGLWolveZOJ.mainUrl = main.imgUrl;
+
+  //     return fetch(url8);
+  //   })
+
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     let sfdata = json.data;
+
+  //     ParkesssOJ = {
+  //       lifeTimeKills: _.get(sfdata, "segments[0].stats.kills.value", "n/a"),
+  //       lifeTimeDamage: _.get(sfdata, "segments[0].stats.damage.value", "n/a"),
+  //       level: _.get(sfdata, "segments[0].stats.level.value", "n/a"),
+
+  //       mainName: "",
+  //       mainUrl: " ",
+  //     };
+
+  //     let legends = [];
+
+  //     var i;
+  //     console.log(sfdata.segments)
+  //     for (i = 1; i < sfdata.segments.length; i++) {
+  //       // if segments[i].stats.kills.value does not exist make it equal 0
+  //       const kills = _.get(sfdata, "segments[" + i + "].stats.kills.value", 0);
+  //       const name = sfdata.segments[i].metadata.name;
+  //       const imgUrl = sfdata.segments[i].metadata.bgImageUrl;
+  //       const legend = { kills, name, imgUrl };
+  //       legends.push(legend);
+  //     }
+
+  //     var topKills = Math.max.apply(
+  //       Math,
+  //       legends.map(function (o) {
+  //         return o.kills;
+  //       })
+  //     );
+
+  //     //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+  //     main = legends.find(function (o) {
+  //       return o.kills == topKills;
+  //     });
+
+  //     //         // display name and img as background
+  //     ParkesssOJ.mainName = main.name;
+  //     ParkesssOJ.mainUrl = main.imgUrl;
+
+    //   console.log(NaffOJ);
+      res.send( "console.js"
+        // AeriuOJ: AeriuOJ,
+        // AGLWolveZOJ: AGLWolveZOJ,
+        // CamThingsOJ: CamThingsOJ,
+        // ddyAshleyOJ: ddyAshleyOJ,
+        // CGK0OJ: CGK0OJ,
+        // rKahziOJ: rKahziOJ,
+        // ParkesssOJ: ParkesssOJ,
       );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      NaffOJ.mainName = main.name;
-      NaffOJ.mainUrl = main.imgUrl;
-
-      //  end of data processing
-
-      //  2nd DATA CALL Aeriu
-      return fetch(url2);
+  
     })
-    .then((response) => response.json())
-    .then((json) => {
-      let mdata = json.data;
-
-      AeriuOJ = {
-        name: _.get(mdata, "platformInfo.platformUserId ", "Aeriu"),
-        lifeTimeKills: _.get(mdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(mdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(mdata, "segments[0].stats.level.value", "n/a"),
-
-        main: "",
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-
-      for (i = 1; i < mdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(mdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = mdata.segments[i].metadata.name;
-        const imgUrl = mdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      AeriuOJ.mainName = main.name;
-      AeriuOJ.mainUrl = main.imgUrl;
-
-      return fetch(url3);
-    })
-    .then((response) => response.json())
-    .then((json) => {
-      let gdata = json.data;
-
-      CGK0OJ = {
-        name: _.get(gdata, "platformInfo.platformUserId", "CGK0"),
-        lifeTimeKills: _.get(gdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(gdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(gdata, "segments[0].stats.level.value", "n/a"),
-
-        main: "",
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-
-      for (i = 1; i < gdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(gdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = gdata.segments[i].metadata.name;
-        const imgUrl = gdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      CGK0OJ.mainName = main.name;
-      CGK0OJ.mainUrl = main.imgUrl;
-
-      return fetch(url4);
-    })
-    .then((response) => response.json())
-    .then((json) => {
-      let sdata = json.data;
-
-      CamThingsOJ = {
-        name: _.get(sdata, "platformInfo.platformUserId", "CamThings"),
-        lifeTimeKills: _.get(sdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(sdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(sdata, "segments[0].stats.level.value", "n/a"),
-
-        main: "",
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-
-      for (i = 1; i < sdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(sdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = sdata.segments[i].metadata.name;
-        const imgUrl = sdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      CamThingsOJ.mainName = main.name;
-      CamThingsOJ.mainUrl = main.imgUrl;
-
-      return fetch(url5);
-    })
-    .then((response) => response.json())
-    .then((json) => {
-      let hdata = json.data;
-
-      ddyAshleyOJ = {
-        name: _.get(hdata, "platformInfo.platformUserId", "ddyAshleyOJ"),
-        lifeTimeKills: _.get(hdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(hdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(hdata, "segments[0].stats.level.value", "n/a"),
-
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-
-      for (i = 1; i < hdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(hdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = hdata.segments[i].metadata.name;
-        const imgUrl = hdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      ddyAshleyOJ.mainName = main.name;
-      ddyAshleyOJ.mainUrl = main.imgUrl;
-
-      return fetch(url6);
-    })
-    .then((response) => response.json())
-    .then((json) => {
-      let xdata = json.data;
-
-      rKahziOJ = {
-        name:  _.get(xdata, "platformInfo.platformUserId", "n/a"),
-        lifeTimeKills: _.get(xdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(xdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(xdata, "segments[0].stats.level.value", "n/a"),
-
-        main: "",
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-
-      for (i = 1; i < xdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(xdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = xdata.segments[i].metadata.name;
-        const imgUrl = xdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      rKahziOJ.mainName = main.name;
-      rKahziOJ.mainUrl = main.imgUrl;
-
-      return fetch(url7);
-    })
-    //  .then the rest of the requst
-    .then((response) => response.json())
-    .then((json) => {
-      let rdata = json.data;
-      console.log(rdata.segments);
-      AGLWolveZOJ = {
-        name: _.get( rdata, "platformInfo.platformUserId" ,"AGLWolveZ"),
-        lifeTimeKills: _.get(rdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(rdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(rdata, "segments[0].stats.level.value", "n/a"),
-
-        main: "",
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-      console.log(rdata);
-      for (i = 1; i < rdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(rdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = rdata.segments[i].metadata.name;
-        const imgUrl = rdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      AGLWolveZOJ.mainName = main.name;
-      AGLWolveZOJ.mainUrl = main.imgUrl;
-
-      return fetch(url8);
-    })
-
-    .then((response) => response.json())
-    .then((json) => {
-      let sfdata = json.data;
-
-      ParkesssOJ = {
-        lifeTimeKills: _.get(sfdata, "segments[0].stats.kills.value", "n/a"),
-        lifeTimeDamage: _.get(sfdata, "segments[0].stats.damage.value", "n/a"),
-        level: _.get(sfdata, "segments[0].stats.level.value", "n/a"),
-
-        mainName: "",
-        mainUrl: " ",
-      };
-
-      let legends = [];
-
-      var i;
-      console.log(sfdata.segments)
-      for (i = 1; i < sfdata.segments.length; i++) {
-        // if segments[i].stats.kills.value does not exist make it equal 0
-        const kills = _.get(sfdata, "segments[" + i + "].stats.kills.value", 0);
-        const name = sfdata.segments[i].metadata.name;
-        const imgUrl = sfdata.segments[i].metadata.bgImageUrl;
-        const legend = { kills, name, imgUrl };
-        legends.push(legend);
-      }
-
-      var topKills = Math.max.apply(
-        Math,
-        legends.map(function (o) {
-          return o.kills;
-        })
-      );
-
-      //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-      main = legends.find(function (o) {
-        return o.kills == topKills;
-      });
-
-      //         // display name and img as background
-      ParkesssOJ.mainName = main.name;
-      ParkesssOJ.mainUrl = main.imgUrl;
-
-      // console.log(NaffOJ);
-      res.render("landingpage", {
-       NaffOJ: NaffOJ,
-        AeriuOJ: AeriuOJ,
-        AGLWolveZOJ: AGLWolveZOJ,
-        CamThingsOJ: CamThingsOJ,
-        ddyAshleyOJ: ddyAshleyOJ,
-        CGK0OJ: CGK0OJ,
-        rKahziOJ: rKahziOJ,
-        ParkesssOJ: ParkesssOJ,
-      });
-    })
+  // })
 
     // .then res.render after you have called everyones info
-    .catch((err) => console.log(err));
+    // .catch((err) => console.log(err));
   // this error will send error if there is any erros on the .then chain
 
   //             nameKey: name,
@@ -606,13 +637,13 @@ app.get("/", function (req, res) {
   //          });
 
   //     // end of data processing ana back end
-  //     });
+      // });
 
   //     // end of get http request going to apex api
   // });
 
   // end of  get "/" root request
-});
+// });
 
 app.get("/:user", function (req, res) {
   let requestedPlayer = req.params.user;
