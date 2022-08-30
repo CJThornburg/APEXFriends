@@ -71,7 +71,7 @@ app.get("/", function (req, res) {
 
           //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
  
-  const requestTwo = axios.get(url2);
+  // const requestTwo = axios.get(url2);
 
  
   // const requestThree = axios.get(url3);
@@ -85,13 +85,13 @@ app.get("/", function (req, res) {
 
   
   axios.all([requestZero, requestOne
-    ,requestTwo 
+    // ,requestTwo 
     // , requestThree, requestFour, requestFive, requestSix, requestSeven
   ]).then(axios.spread((...responses) => {
     const responseZero = responses[0]
     const responseOne= responses[1]
    
-      const responseTwo = responses[2]
+      // const responseTwo = responses[2]
   
 
 
