@@ -67,9 +67,9 @@ app.get("/", function (req, res) {
 
 
 
-  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000, maxRPS: 2 })
+  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1100 })
 
-  axiosRL.getMaxRPS();
+
 
 
   const requestZero = axiosRL.get(url0);
@@ -81,17 +81,17 @@ app.get("/", function (req, res) {
 
  
   const requestThree = axiosRL.get(url3);
-  // const requestFour = axios.get(url4);
-  // const requestFive = axios.get(url5);
-  // const requestSix = axios.get(url6);
-  // const requestSeven = axios.get(url7);
+  const requestFour = axiosRL.get(url4);
+  const requestFive = axiosRL.get(url5);
+  const requestSix = axiosRL.get(url6);
+  const requestSeven = axiosRL.get(url7);
 
 
   
   axios.all([requestZero, requestOne
     ,requestTwo 
     , requestThree
-    // , requestFour, requestFive, requestSix, requestSeven
+    , requestFour, requestFive, requestSix, requestSeven
   ]).then(axios.spread((...responses) => {
     const responseZero = responses[0]
     const responseOne= responses[1]
@@ -101,11 +101,11 @@ app.get("/", function (req, res) {
 
 
     const responseThree = responses[3]
-    // const responseFour = responses[4]
-    // const responseFive= responses[5]
-    // const responseSix = responses[6]
-    // const responseSeven  = responses[7]
-    console.log (  responseThree.data);
+    const responseFour = responses[4]
+    const responseFive= responses[5]
+    const responseSix = responses[6]
+    const responseSeven  = responses[7]
+    console.log (  responseSeven.data);
     // console.log (  responseTwo);
     console.log("before res.send");
   res.send( "completed loading");
