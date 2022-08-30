@@ -10,7 +10,8 @@
   "author": "Chris Thornburg",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "axios": "^0.27.2",
+    "dotenv": "^8.6.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "lodash": "^4.17.20",

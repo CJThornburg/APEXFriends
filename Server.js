@@ -5,9 +5,11 @@ const request = require("request");
 const bodyParser = require("body-parser");
 const fetch = require("node-fetch");
 // const { json } = require("express");
+const axios = require('axios');
 const ejs = require("ejs");
 var _ = require("lodash");
-const { Console } = require("console");
+const { Console, error } = require("console");
+const { response } = require("express");
 const app = express();
 app.set("view engine", "ejs");
 app.use(
@@ -17,118 +19,206 @@ app.use(
 );
 app.use(express.static("public"));
 
-// might be able to make an array of all the usernames and then rund a for loop, this would be a refactor step do not try to do it right off the bat
+
+
+// function getUserData(user, platform) {
+// url =  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=" + user +"&platform="+ platform;
+
+// let data = axios.get(url )
+// .then((response) => {
+//     console.log('Response: ', response.data);
+// }).catch((err) => {
+//     console.error(err);
+// });
+// }
+// ...
+
+
+
+
 
 app.get("/", function (req, res) {
-  const url1 =
+  const url0 =
     "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Naff&platform=X1";
-  const url2 =
+  const url1 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Aeriu&platform=X1";
+  const url2 =
+  "https://api.mozambiquehe.re/bridge?auth="+process.env.API + "&player=CGK0&platform=X1";
   const url3 =
-  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CGK0&platform=X1";
-  const url4 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
    
-  const url5 =
+  const url4 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=ddyAshley&platform=X1";
     
   
-  const url6 =
+  const url5 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
    
    
-  const url7 =
+  const url6 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=AGL%20WolveZ&platform=X1";
    
    
-  const url8 =
+  const url7 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Parkesss&platform=X1";
     
 
-  let NaffOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
 
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let AeriuOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
 
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let Cgk0OJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let CamThingsOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let ddyAshleyOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
 
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let rKahziOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
+  const requestZero = axios.get(url0);
+  const requestOne = axios.get(url1);
 
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let AGLWolveZOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
+          //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
+ 
+  const requestTwo = axios.get(url2);
 
-    main: "",
-    mainName: "",
-    mainUrl: " ",
-  };
-  let ParkesssOJ = {
-    name: "n/a",
-    lifeTimeKills: "n/a",
-    lifeTimeDamage: "n/a",
-    level: "n/a",
-    rank: "n/a",
-    mainName: "",
-    mainUrl: " ",
-  };
+ 
+  // const requestThree = axios.get(url3);
+  // const requestFour = axios.get(url4);
+  // const requestFive = axios.get(url5);
+  // const requestSix = axios.get(url6);
+  // const requestSeven = axios.get(url7);
+
+ 
+
+
+  
+  axios.all([requestZero, requestOne
+    ,requestTwo 
+    // , requestThree, requestFour, requestFive, requestSix, requestSeven
+  ]).then(axios.spread((...responses) => {
+    const responseZero = responses[0]
+    const responseOne= responses[1]
+   
+      const responseTwo = responses[2]
+  
+
+
+    // const responseThree = responses[3]
+    // const responseFour = responses[4]
+    // const responseFive= responses[5]
+    // const responseSix = responses[6]
+    // const responseSeven  = responses[7]
+    console.log (  responseOne.data);
+    // console.log (  responseTwo);
+    console.log("before res.send");
+  res.send( "completed loading");
+  })
+  )
+  .catch(errors => {
+    // react on errors.
+    console.error(errors);
+    res.send("error");
+  });
+  
+
+
+
+
+});
+
+
+// single axios request 
+
+  //     .then((response) => {
+  //         console.log('Response: ', response.data);
+  //     }).catch((err) => {
+  //         console.error(err);
+  //     });
+    
+  //   // ...
+  //   res.send( "completed loading");
+  // });
+
+
+
+
+
+  // let NaffOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let AeriuOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let Cgk0OJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let CamThingsOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let ddyAshleyOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let rKahziOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let AGLWolveZOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+
+  //   main: "",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
+  // let ParkesssOJ = {
+  //   name: "n/a",
+  //   lifeTimeKills: "n/a",
+  //   lifeTimeDamage: "n/a",
+  //   level: "n/a",
+  //   rank: "n/a",
+  //   mainName: "",
+  //   mainUrl: " ",
+  // };
 
 
   
@@ -145,39 +235,60 @@ app.get("/", function (req, res) {
   // .then((json) => {
   //   let naffData = json.data;
   //   console.log(naffData)
-  options = {
-    Authorization: process.env.API
-  }
-
-  https.get(url3, options, function (response)  {
+  // options = {
+  //   headers: {
+  //     // 'Content-Type' : 'application/json',
+  //     // 'Accept' : 'application/json',
+//   //      'Authorization': process.env.API
+//   //   }
+//   // };
+//   const requestOne = axios.get(url1);
+//   const requestTwo = axios.get(url2);
+//   //     .then((response) => {
+//   //         console.log('Response: ', response.data);
+//   //     }).catch((err) => {
+//   //         console.error(err);
+//   //     });
     
-      // console.log(response);
-      let chunks="";
-      response.on("data", function (chunk) {
-        chunks+=chunk;
-      });
+//   //   // ...
+//   //   res.send( "completed loading");
+//   // });
+ 
+
+//   axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
+//     const responseOne = responses[0]
+//     const responseTwo = responses[1]
+//     console.log (  responseOne);
+//     console.log ( "2" + responseTwo);
+//   })
+//   )
+//   .catch(errors => {
+//     // react on errors.
+//     console.error(errors);
+//   });
+ 
+//   res.send( "completed loading");
+// });
+ 
+ 
+  // requestOne.then(response => {
+  //   console.log(response.data)
+  //   console.log("confirming requestOne is working")
+  // }).catch(error => {
+  //   console.err(error)
+  // })
+
+  // res.send("completed loading")
 
 
-      response.on("end", function () {
-        console.log("api data recieved");
-        // test = data.trim(); // remove the unwanted whitespace
-        // let roth = JSON.parse(chunks);
-        let roth = JSON.parse(chunks);
-        console.log(roth);
-        // roth = JSON.parse(data);
-       
-      //  JSON.parse(data);
-      })
-    
-    // ...
-    
-  });
-  res.send( "completed loading");
-});
+  // getUserData("Aeriu", "X1");
+  // res.send( "completed loading");
+  // });
+ 
 
 
 
-// https.get(apiLink, function (response) { 
+  // https.get(apiLink, function (response) { 
 
 //   let chunks="";
 //   response.on("data", function (chunk) {
@@ -737,7 +848,7 @@ app.get("/", function (req, res) {
 
 app.get("/:user", function (req, res) {
   let requestedPlayer = req.params.user;
-  console.log("no hi");
+  // console.log("no hi");
   //  do https request with requestedPlayer
   let url =
     "https://public-api.tracker.gg/v2/apex/standard/profile/5/" +
