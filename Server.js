@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const fetch = require("node-fetch");
 // const { json } = require("express");
 const axios = require('axios');
+const rateLimit = require('axios-rate-limit')
 const ejs = require("ejs");
 var _ = require("lodash");
 const { Console, error } = require("console");
@@ -66,41 +67,45 @@ app.get("/", function (req, res) {
 
 
 
-  const requestZero = axios.get(url0);
-  const requestOne = axios.get(url1);
+  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1000, maxRPS: 2 })
+
+  axiosRL.getMaxRPS();
+
+
+  const requestZero = axiosRL.get(url0);
+  const requestOne = axiosRL.get(url1);
 
           //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
  
-  // const requestTwo = axios.get(url2);
+  const requestTwo = axiosRL.get(url2);
 
  
-  // const requestThree = axios.get(url3);
+  const requestThree = axiosRL.get(url3);
   // const requestFour = axios.get(url4);
   // const requestFive = axios.get(url5);
   // const requestSix = axios.get(url6);
   // const requestSeven = axios.get(url7);
 
- 
-
 
   
   axios.all([requestZero, requestOne
-    // ,requestTwo 
-    // , requestThree, requestFour, requestFive, requestSix, requestSeven
+    ,requestTwo 
+    , requestThree
+    // , requestFour, requestFive, requestSix, requestSeven
   ]).then(axios.spread((...responses) => {
     const responseZero = responses[0]
     const responseOne= responses[1]
    
-      // const responseTwo = responses[2]
+      const responseTwo = responses[2]
   
 
 
-    // const responseThree = responses[3]
+    const responseThree = responses[3]
     // const responseFour = responses[4]
     // const responseFive= responses[5]
     // const responseSix = responses[6]
     // const responseSeven  = responses[7]
-    console.log (  responseOne.data);
+    console.log (  responseThree.data);
     // console.log (  responseTwo);
     console.log("before res.send");
   res.send( "completed loading");
