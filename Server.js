@@ -145,9 +145,11 @@ app.get("/", function (req, res) {
   // .then((json) => {
   //   let naffData = json.data;
   //   console.log(naffData)
+  options = {
+    Authorization: process.env.API
+  }
 
-
-  https.get(url1, function (response)  {
+  https.get(url3, options, function (response)  {
     
       // console.log(response);
       let chunks="";
@@ -170,7 +172,7 @@ app.get("/", function (req, res) {
     // ...
     
   });
-  res.send( "console.js");
+  res.send( "completed loading");
 });
 
 
