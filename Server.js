@@ -65,59 +65,62 @@ app.get("/", function (req, res) {
     
 
 
-
-
-  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1500 })
-
-
-
-
-  const requestZero = axiosRL.get(url0);
-  const requestOne = axiosRL.get(url1);
-
-          //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
- 
-  const requestTwo = axiosRL.get(url2);
-
- 
-  const requestThree = axiosRL.get(url3);
-  const requestFour = axiosRL.get(url4);
-  const requestFive = axiosRL.get(url5);
-  const requestSix = axiosRL.get(url6);
-  const requestSeven = axiosRL.get(url7);
-
-
-  
-  axios.all([requestZero, requestOne
-    ,requestTwo 
-    , requestThree
-    , requestFour, requestFive, requestSix, requestSeven
-  ]).then(axios.spread((...responses) => {
-    const responseZero = responses[0]
-    const responseOne= responses[1]
-   
-      const responseTwo = responses[2]
-  
-
-
-    const responseThree = responses[3]
-    const responseFour = responses[4]
-    const responseFive= responses[5]
-    const responseSix = responses[6]
-    const responseSeven  = responses[7]
-    // console.log (  responseSeven.data);
-    // console.log (  responseTwo);
-    // console.log("before res.send");
-    res.render("landingpage.ejs", {
+  res.render("landingpage.ejs", {
      
-    });
-  })
-  )
-  .catch(errors => {
-    // react on errors.
-    console.error(errors);
-    res.send("error");
-  });
+      });
+
+
+  // const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1500 })
+
+
+
+
+  // const requestZero = axiosRL.get(url0);
+  // const requestOne = axiosRL.get(url1);
+
+  //         //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
+ 
+  // const requestTwo = axiosRL.get(url2);
+
+ 
+  // const requestThree = axiosRL.get(url3);
+  // const requestFour = axiosRL.get(url4);
+  // const requestFive = axiosRL.get(url5);
+  // const requestSix = axiosRL.get(url6);
+  // const requestSeven = axiosRL.get(url7);
+
+
+  
+  // axios.all([requestZero, requestOne
+  //   ,requestTwo 
+  //   , requestThree
+  //   , requestFour, requestFive, requestSix, requestSeven
+  // ]).then(axios.spread((...responses) => {
+  //   const responseZero = responses[0]
+  //   const responseOne= responses[1]
+   
+  //     const responseTwo = responses[2]
+  
+
+
+  //   const responseThree = responses[3]
+  //   const responseFour = responses[4]
+  //   const responseFive= responses[5]
+  //   const responseSix = responses[6]
+  //   const responseSeven  = responses[7]
+  //   // console.log (  responseSeven.data);
+  //   // console.log (  responseTwo);
+  //   // console.log("before res.send");
+  //   res.render("landingpage.ejs", {
+     
+  //   });
+  // })
+  // )
+  // .catch(errors => {
+  //   // react on errors.
+  //   console.error(errors);
+  //   res.send("error");
+  // });
   
 
 
