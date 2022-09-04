@@ -8,9 +8,17 @@
                       
                       /* LANDING PAGE  */
 
+                         
+.userrow {
+  max-height: fit-content;
+}
 
 .userplate {
-  
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* max-width: fit-content; */
+    max-height:fit-content
 }
 
 
