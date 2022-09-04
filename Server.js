@@ -22,6 +22,20 @@ app.use(express.static("public"));
 
 
 
+// function getUserData(user, platform) {
+// url =  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=" + user +"&platform="+ platform;
+
+// let data = axios.get(url )
+// .then((response) => {
+//     console.log('Response: ', response.data);
+// }).catch((err) => {
+//     console.error(err);
+// });
+// }
+// ...
+
+
+
 
 
 app.get("/", function (req, res) {
@@ -53,7 +67,7 @@ app.get("/", function (req, res) {
 
 
 
-  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1100 })
+  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1500 })
 
 
 
@@ -91,10 +105,12 @@ app.get("/", function (req, res) {
     const responseFive= responses[5]
     const responseSix = responses[6]
     const responseSeven  = responses[7]
-    console.log (  responseSeven.data);
+    // console.log (  responseSeven.data);
     // console.log (  responseTwo);
-    console.log("before res.send");
-  res.send( "completed loading");
+    // console.log("before res.send");
+    res.render("landingpage.ejs", {
+     
+    });
   })
   )
   .catch(errors => {
