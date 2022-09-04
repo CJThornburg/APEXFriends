@@ -3,7 +3,7 @@ const https = require("https");
 // const fetch = require('node-fetch');
 
 
-let url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+let url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
 
 
 // fetch(url).then(function (data) {
@@ -13,7 +13,7 @@ let url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRot
 // });
 
 
-// const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRothgard?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
+// const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
     
     https.get(url, function (response) {
 
@@ -33,9 +33,9 @@ let url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/KingRot
         }).on('end', function () {
 
             let data = Buffer.concat(chunks);
-            let kingRothgard = JSON.parse(data);
+            let Naff = JSON.parse(data);
 
-            console.log(kingRothgard);
+            console.log(Naff);
         }
         )
       });
