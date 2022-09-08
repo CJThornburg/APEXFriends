@@ -21,7 +21,19 @@
     max-height:fit-content
 }
 
+.center {
+  margin: auto;
+  width: 50%;
+}
 
+
+
+
+
+.data {
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
 
 
 /* 
