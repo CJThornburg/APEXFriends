@@ -29,16 +29,30 @@
                     
                     }
                       
-                      
+                    
+                    .space {
+                      font-family: 'spaceport';
+                    }
                       
                       
                       
                       /* NAVBAR  */
+                      .navbar-customclass {
+                        background-color: #171717;
+                        
+                    }
 
+                    .footer-customclass {
+                      
+                      background-color: #171717;
+                  }
 
 
                       .brand {
                         margin-left: 3%;
+                        font-family: 'blocktastic';
+                        letter-spacing: 1px;
+
                       }
 
                       /* .nav-right {
@@ -109,6 +123,7 @@
 
 .username {
   font-family: 'spaceport';
+  font-size: 3.5rem;
 }
 
 
@@ -117,6 +132,12 @@
   padding-bottom: 6%;
 }
 
+.player-link {
+  color: #c13327;
+}
+.player-link:hover {
+  color: #932820;
+}
 
 /* 
                       .main-background {
