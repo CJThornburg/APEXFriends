@@ -22,17 +22,7 @@ app.use(express.static("public"));
 
 
 
-// function getUserData(user, platform) {
-// url =  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=" + user +"&platform="+ platform;
 
-// let data = axios.get(url )
-// .then((response) => {
-//     console.log('Response: ', response.data);
-// }).catch((err) => {
-//     console.error(err);
-// });
-// }
-// ...
 
 
 
@@ -65,62 +55,138 @@ app.get("/", function (req, res) {
     
 
 
-  res.render("landingpage.ejs", {
-     
-      });
 
-
-  // const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 1500 })
+  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 2000 })
 
 
 
 
-  // const requestZero = axiosRL.get(url0);
-  // const requestOne = axiosRL.get(url1);
+  const requestZero = axiosRL.get(url0);
+  const requestOne = axiosRL.get(url1);
 
-  //         //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
+          //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
  
-  // const requestTwo = axiosRL.get(url2);
+  const requestTwo = axiosRL.get(url2);
 
  
-  // const requestThree = axiosRL.get(url3);
-  // const requestFour = axiosRL.get(url4);
-  // const requestFive = axiosRL.get(url5);
-  // const requestSix = axiosRL.get(url6);
-  // const requestSeven = axiosRL.get(url7);
+  const requestThree = axiosRL.get(url3);
+  const requestFour = axiosRL.get(url4);
+  const requestFive = axiosRL.get(url5);
+  const requestSix = axiosRL.get(url6);
+  const requestSeven = axiosRL.get(url7);
 
 
   
-  // axios.all([requestZero, requestOne
-  //   ,requestTwo 
-  //   , requestThree
-  //   , requestFour, requestFive, requestSix, requestSeven
-  // ]).then(axios.spread((...responses) => {
-  //   const responseZero = responses[0]
-  //   const responseOne= responses[1]
+  axios.all([requestZero,
+    requestOne,
+    requestTwo,
+    requestThree,
+    requestFour,
+    requestFive,
+    requestSix,
+    requestSeven
+  ])
+    .then(axios.spread((...responses) => {
+    const responseZero = responses[0]
+    const responseOne= responses[1]
    
-  //     const responseTwo = responses[2]
+      const responseTwo = responses[2]
   
 
 
-  //   const responseThree = responses[3]
-  //   const responseFour = responses[4]
-  //   const responseFive= responses[5]
-  //   const responseSix = responses[6]
-  //   const responseSeven  = responses[7]
-  //   // console.log (  responseSeven.data);
-  //   // console.log (  responseTwo);
-  //   // console.log("before res.send");
-  //   res.render("landingpage.ejs", {
-     
-  //   });
-  // })
-  // )
-  // .catch(errors => {
-  //   // react on errors.
-  //   console.error(errors);
-  //   res.send("error");
-  // });
+    const responseThree = responses[3]
+    const responseFour = responses[4]
+    const responseFive= responses[5]
+    const responseSix = responses[6]
+    const responseSeven  = responses[7]
+  
+    //  console.log(reponses[0]); 
+      // console.console.log(responses);
+
+
+
+
+      // level  global.level
+      //  kills  total.kills.value
+      // damage   total.damage.value
+      //  KD  total.kd.value
+
+
+
+      // main 
+      // legends.all.Revenant.data[0].value
+      // legends.all.Crypto.data[0].value
+      // legends.all.Horizon.data[0].value
+      // legends.all.Girbraltar.data[0].value
+      // legends.all.Watson.data[0].value
+      // legends.all.Fuse.data[0].value
+      // legends.all.Bangalore.data[0].value
+      // legends.all.Wraith.data[0].value
+      // legends.all.Octane.data[0].value
+      // legends.all.Bloodhound.data[0].value
+      // legends.all.Causitc.data[0].value
+      // legends.all.Lifeline.data[0].value
+      // legends.all.Pathfinder.data[0].value
+      // legends.all.Loba.data[0].value
+      // legends.all.Mirage.data[0].value
+      // legends.all.Rampart.data[0].value
+      // legends.all.Valkyrie.data[0].value
+      // legends.all.Seer.data[0].value
+      // legends.all.Ash.data[0].value
+      // legends.all["Mad Maggie"].data[0].value
+      // legends.all.Newcastle.data[0].value
+      // legends.all.Vantage.data[0].value
+
+
+
+
+
+
+
+
+      // let legends = [];
+//       var i;
+
+//       for (i = 1; i < gdata.segments.length; i++) {
+//         // if segments[i].stats.kills.value does not exist make it equal 0
+//         const kills = _.get(gdata, "segments[" + i + "].stats.kills.value", 0);
+//         const name = gdata.segments[i].metadata.name;
+//         const imgUrl = gdata.segments[i].metadata.bgImageUrl;
+//         const legend = { kills, name, imgUrl };
+//         legends.push(legend);
+//       }
+
+//       var topKills = Math.max.apply(
+//         Math,
+//         legends.map(function (o) {
+//           return o.kills;
+//         })
+//       );
+
+//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+//       main = legends.find(function (o) {
+//         return o.kills == topKills;
+//       });
+
+
+
+      console.log(responseSeven);
+    res.render("landingpage.ejs", {
+
+    });
+  })
+  )
+  .catch(errors => {
+    // react on errors.
+    console.error(errors);
+    res.send("error");
+  });
+
+
+  
+
+
+  // 
   
 
 
@@ -490,30 +556,7 @@ app.get("/", function (req, res) {
 //         mainUrl: " ",
 //       };
 
-//       let legends = [];
-
-//       var i;
-
-//       for (i = 1; i < gdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(gdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = gdata.segments[i].metadata.name;
-//         const imgUrl = gdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
+//       
 
 //       //         // display name and img as background
 //       CGK0OJ.mainName = main.name;
