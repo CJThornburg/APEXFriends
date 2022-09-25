@@ -91,6 +91,10 @@
  
 }
 
+.space {
+  background-color: #171717;
+}
+
 
 /* .img-center {
   margin: auto;
@@ -107,7 +111,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     /* max-width: fit-content; */
-    max-height:fit-content
+    max-height:fit-content;
+    border-radius: 30px;
 }
 
 .center {
@@ -123,17 +128,38 @@
 
 .username {
   font-family: 'spaceport';
-  font-size: 3.5rem;
+  font-size: 3rem;
+  background-color: #2B2D30;
+  padding: 6%;
+  border-radius: 25px;
+  color:  white;
+  border-style: groove;
+  border-color: #2B2D30;
+  width: fit-content;
 }
+
 
 
 .data {
-  padding-top: 6%;
-  padding-bottom: 6%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
+.data-text {
+  font-size: 1.4rem;
+  color:  white;
+  background-color: #2B2D30;
+  padding: 5%;
+  border-radius: 25px;
+ 
+  border-style: groove;
+  border-color: #2B2D30;
+  width: fit-content;
+  
+}
 .player-link {
   color: #c13327;
+  
 }
 .player-link:hover {
   color: #932820;

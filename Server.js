@@ -28,7 +28,7 @@ function getMain(user) {
   let revenant = { 
     legend: "Revenant",
     kills: _.get(user, "data.legends.all.Revenant.data[0].value", "0"),
-    url:  "https://api.mozambiquehe.re/assets/banners/horizon.jpg"
+    url:  "https://api.mozambiquehe.re/assets/banners/revenant.jpg"
    }
 
   //  legends.all.Revenant.data[0].value
@@ -157,11 +157,11 @@ app.get("/", function (req, res) {
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
    
   const url4 =
-  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=ddyAshley&platform=X1";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Imissedmygrapple&platform=PS4";
     
   
   const url5 =
-  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=KingWonderBoy300&platform=PS4";
    
    
   const url6 =
@@ -171,14 +171,11 @@ app.get("/", function (req, res) {
   const url7 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Parkesss&platform=X1";
     
-
-
-
-  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 2000 })
-
-
-
-
+  
+  
+  const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 3000 })
+ 
+  
   const requestZero = axiosRL.get(url0);
   const requestOne = axiosRL.get(url1);
 
@@ -252,24 +249,24 @@ let mainSeven = getMain( responseSeven );
       // console.log(responseSeven);
       
     res.render("landingpage.ejs", {
-        playeZero: responseZero,
+        playerZero: responseZero,
         mainZero: mainZero,
-        playeZero: responseOne,
-        mainZero: mainOne,
-        playeZero: responseTwo,
-        mainZero: mainTwo,
-        playeZero: responseThree,
-        mainZero: mainThree,
-        playeZero: responseFour,
-        mainZero: mainFour,
-        playeZero: responseFive,
-        mainZero: mainFive,
-        playeZero: responseSix,
-        mainZero: mainSix,
-        playeZero: responseSeven,
-        mainZero: mainSeven
+        playerOne: responseOne,
+        mainOne: mainOne,
+        playerTwo: responseTwo,
+        mainTwo: mainTwo,
+        playerThree: responseThree,
+        mainThree: mainThree,
+        playerFour: responseFour,
+        mainFour: mainFour,
+        playerFive: responseFive,
+        mainFive: mainFive,
+        playerSix: responseSix,
+        mainSix: mainSix,
+        playerSeven: responseSeven,
+        mainSeven: mainSeven
         
-      
+        
 
     });
   })

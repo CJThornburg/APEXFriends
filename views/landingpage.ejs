@@ -29,13 +29,13 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/CamThings">CamThings</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="ddyAshley">ddyAshley</a>
+                        <a class="dropdown-item" href="ddyAshley">Imissedmygrapple</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/CGK0">CGK0</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/rKahzi">rKahzi</a>
+                        <a class="dropdown-item" href="/rKahzi">KingWonderBoy300</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/'AGL WolveZ'">MahaloMerky</a>
+                        <a class="dropdown-item" href="/'AGL WolveZ'">AGL WolveZ</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/Parkesss">Parkesss</a>
                     </div>
@@ -80,8 +80,7 @@
 
             <div class="userrow row m-0">
 
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainZero.url %>');">
 
 
                     <!-- <img class='main-background img-wrapper'
@@ -92,7 +91,9 @@
                     <div class="row">
                         <div class='name-plate col-xl-3 col-lg-6 center'>
 
-                            <h1 class="username">User1 </h1>
+                            <h1 class="username">
+                                <%= playerZero.data.global.name %>
+                            </h1>
 
                             <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 
@@ -100,24 +101,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerZero.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerZero.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerZero.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainZero.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
-
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
 
                         </div>
 
@@ -135,12 +136,12 @@
 
 
 
-                <div class="userplate col-xl-6 col-lg-12 "
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12 " style="background-image:url('<%= mainOne.url %>');">
 
                     <div class="row">
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username"> User2
+                            <h1 class="username">
+                                <%= playerOne.data.global.name %>
 
                             </h1>
 
@@ -150,25 +151,25 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerOne.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerOne.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerOne.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainOne.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
                         </div>
-
                     </div>
 
 
@@ -186,12 +187,12 @@
 
             <div class="userrow row m-0">
 
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainTwo.url %>');">
 
                     <div class="row">
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username">User3
+                            <h1 class="username">
+                                <%= playerTwo.data.global.name %>
 
                             </h1>
 
@@ -201,23 +202,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerTwo.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerTwo.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerTwo.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainTwo.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats ></a>
+                                <a class="player-link" href=""> Player stats ></a>
+                            </div>
                         </div>
 
 
@@ -231,12 +233,12 @@
                 </div>
 
 
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainThree.url %>');">
 
                     <div class="row">
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username">User4
+                            <h1 class="username">
+                                <%= playerThree.data.global.name %>
 
                             </h1>
 
@@ -246,23 +248,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerThree.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerThree.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerThree.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainThree.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
                         </div>
 
 
@@ -280,13 +283,13 @@
 
             <div class="userrow row m-0">
 
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainFour.url %>');">
 
                     <div class="row">
 
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username">User5
+                            <h1 class="username">
+                                <%= playerFour.data.global.name %>
 
                             </h1>
 
@@ -296,23 +299,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerFour.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerFour.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerFour.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainFour.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
                         </div>
 
 
@@ -326,12 +330,12 @@
 
                 </div>
 
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainFive.url %>');">
 
                     <div class="row">
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username">User6
+                            <h1 class="username">
+                                <%= playerFive.data.global.name %>
 
                             </h1>
 
@@ -341,23 +345,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerFive.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerFive.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerFive.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainFive.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
                         </div>
 
 
@@ -376,12 +381,12 @@
 
 
             <div class="userrow row m-0">
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainSix.url %>');">
                     <div class="row">
 
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username">User7
+                            <h1 class="username">
+                                <%= playerSix.data.global.name %>
 
                             </h1>
 
@@ -391,23 +396,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerSix.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerSix.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerSix.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainSix.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
                         </div>
 
 
@@ -420,13 +426,12 @@
 
                 </div>
 
-                <div class="userplate col-xl-6 col-lg-12"
-                    style="background-image:url('https://cdn.shopify.com/s/files/1/0606/9701/8603/products/D1BDA4_800x.png?v=1635198415');">
+                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainSeven.url %>');">
 
                     <div class="row">
                         <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <h1 class="username">User8
-
+                            <h1 class="username">
+                                <%= playerSeven.data.global.name %>
                             </h1>
 
                             <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
@@ -435,23 +440,24 @@
                         </div>
 
                         <div class="data col-xl-3 col-lg-6 center">
+                            <div class="data-text">
+                                <p>Lifetime kills:
+                                    <%= playerSeven.data.total.kills.value %>
+                                </p>
+                                <p>Lifetime damage:
+                                    <%= playerSeven.data.total.damage.value %>
+                                </p>
+                                <p>Level:
+                                    <%= playerSeven.data.global.level %>
+                                </p>
 
-                            <p>Lifetime kills:
-
-                            </p>
-                            <p>Lifetime damage:
-
-                            </p>
-                            <p>Level:
-
-                            </p>
-
-                            <p>Main:
-
-                            </p>
+                                <p>Main:
+                                    <%= mainSeven.legend %>
+                                </p>
 
 
-                            <a class="player-link" href=""> Player stats > </a>
+                                <a class="player-link" href=""> Player stats > </a>
+                            </div>
                         </div>
 
 
