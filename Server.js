@@ -21,7 +21,124 @@ app.use(
 app.use(express.static("public"));
 
 
+function getMain(user) {
 
+  
+
+  let revenant = { 
+    legend: "Revenant",
+    kills: user.data.legends.all.Revenant.data[0].value,
+    url:  "https://api.mozambiquehe.re/assets/banners/horizon.jpg"
+   }
+
+  //  legends.all.Revenant.data[0].value
+   
+  let crypto= { legend: "Crypto" ,
+  kills: user.data.legends.all.Crypto.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/crypto.jpg"}
+   
+  let horizon= { legend: "Horizon",
+  kills:  user.data.legends.all.Horizon.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/horizon.jpg"}
+   
+  let gibraltar= { legend: "Girbraltar" ,
+  kills:  user.data.legends.all.Gibraltar.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/gibraltar.jpg" }
+    
+  let wattson= { legend: "Watson" ,
+  kills:   user.data.legends.all.Wattson.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/wattson.jpg"}
+  
+  let fuse = { legend: "Fuse",
+  kills:  user.data.legends.all.Fuse.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/fuse.jpg"}
+   
+  let bangalor= { legend: "Bangalore",
+  kills: user.data.legends.all.Bangalore.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/bangalore.jpg"}
+    
+  let wraith= { legend: "Wraith",
+  kills:  user.data.legends.all.Wraith.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/wraith.jpg"}
+    
+  let octane= { legend: "Octane" ,
+  kills: user.data.legends.all.Octane.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/octane.jpg"}
+    
+  let bloodhound= { legend: "Bloodhound",
+  kills:  user.data.legends.all.Bloodhound.data[0].value  ,
+  url: "https://api.mozambiquehe.re/assets/banners/bloodhound.jpg"}
+       
+  let caustic= { legend: "Caustic" ,
+  kills: user.data.legends.all.Caustic.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/caustic.jpg" }
+    
+  let lifeline= { legend: "Lifeline" ,
+  kills:    user.data.legends.all.Lifeline.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/lifeline.jpg" }
+  
+  let pathfinder= { legend: "Pathfinder" ,
+  kills: user.data.legends.all.Pathfinder.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/pathfinder.jpg" }
+     
+  let loba = { legend: "Loba",
+  kills:    user.data.legends.all.Loba.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/loba.jpg" }
+  
+  let mirage= { legend: "Mirage",
+  kills:    user.data.legends.all.Mirage.data[0].value ,
+  url:  "https://api.mozambiquehe.re/assets/banners/mirage.jpg"}
+   
+  let rampart= { legend: "Rampart",
+  kills: user.data.legends.all.Rampart.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/rampart.jpg" }
+     
+  let valkyrie= { legend: "Valkyrie" ,
+  kills:  user.data.legends.all.Valkyrie.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/valkyrie.jpg" }
+    
+  let seer = { legend: "Seer",
+  kills: user.data.legends.all.Seer.data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/seer.jpg"}
+    
+  let ash  = { legend: "Ash",
+  kills:  user.data.legends.all.Ash.data[0].value,
+  url: "https://api.mozambiquehe.re/assets/banners/ash.jpg" }
+    
+  let madMaggie= { legend: "Mad Maggie",
+  kills: user.data.legends.all["Mad Maggie"].data[0].value ,
+  url: "https://api.mozambiquehe.re/assets/banners/mad%20maggie.jpg" }
+     
+  let newcastle= { legend: "Newcastle",
+  kills: user.data.legends.all.Newcastle.data[0].value ,
+  url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6aZJB1R04Qe14z5FIlvXdiTKuB_5vgMjmXGAJaatAPI9s3xeYx-3WtVPqqAu9ZHFRWyGvCqsV-LGK4vsglf7Z-2z0NK4_tt0PrpDKnDsnZYKbBPbW-GTwlKq3s2AEKhEik7nNnDETNxzf6EjFPd8pcnSozA04muNttDGh98T-0EDyvuVztEIpXNm9/s575/Apex%20Legends%20Season%2013.webp" }
+          
+  let vantage= { legend: "Vantage" ,
+  kills:   user.data.legends.all.Vantage.data[0].value,
+  url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkiCR3_C_V7Bk3jUaJEf_x4BTjcCxCmGqTpsFQHL1GRndyNHtNiL5DP6qHSUu_aKsb3CBBce9auJDsTYu4rd2qbAxi8tsKCvGwbcUZ3Prs5MbFw9E5a5QeVT_JIQOJIm6ODsGLibBsSe34BRCdWLQwzmQOn4uIomndIfbKIwJ-sAv9C-tjVyYC3uRh/s640/apex-legends-hunted-s14-banner%20(1).webp"}
+   
+  let legends = [revenant, crypto, horizon, gibraltar, wattson, fuse, bangalor, wraith, octane, bloodhound, caustic, lifeline, pathfinder, loba, mirage, rampart, valkyrie, seer, ash, madMaggie, newcastle, vantage ]
+
+
+  
+  for (i = 1; i < legends.length; i++) {
+    //         // if segments[i].stats.kills.value does not exist make it equal 0
+  legends[i].kills
+
+          var topKills = Math.max.apply(
+            Math,
+            legends.map(function (o) {
+              return o.kills;
+            })
+          );
+    
+    //       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
+          main = legends.find(function (o) {
+            return o.kills == topKills;
+          });
+ return main;
+}
+}
 
 
 
@@ -110,190 +227,13 @@ app.get("/", function (req, res) {
       //  KD  total.kd.value
 
 
-      // main 
-      // legends.all.Revenant.data[0].value
-      // legends.all.Crypto.data[0].value
-      // legends.all.Horizon.data[0].value
-      // legends.all.Girbraltar.data[0].value
-      // legends.all.Watson.data[0].value
-      // legends.all.Fuse.data[0].value
-      // legends.all.Bangalore.data[0].value
-      // legends.all.Wraith.data[0].value
-      // legends.all.Octane.data[0].value
-      // legends.all.Bloodhound.data[0].value
-      // legends.all.Causitc.data[0].value
-      // legends.all.Lifeline.data[0].value
-      // legends.all.Pathfinder.data[0].value
-      // legends.all.Loba.data[0].value
-      // legends.all.Mirage.data[0].value
-      // legends.all.Rampart.data[0].value
-      // legends.all.Valkyrie.data[0].value
-      // legends.all.Seer.data[0].value
-      // legends.all.Ash.data[0].value
-      // legends.all["Mad Maggie"].data[0].value
-      // legends.all.Newcastle.data[0].value
-      // legends.all.Vantage.data[0].value
-
-
-
-
-
-
-
-
-      // let legends = [];
-//       var i;
-
-//       for (i = 1; i < gdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(gdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = gdata.segments[i].metadata.name;
-//         const imgUrl = gdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-function getMain(user) {
-
-  
-
-  let revenant = { 
-    legend: "Revenant",
-    kills: user.data.legends.all.Revenant.data[0].value,
-    url:  "https://api.mozambiquehe.re/assets/banners/horizon.jpg"
-   }
-
-  //  legends.all.Revenant.data[0].value
-   
-  let cyrpto= { legend: "Crypto" ,
-  kills: user.data.legends.all.Crypto.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/crypto.jpg"}
-   
-  let horizon= { legend: "Horizon",
-  kills:  user.data.legends.all.Horizon.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/horizon.jpg"}
-   
-  let girbraltar= { legend: "Girbraltar" ,
-  kills:  user.data.legends.all.Girbraltar.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/gibraltar.jpg" }
-    
-  let watson= { legend: "Watson" ,
-  kills:   user.data.legends.all.Watson.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/wattson.jpg"}
-  
-  let fuse = { legend: "Fuse",
-  kills:  user.data.legends.all.Fuse.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/fuse.jpg"}
-   
-  let bangalor= { legend: "Bangalore",
-  kills: user.data.legends.all.Bangalore.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/bangalore.jpg"}
-    
-  let wraith= { legend: "Wraith",
-  kills:  user.data.legends.all.Wraith.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/wraith.jpg"}
-    
-  let octane= { legend: "Octane" ,
-  kills: user.data.legends.all.Octane.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/octane.jpg"}
-    
-  let bloodhound= { legend: "Bloodhound",
-  kills:  user.data.legends.all.Bloodhound.data[0].value  ,
-  url: "https://api.mozambiquehe.re/assets/banners/bloodhound.jpg"}
-       
-  let caustic= { legend: "Caustic" ,
-  kills: user.data.legends.all.Caustic.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/caustic.jpg" }
-    
-  let lifeline= { legend: "Lifeline" ,
-  kills:    user.data.legends.all.Lifeline.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/lifeline.jpg" }
-  
-  let pathfinder= { legend: "Pathfinder" ,
-  kills: user.data.legends.all.Pathfinder.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/pathfinder.jpg" }
      
-  let loba = { legend: "Loba",
-  kills:    user.data.legends.all.Loba.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/loba.jpg" }
-  
-  let mirage= { legend: "Mirage",
-  kills:    user.data.legends.all.Mirage.data[0].value ,
-  url:  "https://api.mozambiquehe.re/assets/banners/mirage.jpg"}
-   
-  let rampart= { legend: "Rampart",
-  kills: user.data.legends.all.Rampart.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/rampart.jpg" }
-     
-  let valkyrie= { legend: "Valkyrie" ,
-  kills:  user.data.legends.all.Valkyrie.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/valkyrie.jpg" }
-    
-  let seer = { legend: "Seer",
-  kills: user.data.legends.all.Seer.data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/seer.jpg"}
-    
-  let ash  = { legend: "Ash",
-  kills:  user.data.legends.all.Ash.data[0].value,
-  url: "https://api.mozambiquehe.re/assets/banners/ash.jpg" }
-    
-  let madMaggie= { legend: "Mad Maggie",
-  kills: user.data.legends.all["Mad Maggie"].data[0].value ,
-  url: "https://api.mozambiquehe.re/assets/banners/mad%20maggie.jpg" }
-     
-  let newcastle= { legend: "Newcastle",
-  kills: user.data.legends.all.Newcastle.data[0].value ,
-  url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6aZJB1R04Qe14z5FIlvXdiTKuB_5vgMjmXGAJaatAPI9s3xeYx-3WtVPqqAu9ZHFRWyGvCqsV-LGK4vsglf7Z-2z0NK4_tt0PrpDKnDsnZYKbBPbW-GTwlKq3s2AEKhEik7nNnDETNxzf6EjFPd8pcnSozA04muNttDGh98T-0EDyvuVztEIpXNm9/s575/Apex%20Legends%20Season%2013.webp" }
-          
-  let vantage= { legend: "Vantage" ,
-  kills:   user.data.legends.all.Vantage.data[0].value,
-  url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkiCR3_C_V7Bk3jUaJEf_x4BTjcCxCmGqTpsFQHL1GRndyNHtNiL5DP6qHSUu_aKsb3CBBce9auJDsTYu4rd2qbAxi8tsKCvGwbcUZ3Prs5MbFw9E5a5QeVT_JIQOJIm6ODsGLibBsSe34BRCdWLQwzmQOn4uIomndIfbKIwJ-sAv9C-tjVyYC3uRh/s640/apex-legends-hunted-s14-banner%20(1).webp"}
-   
-  let legends = [revenant, crypto, horizon, girbraltar, watson, fuse, bangalor, wraith, octane, bloodhound, caustic, lifeline, pathfinder, loba, mirage, rampart, valkyrie, seer, ash, madMaggie, newcastle, vantage ]
 
 
-  
-  for (i = 1; i < legends.length; i++) {
-    //         // if segments[i].stats.kills.value does not exist make it equal 0
-  legends[i].kills
-
-    //         const kills = _.get(naffData, "segments[" + i + "].stats.kills.value", 0);
-    //         const name = naffData.segments[i].metadata.name;
-    //         const imgUrl = naffData.segments[i].metadata.bgImageUrl;
-    //         const legend = { kills, name, imgUrl };
-    //         legends.push(legend);
-    //       }
-    
-          var topKills = Math.max.apply(
-            Math,
-            legends.map(function (o) {
-              return o.kills;
-            })
-          );
-    
-    //       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-          main = legends.find(function (o) {
-            return o.kills == topKills;
-          });
- return main;
-}
-}
+  let mainZero = getMain(responseZero);
 
 
-
-
-
+  console.log(mainResult)
       // console.log(responseSeven);
       
     res.render("landingpage.ejs", {
