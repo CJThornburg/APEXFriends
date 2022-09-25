@@ -27,94 +27,94 @@ function getMain(user) {
 
   let revenant = { 
     legend: "Revenant",
-    kills: user.data.legends.all.Revenant.data[0].value,
+    kills: _.get(user, "data.legends.all.Revenant.data[0].value", "0"),
     url:  "https://api.mozambiquehe.re/assets/banners/horizon.jpg"
    }
 
   //  legends.all.Revenant.data[0].value
    
   let crypto= { legend: "Crypto" ,
-  kills: user.data.legends.all.Crypto.data[0].value ,
+  kills: _.get(user, "data.legends.all.Crypto.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/crypto.jpg"}
    
   let horizon= { legend: "Horizon",
-  kills:  user.data.legends.all.Horizon.data[0].value ,
+  kills: _.get(user, "data.legends.all.Horizon.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/horizon.jpg"}
    
   let gibraltar= { legend: "Girbraltar" ,
-  kills:  user.data.legends.all.Gibraltar.data[0].value,
+  kills: _.get(user, "data.legends.all.Gibraltar.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/gibraltar.jpg" }
     
   let wattson= { legend: "Watson" ,
-  kills:   user.data.legends.all.Wattson.data[0].value,
+  kills: _.get(user, "data.legends.all.Wattson.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/wattson.jpg"}
   
   let fuse = { legend: "Fuse",
-  kills:  user.data.legends.all.Fuse.data[0].value,
+  kills: _.get(user, "data.legends.all.Fuse.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/fuse.jpg"}
    
   let bangalor= { legend: "Bangalore",
-  kills: user.data.legends.all.Bangalore.data[0].value ,
+  kills: _.get(user, "data.legends.all.Bangalore.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/bangalore.jpg"}
     
   let wraith= { legend: "Wraith",
-  kills:  user.data.legends.all.Wraith.data[0].value ,
+  kills: _.get(user, "data.legends.all.Wraith.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/wraith.jpg"}
     
   let octane= { legend: "Octane" ,
-  kills: user.data.legends.all.Octane.data[0].value,
+  kills: _.get(user, "data.legends.all.Octane.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/octane.jpg"}
     
   let bloodhound= { legend: "Bloodhound",
-  kills:  user.data.legends.all.Bloodhound.data[0].value  ,
+  kills: _.get(user, "data.legends.all.Bloodhound.data[0].value ", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/bloodhound.jpg"}
        
   let caustic= { legend: "Caustic" ,
-  kills: user.data.legends.all.Caustic.data[0].value ,
+  kills: _.get(user, "data.legends.all.Caustic.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/caustic.jpg" }
     
   let lifeline= { legend: "Lifeline" ,
-  kills:    user.data.legends.all.Lifeline.data[0].value ,
+  kills: _.get(user, "data.legends.all.Lifeline.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/lifeline.jpg" }
   
   let pathfinder= { legend: "Pathfinder" ,
-  kills: user.data.legends.all.Pathfinder.data[0].value ,
+  kills: _.get(user, "data.legends.all.Pathfinder.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/pathfinder.jpg" }
-     
+
   let loba = { legend: "Loba",
-  kills:    user.data.legends.all.Loba.data[0].value,
+  kills: _.get(user, "data.legends.all.Loba.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/loba.jpg" }
   
   let mirage= { legend: "Mirage",
-  kills:    user.data.legends.all.Mirage.data[0].value ,
+  kills: _.get(user, "data.legends.all.Mirage.data[0].value", "0"),
   url:  "https://api.mozambiquehe.re/assets/banners/mirage.jpg"}
-   
   let rampart= { legend: "Rampart",
-  kills: user.data.legends.all.Rampart.data[0].value ,
+  
+  kills: _.get(user, "data.legends.all.Rampart.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/rampart.jpg" }
-     
   let valkyrie= { legend: "Valkyrie" ,
-  kills:  user.data.legends.all.Valkyrie.data[0].value,
+
+  kills: _.get(user, "data.legends.all.Valkyrie.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/valkyrie.jpg" }
-    
   let seer = { legend: "Seer",
-  kills: user.data.legends.all.Seer.data[0].value ,
+  
+  kills: _.get(user, "data.legends.all.Seer.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/seer.jpg"}
-    
   let ash  = { legend: "Ash",
-  kills:  user.data.legends.all.Ash.data[0].value,
+  
+  kills: _.get(user, "data.legends.all.Ash.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/ash.jpg" }
-    
+  
   let madMaggie= { legend: "Mad Maggie",
-  kills: user.data.legends.all["Mad Maggie"].data[0].value ,
+  kills: _.get(user, "data.legends.all['Mad Maggie'].data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/mad%20maggie.jpg" }
-     
+  
   let newcastle= { legend: "Newcastle",
-  kills: user.data.legends.all.Newcastle.data[0].value ,
+  kills: _.get(user, "data.legends.all.Newcastle.data[0].value", "0"),
   url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6aZJB1R04Qe14z5FIlvXdiTKuB_5vgMjmXGAJaatAPI9s3xeYx-3WtVPqqAu9ZHFRWyGvCqsV-LGK4vsglf7Z-2z0NK4_tt0PrpDKnDsnZYKbBPbW-GTwlKq3s2AEKhEik7nNnDETNxzf6EjFPd8pcnSozA04muNttDGh98T-0EDyvuVztEIpXNm9/s575/Apex%20Legends%20Season%2013.webp" }
-          
+        
   let vantage= { legend: "Vantage" ,
-  kills:   user.data.legends.all.Vantage.data[0].value,
+  kills: _.get(user, "data.legends.all.Vantage.data[0].value", "0"),
   url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkiCR3_C_V7Bk3jUaJEf_x4BTjcCxCmGqTpsFQHL1GRndyNHtNiL5DP6qHSUu_aKsb3CBBce9auJDsTYu4rd2qbAxi8tsKCvGwbcUZ3Prs5MbFw9E5a5QeVT_JIQOJIm6ODsGLibBsSe34BRCdWLQwzmQOn4uIomndIfbKIwJ-sAv9C-tjVyYC3uRh/s640/apex-legends-hunted-s14-banner%20(1).webp"}
    
   let legends = [revenant, crypto, horizon, gibraltar, wattson, fuse, bangalor, wraith, octane, bloodhound, caustic, lifeline, pathfinder, loba, mirage, rampart, valkyrie, seer, ash, madMaggie, newcastle, vantage ]
@@ -139,6 +139,9 @@ function getMain(user) {
  return main;
 }
 }
+
+
+
 
 
 
@@ -230,13 +233,43 @@ app.get("/", function (req, res) {
      
 
 
-  let mainZero = getMain(responseZero);
+let mainZero = getMain( responseZero );
+let mainOne = getMain( responseOne );
+let mainTwo = getMain( responseTwo );
+let mainThree = getMain( responseThree );
+let mainFour = getMain( responseFour );
+let mainFive = getMain( responseFive );
+let mainSix = getMain( responseSix );
+let mainSeven = getMain( responseSeven );
 
 
-  console.log(mainResult)
+
+
+
+
+  
+
       // console.log(responseSeven);
       
     res.render("landingpage.ejs", {
+        playeZero: responseZero,
+        mainZero: mainZero,
+        playeZero: responseOne,
+        mainZero: mainOne,
+        playeZero: responseTwo,
+        mainZero: mainTwo,
+        playeZero: responseThree,
+        mainZero: mainThree,
+        playeZero: responseFour,
+        mainZero: mainFour,
+        playeZero: responseFive,
+        mainZero: mainFive,
+        playeZero: responseSix,
+        mainZero: mainSix,
+        playeZero: responseSeven,
+        mainZero: mainSeven
+        
+      
 
     });
   })
@@ -276,693 +309,7 @@ app.get("/", function (req, res) {
 
 
 
-  // let NaffOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let AeriuOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let Cgk0OJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let CamThingsOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let ddyAshleyOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let rKahziOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let AGLWolveZOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-
-  //   main: "",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-  // let ParkesssOJ = {
-  //   name: "n/a",
-  //   lifeTimeKills: "n/a",
-  //   lifeTimeDamage: "n/a",
-  //   level: "n/a",
-  //   rank: "n/a",
-  //   mainName: "",
-  //   mainUrl: " ",
-  // };
-
-
-  
-  // fetch(url)
-  // .then((response) => response.json())
-  // .then((data) => console.log(data));
-  // // .then ()
-  // .then (
-
-  // fetch(url)
-  // .then((response) => {
-  //   return response.json();
-  // })
-  // .then((json) => {
-  //   let naffData = json.data;
-  //   console.log(naffData)
-  // options = {
-  //   headers: {
-  //     // 'Content-Type' : 'application/json',
-  //     // 'Accept' : 'application/json',
-//   //      'Authorization': process.env.API
-//   //   }
-//   // };
-//   const requestOne = axios.get(url1);
-//   const requestTwo = axios.get(url2);
-//   //     .then((response) => {
-//   //         console.log('Response: ', response.data);
-//   //     }).catch((err) => {
-//   //         console.error(err);
-//   //     });
-    
-//   //   // ...
-//   //   res.send( "completed loading");
-//   // });
  
-
-//   axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-//     const responseOne = responses[0]
-//     const responseTwo = responses[1]
-//     console.log (  responseOne);
-//     console.log ( "2" + responseTwo);
-//   })
-//   )
-//   .catch(errors => {
-//     // react on errors.
-//     console.error(errors);
-//   });
- 
-//   res.send( "completed loading");
-// });
- 
- 
-  // requestOne.then(response => {
-  //   console.log(response.data)
-  //   console.log("confirming requestOne is working")
-  // }).catch(error => {
-  //   console.err(error)
-  // })
-
-  // res.send("completed loading")
-
-
-  // getUserData("Aeriu", "X1");
-  // res.send( "completed loading");
-  // });
- 
-
-
-
-  // https.get(apiLink, function (response) { 
-
-//   let chunks="";
-//   response.on("data", function (chunk) {
-//       chunks+=chunk;
-//   });
-//   response.on("end", function(){
-//       // console.log("API Data recieved");
-
-//       let defaultCovidData = JSON.parse(chunks);
-//       // code after parse string into JSON format
-//   });
-
-// });
-
-
-
-
-
-// https.get(url2, (res) => {
-
-  //   console.log( res.statusCode);
-  //   console.log( res.headers); 
-
-  //   console.log(res.data)
-  
-  
-  // });
-//     reject(new Error("in reject console log"))
-//   });
-
-
-
-
-
-// });
-  
-// promise.then(res => {
-//   console.log(res);
-// })
-
-
-
-// .catch(err => console.log(err));
-// var postHead = {
-//   'Accept': 'application/json',
-//   'Content-Type': 'application/json',
-// } 
-// request(url2, function (error, response, body) {
-//   console.error('error:', error); // Print the error if one occurred
-//   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-//   console.log('body:', body); // Print the HTML for the Google homepage.
-// });
-
-
-// res.send( "console.js"
-// AeriuOJ: AeriuOJ,
-// AGLWolveZOJ: AGLWolveZOJ,
-// CamThingsOJ: CamThingsOJ,
-// ddyAshleyOJ: ddyAshleyOJ,
-// CGK0OJ: CGK0OJ,
-// rKahziOJ: rKahziOJ,
-// ParkesssOJ: ParkesssOJ,
-// );
-
-// });
-
-// fetch(url1)
-// .then((res) => res.text())
-// .then(data => console.log(data))
-
-
-// fetch(url)
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((json) => {
-//       let naffData = json.data;
-//       console.log(naffData.segments)
-
-//       NaffOJ = {
-//         // name: "Naff",
-//         name: _.get(data, "platformInfo.platformUserId ", "Naff"),
-//         lifeTimeKills: _.get(naffData, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(naffData, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(naffData, "segments[0].stats.level.value", "n/a"),
-//         rank: _.get(
-//           naffData,
-//           "segments[0].stats.rankScore.metadata.rankName",
-//           "n/a"
-//         ),
-
-//         main: " ",
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-
-//       for (i = 1; i < naffData.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(naffData, "segments[" + i + "].stats.kills.value", 0);
-//         const name = naffData.segments[i].metadata.name;
-//         const imgUrl = naffData.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       NaffOJ.mainName = main.name;
-//       NaffOJ.mainUrl = main.imgUrl;
-
-//       //  end of data processing
-
-//       //  2nd DATA CALL Aeriu
-//       return fetch(url2);
-//     })
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let mdata = json.data;
-
-//       AeriuOJ = {
-//         name: _.get(mdata, "platformInfo.platformUserId ", "Aeriu"),
-//         lifeTimeKills: _.get(mdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(mdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(mdata, "segments[0].stats.level.value", "n/a"),
-
-//         main: "",
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-
-//       for (i = 1; i < mdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(mdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = mdata.segments[i].metadata.name;
-//         const imgUrl = mdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       AeriuOJ.mainName = main.name;
-//       AeriuOJ.mainUrl = main.imgUrl;
-
-//       return fetch(url3);
-//     })
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let gdata = json.data;
-
-//       CGK0OJ = {
-//         name: _.get(gdata, "platformInfo.platformUserId", "CGK0"),
-//         lifeTimeKills: _.get(gdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(gdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(gdata, "segments[0].stats.level.value", "n/a"),
-
-//         main: "",
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       
-
-//       //         // display name and img as background
-//       CGK0OJ.mainName = main.name;
-//       CGK0OJ.mainUrl = main.imgUrl;
-
-//       return fetch(url4);
-//     })
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let sdata = json.data;
-
-//       CamThingsOJ = {
-//         name: _.get(sdata, "platformInfo.platformUserId", "CamThings"),
-//         lifeTimeKills: _.get(sdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(sdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(sdata, "segments[0].stats.level.value", "n/a"),
-
-//         main: "",
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-
-//       for (i = 1; i < sdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(sdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = sdata.segments[i].metadata.name;
-//         const imgUrl = sdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       CamThingsOJ.mainName = main.name;
-//       CamThingsOJ.mainUrl = main.imgUrl;
-
-//       return fetch(url5);
-//     })
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let hdata = json.data;
-
-//       ddyAshleyOJ = {
-//         name: _.get(hdata, "platformInfo.platformUserId", "ddyAshleyOJ"),
-//         lifeTimeKills: _.get(hdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(hdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(hdata, "segments[0].stats.level.value", "n/a"),
-
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-
-//       for (i = 1; i < hdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(hdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = hdata.segments[i].metadata.name;
-//         const imgUrl = hdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       ddyAshleyOJ.mainName = main.name;
-//       ddyAshleyOJ.mainUrl = main.imgUrl;
-
-//       return fetch(url6);
-//     })
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let xdata = json.data;
-
-//       rKahziOJ = {
-//         name:  _.get(xdata, "platformInfo.platformUserId", "n/a"),
-//         lifeTimeKills: _.get(xdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(xdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(xdata, "segments[0].stats.level.value", "n/a"),
-
-//         main: "",
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-
-//       for (i = 1; i < xdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(xdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = xdata.segments[i].metadata.name;
-//         const imgUrl = xdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       rKahziOJ.mainName = main.name;
-//       rKahziOJ.mainUrl = main.imgUrl;
-
-//       return fetch(url7);
-//     })
-//     //  .then the rest of the requst
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let rdata = json.data;
-//       console.log(rdata.segments);
-//       AGLWolveZOJ = {
-//         name: _.get( rdata, "platformInfo.platformUserId" ,"AGLWolveZ"),
-//         lifeTimeKills: _.get(rdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(rdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(rdata, "segments[0].stats.level.value", "n/a"),
-
-//         main: "",
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-//       console.log(rdata);
-//       for (i = 1; i < rdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(rdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = rdata.segments[i].metadata.name;
-//         const imgUrl = rdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       AGLWolveZOJ.mainName = main.name;
-//       AGLWolveZOJ.mainUrl = main.imgUrl;
-
-//       return fetch(url8);
-//     })
-
-//     .then((response) => response.json())
-//     .then((json) => {
-//       let sfdata = json.data;
-
-//       ParkesssOJ = {
-//         lifeTimeKills: _.get(sfdata, "segments[0].stats.kills.value", "n/a"),
-//         lifeTimeDamage: _.get(sfdata, "segments[0].stats.damage.value", "n/a"),
-//         level: _.get(sfdata, "segments[0].stats.level.value", "n/a"),
-
-//         mainName: "",
-//         mainUrl: " ",
-//       };
-
-//       let legends = [];
-
-//       var i;
-//       console.log(sfdata.segments)
-//       for (i = 1; i < sfdata.segments.length; i++) {
-//         // if segments[i].stats.kills.value does not exist make it equal 0
-//         const kills = _.get(sfdata, "segments[" + i + "].stats.kills.value", 0);
-//         const name = sfdata.segments[i].metadata.name;
-//         const imgUrl = sfdata.segments[i].metadata.bgImageUrl;
-//         const legend = { kills, name, imgUrl };
-//         legends.push(legend);
-//       }
-
-//       var topKills = Math.max.apply(
-//         Math,
-//         legends.map(function (o) {
-//           return o.kills;
-//         })
-//       );
-
-//       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//       main = legends.find(function (o) {
-//         return o.kills == topKills;
-//       });
-
-//       //         // display name and img as background
-//       ParkesssOJ.mainName = main.name;
-//       ParkesssOJ.mainUrl = main.imgUrl;
-
-//       console.log(NaffOJ);
-//       res.send( "console.js"
-//         AeriuOJ: AeriuOJ,
-//         AGLWolveZOJ: AGLWolveZOJ,
-//         CamThingsOJ: CamThingsOJ,
-//         ddyAshleyOJ: ddyAshleyOJ,
-//         CGK0OJ: CGK0OJ,
-//         rKahziOJ: rKahziOJ,
-//         ParkesssOJ: ParkesssOJ,
-//       );
-  
-//     })
-//   })
-
-//     .then res.render after you have called everyones info
-//     .catch((err) => console.log(err));
-//   this error will send error if there is any erros on the .then chain
-
-//               nameKey: name,
-//               lifeTimeKillsKey: lifeTimeKills,
-//               lifeTimeDamageKey: lifeTimeDamage,
-//               levelKey: level,
-//               rankKey: rank,
-//               mainNameKey: mainName,
-//               mainUrlKey: mainUrl
-
-//   let name = "";
-
-  // Naff   Origin
-
-//   const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
-
-//   https.get(url, function (response) {
-
-//       let chunks = [];
-//       let  name = "";
-//       let lifeTimeKills = "";
-//       let lifeTimeDamage = "";
-//       let level = "";
-//       let rank = "";
-//       let legends=[];
-//       let main = "";
-//       let mainName;
-//       let mainUrl;
-
-//       response.on("data", function (data) {
-//           chunks.push(data);
-//       }).on('end', function () {
-
-//           let data = Buffer.concat(chunks);
-//           let Naff = JSON.parse(data);
-
-//           // putting into varible
-//           name = Naff.data.platformInfo.platformUserId;
-
-//           lifeTimeKills = Naff.data.segments[0].stats.kills.value;
-
-//           lifeTimeDamage = Naff.data.segments[0].stats.damage.value;
-
-//           level =Naff.data.segments[0].stats.level.value;
-
-//           rank = Naff.data.segments[0].stats.rankScore.metadata.iconUrl;
-
-//           var i;
-
-//           for (i = 1; i <13; i++) {
-
-//           const kills = Naff.data.segments[i].stats.kills.value;
-//           const name = Naff.data.segments[i].metadata.name;
-//           const imgUrl = Naff.data.segments[i].metadata.bgImageUrl;
-//           const legend = {kills, name, imgUrl};
-//           legends.push(legend);
-
-//           }
-
-//           // compare all the values to find the highest
-
-//           // find the max value in the array of objects
-//           var topKills = Math.max.apply(Math,legends.map(function(o){return o.kills;}))
-
-//           // uses topKills values and looks throught array of onjects and returns the onbject with that value
-//           main = legends.find(function(o){ return o.kills == topKills; })
-
-//           // display name and img as background
-//           mainName = main.name;
-//           mainUrl = main.imgUrl;
-
-//           res.render("landingpage", {
-//               nameKey: name,
-//               lifeTimeKillsKey: lifeTimeKills,
-//               lifeTimeDamageKey: lifeTimeDamage,
-//               levelKey: level,
-//               rankKey: rank,
-//               mainNameKey: mainName,
-//               mainUrlKey: mainUrl
-
-//               // end of res.render function
-//            });
-
-//       // end of data processing ana back end
-//       });
-
-//       // end of get http request going to apex api
-//   });
-
-//   end of  get "/" root request
-// });
 
 app.get("/:user", function (req, res) {
   let requestedPlayer = req.params.user;
