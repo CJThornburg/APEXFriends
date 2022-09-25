@@ -167,10 +167,60 @@
 
 
 
+/*  PLAYER PAGE  */
 
 
+.player {
+  background-color: #171717;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.player-plate {
+  font-family: 'blocktastic';
+  text-align: center;
+  font-size: 4rem;
+  color:  white;
+  background-color: #2B2D30;
+  padding: 4%;
+  border-radius: 25px;
+  
+  border-style: groove;
+  border-color: #2B2D30;
+  width: fit-content;
+}
 
 
+.personal-player-data {
+  font-family: 'spaceport';
+}
+
+.player-sub {
+  font-size: 1.4rem;
+  color:  white;
+  background-color: #2B2D30;
+  padding: 3%;
+  border-radius: 25px;
+  margin-top: 3%;
+  border-style: groove;
+  border-color: #2B2D30;
+  width: fit-content;
+}
+
+.player-sub-last {
+  margin-bottom: 3%;
+}
+
+@media (max-width: 1200px) { 
+  .player-sub{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  
+}
                         
 
 

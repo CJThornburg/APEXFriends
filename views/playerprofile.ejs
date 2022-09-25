@@ -9,11 +9,9 @@
       <div class="collapse navbar-collapse space " id="navbarNavDropdown">
          <ul class="navbar-nav ml-auto">
             <li class="nav-item px-3 ">
-               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item px-3">
-               <a class="nav-link" href="#">About</a>
-            </li>
+
 
 
             <li class="nav-item px-3 dropdown">
@@ -28,13 +26,13 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="/CamThings">CamThings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="ddyAshley">Imissedmygrapple</a>
+                  <a class="dropdown-item" href="/Imissedmygrapple">Imissedmygrapple</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="/CGK0">CGK0</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/rKahzi">KingWonderBoy300</a>
+                  <a class="dropdown-item" href="/KingWonderBoy300">KingWonderBoy300</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/'AGL WolveZ'">AGL WolveZ</a>
+                  <a class="dropdown-item" href="/AGL WolveZ">AGL WolveZ</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="/Parkesss">Parkesss</a>
                </div>
@@ -62,35 +60,77 @@
    </head>
 
    <body>
-      <div class="container-fluid   ">
-         <div class="row player">
-            <div class=" col center ">
 
-               <h1>
-                  <%= name %>:
-               </h1>
+      <div class="row player">
+         <div class=" col-xl-6 col-lg-12 col-md-12 col-sm-12 row-padding center">
+            <div class="player-plate center">
+               <p>
+                  <%= name %>
+               </p>
+               <p>
+                  KD : total.kd.value
+               </p>
 
+
+               <p>
+                  Online/offline
+                  <!-- realtime.currentState : "offline" or "online" -->
+               </p>
+            </div>
+         </div>
+
+         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 center row-padding personal-player-data ">
+            <div class="player-sub">
+               <p> Currently banned
+                  global.bans.isActive
+               </p>
+
+               <p>Last Played Legend:
+               </p>
 
             </div>
 
-            <div class="col ">
-               <p>Lifetime kills: <%= kills %>
+            <div class="player-sub">
+               <p>Rank Stats</p>
+               <p>Rank: global.rank.rankName</p>
+               <p> Rank Score: global.rank.rankScore</p>
+
+            </div>
+
+
+            <div class="player-sub">
+               <p> Current Season Stats</p>
+
+               <p> Wins This Season:
+                  total.wins_aeason14.value</p>
+               <p></p>Kills this season:
+               total.kills_season_14</p>
+               <p> Battle Pass Level: gloabl.battlepaass.level</p>
+            </div>
+
+            <div class="player-sub player-sub-last">
+               <p>Life Time Stats </p>
+               <p>Lifetime kills:
                </p>
-               <P>Kills percentile: <%= percentile %>%</P>
-               <p>Lifetime damage: <%= damage %>
+               <p>Lifetime damage:
                </p>
-               <P>Lifetime headshots: <%= headshots %>
+               <p>Headshots:
+                  total.headsshots.value
+               </p>
+               <P>BR Games Played:
+                  total.gamesplayed.value
                </P>
-
-
-
-               <h4>Last Played Legend: <%= lastPlayed %>
-               </h4>
-               <p>Kills: <%= lastKilled %>
+               <p>Executions:
+                  total.executions.value
                </p>
-
-
+               <p>
+                  Revives:
+                  total.revives.value
+               </p>
             </div>
+
+
+
 
 
 
@@ -98,6 +138,12 @@
 
 
          </div>
+
+
+
+
+
+
       </div>
 
 
