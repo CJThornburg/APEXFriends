@@ -309,120 +309,61 @@ let mainSeven = getMain( responseSeven );
  
 
 app.get("/:user", function (req, res) {
-  let requestedPlayer = req.params.user;
+  let requestedPlayer = req.params['user'];
   // console.log("no hi");
   //  do https request with requestedPlayer
+  console.log(requestedPlayer);
   let url =
-    "https://public-api.tracker.gg/v2/apex/standard/profile/5/" +
-    requestedPlayer +
-    "?" +
-    process.env.API +
-    "&Accept=json&Accept-Encoding=gzip";
+  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=X1";
+   
+console.log(url);
 
-  //   async function userData(url) {
-  //     let response = await fetch(url);
-  //     console.log(1 + response); // Logs the response
-  //     return response;
-  //  )
-
-  //  console.log(userData(url)); // Returns Promise
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((json) => {
-      // .then(function (serverPromise) {
-      // serverPromise.json().then(function (j) {
-      // if statment because level is going higer than 500
-      let userData = json.data;
-      // let userData = j.data;
-      let pulledLevel = _.get(userData, "segments[0].stats.level.value", "n/a");
-      // console.log(userData);
-      // let fixedlevel = "";
-      // console.log(fixedlevel + " nothing");
-      // if (pulledLevel !== "n/a") {
-      //   if (pulledLevel > 500) {
-      //     let fixedLevel = 500;
-      //     console.log(fixedlevel + " greated than 500");
-      //   } else {
-      //     let fixedLevel = pulledLevel;
-      //     console.log(fixedLevel + " less than 500");
-      //   }
-      // }
-      // console.log("finale:" + fixedlevel);
-      // if (pulledLevel === "n/a") {
-      //   const fixedLevel = "N/A";
-      //   console.log(fixedLevel + "level was not pulled");
-      // } else {
-      // }
-
-      let data = {
-        percentile: _.get(
-          userData,
-          "segments[0].stats.level.percentile",
-          "Not available"
-        ),
-        // percentile: j.data.segments[0].stats.level.percentile,
-        // data.data.segments[1].stats.kills.value
-        kills: _.get(userData, "segments[1].stats.kills.value", ""),
-        // kills: j.data.segments[0].stats.kills.value,
-        damage: _.get(userData, "segments[0].stats.damage.value", ""),
-
-        headshots: _.get(userData, "segments[0].stats.headshots.value", ""),
-        // headshots: j.data.segments[0].stats.headshots.value,
-        // fixedLevel: fixedLevel,
-        matchesPlayed: _.get(
-          userData,
-          "segments[0].stats.matchesPlayed.value",
-          ""
-        ),
-        // matchesPlayed: j.data.segments[0].stats.matchesPlayed.value || "",
-        lastPlayed: _.get(userData, "segments[1].metadata.name", ""),
-        // lastPlayed: j.data.segments[1].metadata.name,
-        lastKilled: _.get(userData, "segments[1].stats.kills.values", ""),
-
-        estimateLevel: _.get(userData, "segments[0].stats.level.value", ""),
-        // lastKilled: j.data.segments[1].stats.kills.value,
-      };
-
+  axios.get(url)
+  .then((response) => {
+      // console.log('Response: ', response.data);
+      let user = response.data;
       res.render("playerprofile", {
-        name: requestedPlayer,
-        percentile: data.percentile,
-        kills: data.kills,
-        damage: data.damage,
-        headshots: data.headshots,
-        matchesPlayed: data.matchesPlayed,
-        lastPlayed: data.lastPlayed,
-        lastKilled: data.lastKilled,
-        estimateLevel: data.estimateLevel,
+        user: user
       });
-      // });
-      // .catch(function (e) {
-      //   console.log(e);
-      // });
-    })
-    .catch(function (e) {
-      console.log(e);
-    });
-  // async function userData() {
-  //   let response = await fetch(url);
-  //   let data = await response.json();
-  //   return data;
-  // }
+  }).catch((err) => {
+      // console.error(err);
+  });
 
-  // let user = userData();
-
-  // console.log(user);
-  // fetch(url)
-  //   .then((response) => {
-  //     response.json();
-  //   })
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((err) => console.log(err));
-  // .then((json) => {
-  //   let data = json.data;))
 });
+ 
+
+
+   
+
+  //     res.render("playerprofile", {
+  //       name: requestedPlayer,
+  //       percentile: data.percentile,
+  //       kills: data.kills,
+  //       damage: data.damage,
+  //       headshots: data.headshots,
+  //       matchesPlayed: data.matchesPlayed,
+  //       lastPlayed: data.lastPlayed,
+  //       lastKilled: data.lastKilled,
+  //       estimateLevel: data.estimateLevel,
+  //     });
+  //     // });
+  //     // .catch(function (e) {
+  //     //   console.log(e);
+  //     // });
+  //   })
+  //   .catch(errors => {
+  //     // react on errors.
+  //     console.error(errors);
+  //     res.send("error");
+  // });
+
+
+
+
+
+
+
+
 
 app.listen(2000, function () {
   console.log("SEVER IS LIVE");
