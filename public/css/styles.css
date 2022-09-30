@@ -169,7 +169,6 @@
 
 /*  PLAYER PAGE  */
 
-
 .player {
   background-color: #171717;
   margin-left: 0;
@@ -190,6 +189,9 @@
   width: fit-content;
 }
 
+.player-name {
+ font-size: 7rem;
+}
 
 .personal-player-data {
   font-family: 'spaceport';

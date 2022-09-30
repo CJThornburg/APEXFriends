@@ -277,16 +277,7 @@ let mainSeven = getMain( responseSeven );
     res.send("error");
   });
 
-
   
-
-
-  // 
-  
-
-
-
-
 });
 
 
@@ -308,8 +299,9 @@ let mainSeven = getMain( responseSeven );
 
  
 
-app.get("/:user", function (req, res) {
+app.get("/profile/:user", function (req, res) {
   let requestedPlayer = req.params['user'];
+  console.log(req.params)
   // console.log("no hi");
   //  do https request with requestedPlayer
   console.log(requestedPlayer);
@@ -321,7 +313,7 @@ console.log(url);
   axios.get(url)
   .then((response) => {
       // console.log('Response: ', response.data);
-      let user = response.data;
+      let user = response;
       res.render("playerprofile", {
         user: user
       });
@@ -331,36 +323,6 @@ console.log(url);
 
 });
  
-
-
-   
-
-  //     res.render("playerprofile", {
-  //       name: requestedPlayer,
-  //       percentile: data.percentile,
-  //       kills: data.kills,
-  //       damage: data.damage,
-  //       headshots: data.headshots,
-  //       matchesPlayed: data.matchesPlayed,
-  //       lastPlayed: data.lastPlayed,
-  //       lastKilled: data.lastKilled,
-  //       estimateLevel: data.estimateLevel,
-  //     });
-  //     // });
-  //     // .catch(function (e) {
-  //     //   console.log(e);
-  //     // });
-  //   })
-  //   .catch(errors => {
-  //     // react on errors.
-  //     console.error(errors);
-  //     res.send("error");
-  // });
-
-
-
-
-
 
 
 

@@ -20,23 +20,22 @@
                   Players
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="/Naff">Naff</a>
+                  <a class="dropdown-item" href="/profile/Naff">Naff</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/Aeriun">Aeriun</a>
+                  <a class="dropdown-item" href="/profile/Aeriun">Aeriun</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/CamThings">CamThings</a>
+                  <a class="dropdown-item" href="/profile/CamThings">CamThings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/Imissedmygrapple">Imissedmygrapple</a>
+                  <a class="dropdown-item" href="/profile/Imissedmygrapple">Imissedmygrapple</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/CGK0">CGK0</a>
+                  <a class="dropdown-item" href="/profile/CGK0">CGK0</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/KingWonderBoy300">KingWonderBoy300</a>
+                  <a class="dropdown-item" href="/profile/KingWonderBoy300">KingWonderBoy300</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/AGL WolveZ">AGL WolveZ</a>
+                  <a class="dropdown-item" href="/profile/'AGL WolveZ'">AGL WolveZ</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/Parkesss">Parkesss</a>
+                  <a class="dropdown-item" href="/profile/Parkesss">Parkesss</a>
                </div>
-
             </li>
             <li class="nav-item user px-3 nav-search">
                <form class="form-inline">
@@ -64,11 +63,11 @@
       <div class="row player">
          <div class=" col-xl-6 col-lg-12 col-md-12 col-sm-12 row-padding center">
             <div class="player-plate center">
+               <h1 class="player-name">
+                  <%= user.data.global.name %>
+               </h1>
                <p>
-
-               </p>
-               <p>
-                  KD : total.kd.value
+                  KD : <%= user.data.total.kd.value %>
                </p>
 
 
@@ -81,51 +80,83 @@
 
          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 center row-padding personal-player-data ">
             <div class="player-sub">
-               <p> Currently banned
-                  user.dataglobal.bans.isActive
+               <p> Currently banned:
+                  <!-- to do 
+                  Lodash format this string -->
+                  <%= user.data.global.bans.isActive %>
+               </p>
+               <p>
+                  Reason for latest ban:
+                  <!-- to do 
+                  Lodash format this string 
+                     Check to see what the input is if you have never been banned
+               -->
+                  <%= user.data.global.bans.last_banReason %>
                </p>
 
                <p>Last Played Legend:
+                  <%= user.data.legends.selected.LegendName %>
+
                </p>
 
             </div>
 
             <div class="player-sub">
                <p>Rank Stats</p>
-               <p>Rank: global.rank.rankName</p>
-               <p> Rank Score: global.rank.rankScore</p>
+               <p>Rank:
+                  <%= user.data.global.rank.rankName %>
+               </p>
+               <p> Rank Score: <%= user.data.global.rank.rankScore %>
+               </p>
 
             </div>
 
 
             <div class="player-sub">
-               <p> Current Season Stats</p>
+               <p> Seasons Stats</p>
 
-               <p> Wins This Season:
-                  total.wins_aeason14.value</p>
-               <p></p>Kills this season:
-               total.kills_season_14</p>
+               <p> Season 14 Wins:
+                  <%= user.data.total.wins_season_14.value %>
+               </p>
+               <p>Season 13 Wins:
+                  <%= user.data.total.wins_season_13.value %>
+               </p>
+               <p> Season 12 Wins:
+                  <%= user.data.total.wins_season_12.value %>
+               </p>
+
+               <p>Season 13 Kills:
+                  <%= user.data.total.kills_season_13.value %>
+               </p>
+               <p>Season 12 Kills:
+                  <%= user.data.total.kills_season_12.value %>
+               </p>
+               <p>Season 11 Kills:
+                  <%= user.data.total.kills_season_11.value %>
+               </p>
                <p> Battle Pass Level: gloabl.battlepaass.level</p>
             </div>
 
             <div class="player-sub player-sub-last">
                <p>Life Time Stats </p>
-               <p>Lifetime kills:
+               <p>Lifetime Kills:
+                  <%= user.data.total.kills.value %>
                </p>
-               <p>Lifetime damage:
+               <p>Lifetime Damage:
+                  <%= user.data.total.damage.value %>
                </p>
                <p>Headshots:
-                  total.headsshots.value
+                  <%= user.data.total.headshots.value %>
                </p>
                <P>BR Games Played:
-                  total.gamesplayed.value
+                  <%= user.data.total.games_played.value %>
                </P>
                <p>Executions:
-                  total.executions.value
+                  <%= user.data.total.executions.value %>
                </p>
                <p>
                   Revives:
-                  total.revives.value
+                  <%= user.data.total.revives.value %>
                </p>
             </div>
 
