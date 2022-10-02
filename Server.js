@@ -281,32 +281,32 @@ let mainSeven = getMain( responseSeven );
 });
 
 
-// single axios request 
-
-  //     .then((response) => {
-  //         console.log('Response: ', response.data);
-  //     }).catch((err) => {
-  //         console.error(err);
-  //     });
-    
-  //   // ...
-  //   res.send( "completed loading");
-  // });
-
-
-
 
 
  
 
 app.get("/profile/:user", function (req, res) {
-  let requestedPlayer = req.params['user'];
+  
+  // if user clicks a link 
+  // bases on param choose the platform 
+  // if naf or aglWolves or...  use x1 
+  
+    let requestedPlayer = req.params['user'];
   console.log(req.params)
   // console.log("no hi");
   //  do https request with requestedPlayer
   console.log(requestedPlayer);
   let url =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=X1";
+
+
+
+  // else if 
+  // if someon types in a username not in the if statment and does not have a platfomorm, rediret them to a page for them to put in username and platform
+
+  // else if they use form from home site
+  // pass value of name and platform into url 
+  // let url =  www... form.player.value ... form.player.platform 
    
 console.log(url);
 
@@ -331,7 +331,3 @@ app.listen(2000, function () {
   console.log("SEVER IS LIVE");
 });
 
-// api format
-// TRN-Api-Key: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-// api key
-// check postman fo
