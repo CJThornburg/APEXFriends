@@ -314,8 +314,11 @@ console.log(url);
   .then((response) => {
       // console.log('Response: ', response.data);
       let user = response;
+
+      kills: _.get(user, "data.legends.all.Ash.data[0].value", "0")S
       res.render("playerprofile", {
-        user: user
+        user: user,
+        requetedPlayer: requestedPlayer
       });
   }).catch((err) => {
       // console.error(err);
