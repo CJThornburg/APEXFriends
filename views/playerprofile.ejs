@@ -64,10 +64,10 @@
          <div class=" col-xl-6 col-lg-12 col-md-12 col-sm-12 row-padding center">
             <div class="player-plate center">
                <h1 class="player-name">
-                  <%= user.data.global.name %>
+                  <%= requetedPlayer %>
                </h1>
                <p>
-                  KD : <%= user.data.total.kd.value %>
+                  KD : <%= user2.kd %>
                </p>
 
 
@@ -83,7 +83,7 @@
                <p> Currently banned:
                   <!-- to do 
                   Lodash format this string -->
-                  <%= user.data.global.bans.isActive %>
+                  <%= user2.banned %>
                </p>
                <p>
                   Reason for latest ban:
@@ -91,11 +91,11 @@
                   Lodash format this string 
                      Check to see what the input is if you have never been banned
                -->
-                  <%= user.data.global.bans.last_banReason %>
+                  <%= user2.banReason %>
                </p>
 
                <p>Last Played Legend:
-                  <%= user.data.legends.selected.LegendName %>
+                  <%= user2.lastPlayedLegend %>
 
                </p>
 
@@ -104,9 +104,9 @@
             <div class="player-sub">
                <p>Rank Stats</p>
                <p>Rank:
-                  <%= user.data.global.rank.rankName %>
+                  <%= user2.rank %>
                </p>
-               <p> Rank Score: <%= user.data.global.rank.rankScore %>
+               <p> Rank Score: <%= user2.rankScore %>
                </p>
 
             </div>
@@ -115,48 +115,50 @@
             <div class="player-sub">
                <p> Seasons Stats</p>
 
-               <p> Season 13 Wins:
-                  <%= user.data.total.wins_season_13.value %>
+               <p> Season 14 Wins:
+                  <%= user2.seasonWins14 %>
                </p>
-               <p>Season 12 Wins:
-                  <%= user.data.total.wins_season_12.value %>
+               <p>Season 13 Wins:
+                  <%= user2.seasonWins13 %>
                </p>
-               <p> Season 11 Wins:
-                  <%= user.data.total.wins_season_11.value %>
+               <p> Season 12 Wins:
+                  <%= user2.seasonWins12 %>
                </p>
 
+               <p>Season 14 Kills:
+                  <%= user2.seasonKills14 %>
+               </p>
                <p>Season 13 Kills:
-                  <%= user.data.total.kills_season_13.value %>
+                  <%= user2.seasonKills13 %>
                </p>
                <p>Season 12 Kills:
-                  <%= user.data.total.kills_season_12.value %>
+                  <%= user2.seasonKills12 %>
                </p>
-               <p>Season 11 Kills:
-                  <%= user.data.total.kills_season_11.value %>
+               <p> Battle Pass Level:
+                  <%= user2.battlePassLevel %>
                </p>
-               <p> Battle Pass Level: gloabl.battlepaass.level</p>
             </div>
 
             <div class="player-sub player-sub-last">
                <p>Life Time Stats </p>
                <p>Lifetime Kills:
-                  <%= user.data.total.kills.value %>
+                  <%= user2.kills %>
                </p>
                <p>Lifetime Damage:
-                  <%= user.data.total.damage.value %>
+                  <%= user2.damage %>
                </p>
                <p>Headshots:
-                  <%= user.data.total.headshots.value %>
+                  <%= user2.headshots %>
                </p>
                <P>BR Games Played:
-                  <%= user.data.total.games_played.value %>
+                  <%= user2.gamesPlayed %>
                </P>
                <p>Executions:
-                  <%= user.data.total.executions.value %>
+                  <%= user2.executions %>
                </p>
                <p>
                   Revives:
-                  <%= user.data.total.revives.value %>
+                  <%= user2.revives %>
                </p>
             </div>
 

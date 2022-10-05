@@ -314,39 +314,41 @@ console.log(url);
   .then((response) => {
       // console.log('Response: ', response.data);
       let user = response;
-      let usertrimmed = {
+      let userTrimmed = {
         requestedPlayer: requestedPlayer,
-        kd: _get(user, "data.total.kd.value", "Not Available"),
-        banned: _get(user, "data.global.bans.isActive", "Not Available"),
-        banReason: _get(user, "data.global.bans.last_banReason", "Not Available"),
-        lastPlayedLegend: _get(user, "data.legends.selected.LegendName", "Not Available"),
-        rank: _get(user, "data.gloabl.rank.rankName", "Not Available"),
-        seaon14wins  : _get(user, "data.total.wins_season_14.value", "Not Available"),
-        seaon13wins  : _get(user, "data.total.wins_season_13.value", "Not Available"),
-        seaon12wins  : _get(user, "data.total.wins_season_12.value", "Not Available"),
-        seaon14kills: _get(user, "data.total.kills_season_14.value", "Not Available"),
-        seaon13kills: _get(user, "data.total.kills_season_13.value", "Not Available"),
-        seaon12kills: _get(user, "data.total.kills_season_12.value", "Not Available"),
-        battlePassLevel  : _get(user, "data.global.battlepaass.level", "Not Available"),
-        kills : _get(user, "data.total.kills.value", "Not Available"),
-        damage: _get(user, "data.total.damage.value", "Not Available"),
-        headshots: _get(user, "data.total.headshots.value", "Not Available"),
-        gamesPlayed  : _get(user, "data.total.games_played.value", "Not Available"),
-        executions  : _get(user, "data.total.executions.value", "Not Available"),
-        revives  : _get(user, "data.total.revives.value", "Not Available")
+        kd: _.get(user, "data.total.kd.value", "Not Available"),
+        banned: _.get(user, "data.global.bans.isActive", "Not Available"),
+        banReason: _.get(user, "data.global.bans.last_banReason", "Not Available"),
+        lastPlayedLegend: _.get(user, "data.legends.selected.LegendName", "Not Available"),
+        rank: _.get(user, "data.global.rank.rankName", "Not Available"),
+        rankScore:  _.get(user, "data.global.rank.rankScore", "Not Available"),
+        seasonWins14  : _.get(user, "data.total.wins_season_14.value", "Not Available"),
+        seasonWins13  : _.get(user, "data.total.wins_season_13.value", "Not Available"),
+        seasonWins12  : _.get(user, "data.total.wins_season_12.value", "Not Available"),
+        seasonKills14: _.get(user, "data.total.kills_season_14.value", "Not Available"),
+        seasonKills13: _.get(user, "data.total.kills_season_13.value", "Not Available"),
+        seasonKills12: _.get(user, "data.total.kills_season_12.value", "Not Available"),
+        battlePassLevel  : _.get(user, "data.global.battlepass.level", "Not Available"),
+        kills : _.get(user, "data.total.kills.value", "Not Available"),
+        damage: _.get(user, "data.total.damage.value", "Not Available"),
+        headshots: _.get(user, "data.total.headshots.value", "Not Available"),
+        gamesPlayed  : _.get(user, "data.total.games_played.value", "Not Available"),
+        executions  : _.get(user, "data.total.executions.value", "Not Available"),
+        revives  : _.get(user, "data.total.revives.value", "Not Available")
             
 
       };
 
 
-
-      kills: _.get(user, "data.legends.all.Ash.data[0].value", "0")
+      
+     
       res.render("playerprofile", {
         user: user,
+        user2: userTrimmed,
         requetedPlayer: requestedPlayer
       });
   }).catch((err) => {
-      // console.error(err);
+      console.error(err);
   });
 
 });
