@@ -11,6 +11,7 @@ const ejs = require("ejs");
 var _ = require("lodash");
 const { Console, error } = require("console");
 const { response } = require("express");
+const { platform } = require("os");
 const app = express();
 app.set("view engine", "ejs");
 app.use(
@@ -286,18 +287,71 @@ let mainSeven = getMain( responseSeven );
  
 
 app.get("/profile/:user", function (req, res) {
-  
+  let platform = "";
+  let requestedPlayer = req.params['user'];
+  let url = ""
   // if user clicks a link 
   // bases on param choose the platform 
   // if naf or aglWolves or...  use x1 
   
-    let requestedPlayer = req.params['user'];
+            // someone clicked a link
+          if (requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" ||requestedPlayer === "CamThings" || requestedPlayer ==="Imissedmygrapple" || requestedPlayer === "KingWonderBoy" || requestedPlayer ==="Parkesss" ||requestedPlayer ===  "AGL WolveZ" || requestedPlayer ==="Parkesss" ) { 
+            // console.log("hi 1")
+                
+                  if(requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" || requestedPlayer === "CamThings" || requestedPlayer === "AGL WolveZ" || requestedPlayer ==="Parkesss"){
+                    platform = "X1";
+                    console.log(platform);
+                  }
+                  else {
+                    platform = "PS4"
+                    console.log(platform)
+                  }
+
+                  console.log ("hi 2");
+                  url =
+                  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=" + platform;
+
+           } 
+          // else if ( 
+            // form submission so has user and platform
+            // body.parse.user === true && body.parse.checkedPlatform === true
+            // url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=" + checedPlatform;
+          //    ) {
+
+
+          //  } 
+          //  else  {
+            // no platform so typed it in 
+            // redirect to a page they can put that in prob with the user name again
+          //  }
+
+
+
+
+
+
+
+
+
+          // else { typed in or form  }
+
+
+
+
+
+
+          
+
+
+
+
+    // let requestedPlayer = req.params['user'];
   console.log(req.params)
   // console.log("no hi");
   //  do https request with requestedPlayer
   console.log(requestedPlayer);
-  let url =
-  "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=X1";
+  // let url =
+  // "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=X1";
 
 
 
@@ -348,7 +402,7 @@ console.log(url);
         requetedPlayer: requestedPlayer
       });
   }).catch((err) => {
-      console.error(err);
+      // console.error(err);
   });
 
 });
