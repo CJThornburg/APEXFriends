@@ -284,18 +284,26 @@ let mainSeven = getMain( responseSeven );
 
 
 
- 
+let submittedUser = "";
+let submittedPlatform = "";
+
+app.post("/userlookup", function (req, res) {
+  const user = req.body.username;
+  const platform = req.body.platform;
+  submittedUser = user;
+  submittedPlatform = platform;
+
+  res.redirect("/profile/" + submittedUser);
+});
 
 app.get("/profile/:user", function (req, res) {
   let platform = "";
   let requestedPlayer = req.params['user'];
   let url = ""
-  // if user clicks a link 
-  // bases on param choose the platform 
-  // if naf or aglWolves or...  use x1 
-  
+  console.log(submittedUser);
+ 
             // someone clicked a link
-          if (requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" ||requestedPlayer === "CamThings" || requestedPlayer ==="Imissedmygrapple" || requestedPlayer === "KingWonderBoy" || requestedPlayer ==="Parkesss" ||requestedPlayer ===  "AGL WolveZ" || requestedPlayer ==="Parkesss" ) { 
+          if (requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" ||requestedPlayer === "CamThings" || requestedPlayer ==="Imissedmygrapple" || requestedPlayer === "KingWonderBoy300" || requestedPlayer ==="Parkesss" ||requestedPlayer ===  "AGL WolveZ" || requestedPlayer ==="Parkesss" ) { 
             // console.log("hi 1")
                 
                   if(requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" || requestedPlayer === "CamThings" || requestedPlayer === "AGL WolveZ" || requestedPlayer ==="Parkesss"){
@@ -312,55 +320,22 @@ app.get("/profile/:user", function (req, res) {
                   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=" + platform;
 
            } 
-          // else if ( 
-            // form submission so has user and platform
-            // body.parse.user === true && body.parse.checkedPlatform === true
-            // url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=" + checedPlatform;
-          //    ) {
+          else if ( submittedUser != "" && submittedPlatform != "") {
+            console.log (submittedPlatform);
+            console.log (submittedUser);
+            requestedPlayer = submittedUser;
+            url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+  submittedUser +"&platform=" + submittedPlatform;
+          }
 
 
-          //  } 
-          //  else  {
-            // no platform so typed it in 
-            // redirect to a page they can put that in prob with the user name again
-          //  }
-
-
-
+    
+           else  {
+            res.redirect("/search");
+           }
 
 
 
 
-
-
-          // else { typed in or form  }
-
-
-
-
-
-
-          
-
-
-
-
-    // let requestedPlayer = req.params['user'];
-  console.log(req.params)
-  // console.log("no hi");
-  //  do https request with requestedPlayer
-  console.log(requestedPlayer);
-  // let url =
-  // "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=X1";
-
-
-
-  // else if 
-  // if someon types in a username not in the if statment and does not have a platfomorm, rediret them to a page for them to put in username and platform
-
-  // else if they use form from home site
-  // pass value of name and platform into url 
-  // let url =  www... form.player.value ... form.player.platform 
    
 console.log(url);
 
@@ -402,7 +377,7 @@ console.log(url);
         requetedPlayer: requestedPlayer
       });
   }).catch((err) => {
-      // console.error(err);
+      console.error(err);
   });
 
 });

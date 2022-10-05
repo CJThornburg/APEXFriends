@@ -76,6 +76,11 @@
                         }
                       }
 
+                      .platform {
+                        color: white;
+                        font-family: 'spaceport';
+                        /* font-size: 3rem; */
+                      }
                      
                       /* .form {
                         justify-content: center;
