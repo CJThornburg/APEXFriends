@@ -1,0 +1,68 @@
+<%- include("header"); -%>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-customclass  ">
+        <a class="navbar-brand brand" href="#">APEX Friends
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse space " id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item px-3 ">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+                <li class="nav-item px-3 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Players
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/profile/Naff">Naff</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/Aeriu">Aeriu</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/CamThings">CamThings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/Imissedmygrapple">Imissedmygrapple</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/CGK0">CGK0</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/KingWonderBoy300">KingWonderBoy300</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/AGL%20WolveZ">AGL WolveZ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/Parkesss">Parkesss</a>
+                    </div>
+                </li>
+                <li class="nav-item user px-3 nav-search">
+                    <form class="form-inline" action="/userlookup" method="post"">
+                <input class=" form-control mr-sm-2" type="search" name="username" placeholder="username"
+                        aria-label="username">
+                        <input type="radio" id="PC" name="platform" value="PC" class=" navbar ml-3 ">
+                        <label for="PC" class="platform  ml-2 mr-3">PC</label>
+                        <input type="radio" id="Xbox" name="platform" value="X1" class="navbar ml-2">
+                        <label for="Xbox" class="platform  ml-2 mr-3">Xbox</label>
+                        <input type="radio" id="PS4" name="platform" value="PS4" class="navbar ml-2">
+                        <label for="PS4" class="platform ml-2 mr-3">PlayStation </label>
+                        <button class="btn btn-outline-danger my-2 my-sm-0 px-4" type="submit">Search</button>
+
+                    </form>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+
+
+    </nav>
+
+
+
+    </head>

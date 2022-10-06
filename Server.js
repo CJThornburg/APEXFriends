@@ -383,6 +383,10 @@ console.log(url);
 });
  
 
+app.get("/search", function (req, res) {
+  res.render("search.ejs")
+  
+})
 
 
 

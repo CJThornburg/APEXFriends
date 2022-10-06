@@ -49,8 +49,6 @@
                         <input type="radio" id="PS4" name="platform" value="PS4" class="navbar ml-2">
                         <label for="PS4" class="platform ml-2 mr-3">PlayStation </label>
                         <button class="btn btn-outline-danger my-2 my-sm-0 px-4" type="submit">Search</button>
-                        <button class="btn btn-outline-danger my-2 my-sm-0 px-4" type="submit">Search</button>
-
                     </form>
                 </li>
 
@@ -68,69 +66,77 @@
 
     </head>
 
+    <body>
+
+        <div class="main">
 
 
-    <div class="main">
+
+            <div class="cover ">
+                <img src="\img\cover1100wApexfriends.png" class=" rounded img-fluid mx-auto d-block img-corner"
+                    alt="Responsive image">
+
+            </div>
 
 
-
-        <div class="cover ">
-            <img src="\img\cover1100wApexfriends.png" class=" rounded img-fluid mx-auto d-block img-corner"
-                alt="Responsive image">
-
-        </div>
+            <div class="space">
 
 
-        <div class="space">
+                <div class="userrow row m-0">
+
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainZero.url %>');">
 
 
-            <div class="userrow row m-0">
-
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainZero.url %>');">
-
-
-                    <!-- <img class='main-background img-wrapper'
+                        <!-- <img class='main-background img-wrapper'
                     src=https://cdn.vox-cdn.com/thumbor/AiUaCaqY9pCsTyqO_hlihCsO54Y=/0x0:3840x2160/920x613/filters:focal(738x837:1352x1451):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63050061/APEX_Legends_Screenshot_LE_BloodhoundRaven_03_Clean.0.jpg> -->
 
 
 
-                    <div class="row">
-                        <div class='name-plate col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1 class="">
-                                    <%= playerZero.data.global.name %>
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
+                        <div class="row">
+                            <div class='name-plate col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1 class="">
+                                        <%= playerZero.data.global.name %>
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerZero.data.total.kd.value %>
+                                    </h2>
+                                </div>
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
                             </div>
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+                            <div class="data col-xl-3 col-lg-6 center">
+
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerZero.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerZero.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerZero.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainZero.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
+
+                            </div>
 
 
                         </div>
 
-                        <div class="data col-xl-3 col-lg-6 center">
-
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerZero.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerZero.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerZero.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainZero.legend %>
-                                </p>
 
 
-                                <a class="player-link" href=""> Player stats > </a>
-                            </div>
 
-                        </div>
+
 
 
                     </div>
@@ -138,54 +144,46 @@
 
 
 
+                    <div class="userplate col-xl-6 col-lg-12 " style="background-image:url('<%= mainOne.url %>');">
+
+                        <div class="row">
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerOne.data.global.name %>
+
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerOne.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 
 
-
-                </div>
-
-
-
-
-                <div class="userplate col-xl-6 col-lg-12 " style="background-image:url('<%= mainOne.url %>');">
-
-                    <div class="row">
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerOne.data.global.name %>
-
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
                             </div>
 
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerOne.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerOne.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerOne.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainOne.legend %>
+                                    </p>
 
 
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerOne.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerOne.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerOne.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainOne.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats > </a>
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
 
@@ -193,345 +191,345 @@
 
 
 
-                    <!-- <img class='main-background img-wrapper'
+                        <!-- <img class='main-background img-wrapper'
                     src=https://cdn.vox-cdn.com/thumbor/AiUaCaqY9pCsTyqO_hlihCsO54Y=/0x0:3840x2160/920x613/filters:focal(738x837:1352x1451):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63050061/APEX_Legends_Screenshot_LE_BloodhoundRaven_03_Clean.0.jpg> -->
+                    </div>
+
                 </div>
 
+
+                <div class="userrow row m-0">
+
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainTwo.url %>');">
+
+                        <div class="row">
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerTwo.data.global.name %>
+
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerTwo.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
+                            </div>
+
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerTwo.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerTwo.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerTwo.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainTwo.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats ></a>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainThree.url %>');">
+
+                        <div class="row">
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerThree.data.global.name %>
+
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerThree.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
+                            </div>
+
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerThree.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerThree.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerThree.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainThree.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="userrow row m-0">
+
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainFour.url %>');">
+
+                        <div class="row">
+
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerFour.data.global.name %>
+
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerFour.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
+                            </div>
+
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerFour.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerFour.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerFour.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainFour.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainFive.url %>');">
+
+                        <div class="row">
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerFive.data.global.name %>
+
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerFive.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
+                            </div>
+
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerFive.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerFive.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerFive.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainFive.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="userrow row m-0">
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainSix.url %>');">
+                        <div class="row">
+
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerSix.data.global.name %>
+
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerSix.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
+                            </div>
+
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerSix.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerSix.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerSix.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainSix.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainSeven.url %>');">
+
+                        <div class="row">
+
+                            <div class='name-plate  col-xl-3 col-lg-6 center'>
+                                <div class="username">
+                                    <h1>
+                                        <%= playerSeven.data.global.name %>
+                                    </h1>
+                                    <h2 class="kdlandingpage">
+                                        KD: <%= playerSeven.data.total.kd.value %>
+                                    </h2>
+                                </div>
+
+                                <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
+                            </div>
+
+                            <div class="data col-xl-3 col-lg-6 center">
+                                <div class="data-text">
+                                    <p>Lifetime kills:
+                                        <%= playerSeven.data.total.kills.value %>
+                                    </p>
+                                    <p>Lifetime damage:
+                                        <%= playerSeven.data.total.damage.value %>
+                                    </p>
+                                    <p>Level:
+                                        <%= playerSeven.data.global.level %>
+                                    </p>
+
+                                    <p>Main:
+                                        <%= mainSeven.legend %>
+                                    </p>
+
+
+                                    <a class="player-link" href=""> Player stats > </a>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
             </div>
 
+            <%- include("footer"); -%>
 
-            <div class="userrow row m-0">
 
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainTwo.url %>');">
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
 
-                    <div class="row">
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerTwo.data.global.name %>
+    </body>
 
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
-                            </div>
-
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-
-
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerTwo.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerTwo.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerTwo.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainTwo.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats ></a>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-
-
-
-                </div>
-
-
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainThree.url %>');">
-
-                    <div class="row">
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerThree.data.global.name %>
-
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
-                            </div>
-
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-
-
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerThree.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerThree.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerThree.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainThree.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats > </a>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-
-
-
-
-                </div>
-
-            </div>
-
-            <div class="userrow row m-0">
-
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainFour.url %>');">
-
-                    <div class="row">
-
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerFour.data.global.name %>
-
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
-                            </div>
-
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-
-
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerFour.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerFour.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerFour.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainFour.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats > </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-
-
-
-
-                </div>
-
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainFive.url %>');">
-
-                    <div class="row">
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerFive.data.global.name %>
-
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
-                            </div>
-
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-
-
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerFive.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerFive.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerFive.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainFive.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats > </a>
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-
-
-
-
-                </div>
-            </div>
-
-
-
-
-            <div class="userrow row m-0">
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainSix.url %>');">
-                    <div class="row">
-
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerSix.data.global.name %>
-
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
-                            </div>
-
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-
-
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerSix.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerSix.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerSix.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainSix.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats > </a>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-
-
-
-                </div>
-
-                <div class="userplate col-xl-6 col-lg-12" style="background-image:url('<%= mainSeven.url %>');">
-
-                    <div class="row">
-
-                        <div class='name-plate  col-xl-3 col-lg-6 center'>
-                            <div class="username">
-                                <h1>
-                                    <%= playerSeven.data.global.name %>
-                                </h1>
-                                <h2 class="kdlandingpage">
-                                    KD: <%= playerZero.data.total.kd.value %>
-                                </h2>
-                            </div>
-
-                            <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-
-
-                        </div>
-
-                        <div class="data col-xl-3 col-lg-6 center">
-                            <div class="data-text">
-                                <p>Lifetime kills:
-                                    <%= playerSeven.data.total.kills.value %>
-                                </p>
-                                <p>Lifetime damage:
-                                    <%= playerSeven.data.total.damage.value %>
-                                </p>
-                                <p>Level:
-                                    <%= playerSeven.data.global.level %>
-                                </p>
-
-                                <p>Main:
-                                    <%= mainSeven.legend %>
-                                </p>
-
-
-                                <a class="player-link" href=""> Player stats > </a>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-
-        <%- include("footer"); -%>
-
-
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
-
-            </body>
-
-            </html>
+    </html>
