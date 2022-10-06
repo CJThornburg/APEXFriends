@@ -231,10 +231,56 @@
                         
 
 
+/* search page */
 
 
+.search-div {
+  height: 90vh;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find {
+  text-align: center;
+  margin-bottom: 30px;
+
+}
 
 
+@media (min-width: 1200px) { 
+  .find {
+    font-size: 3.5rem;
+  }
+
+  
+}
+
+
+.search-form {
+  font-family: 'spaceport';
+  font-size: 1.5rem;
+  background-color: #2B2D30;
+  padding: 4%;
+  border-radius: 25px;
+  color:  white;
+  border-style: groove;
+  border-color: #2B2D30;
+  width: fit-content;
+  height: fit-content;
+   text-align: center;
+ 
+  /* margin-left: auto; */
+}
+
+.search-username {
+  font-size: 1.2rem;
+}
+
+.search-button {
+  margin-left: auto;
+}
 
 
 
