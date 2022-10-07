@@ -286,6 +286,7 @@ let mainSeven = getMain( responseSeven );
 
 let submittedUser = "";
 let submittedPlatform = "";
+// let missingError = "";
 
 app.post("/userlookup", function (req, res) {
   const user = req.body.username;
@@ -300,7 +301,7 @@ app.get("/profile/:user", function (req, res) {
   let platform = "";
   let requestedPlayer = req.params['user'];
   let url = ""
-  console.log(submittedUser);
+ 
  
             // someone clicked a link
           if (requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" ||requestedPlayer === "CamThings" || requestedPlayer ==="Imissedmygrapple" || requestedPlayer === "KingWonderBoy300" || requestedPlayer ==="Parkesss" ||requestedPlayer ===  "AGL WolveZ" || requestedPlayer ==="Parkesss" ) { 
@@ -308,7 +309,7 @@ app.get("/profile/:user", function (req, res) {
                 
                   if(requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" || requestedPlayer === "CamThings" || requestedPlayer === "AGL WolveZ" || requestedPlayer ==="Parkesss"){
                     platform = "X1";
-                    console.log(platform);
+                    // console.log(platform);
                   }
                   else {
                     platform = "PS4"
@@ -320,17 +321,24 @@ app.get("/profile/:user", function (req, res) {
                   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=" + platform;
 
            } 
-          else if ( submittedUser != "" && submittedPlatform != "") {
-            console.log (submittedPlatform);
-            console.log (submittedUser);
-            requestedPlayer = submittedUser;
-            url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+  submittedUser +"&platform=" + submittedPlatform;
+          else if ( submittedUser === "" || submittedPlatform === "") {
+            submittedUser = "";
+            submittedPlatform = "";
+            res.redirect("/search");
+            
+            // requestedPlayer = submittedUser;
+            // url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+  submittedUser +"&platform=" + submittedPlatform;
           }
 
 
     
            else  {
-            res.redirect("/search");
+            // res.redirect("/search");
+
+            console.log (submittedPlatform + " else");
+            console.log (submittedUser + " else");
+            requestedPlayer = submittedUser;
+            url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+  submittedUser +"&platform=" + submittedPlatform;
            }
 
 
@@ -341,8 +349,18 @@ console.log(url);
 
   axios.get(url)
   .then((response) => {
-      // console.log('Response: ', response.data);
+    
+
+    if(response.data.Error) {
+
+      res.render("error", {
+        error : response.data.Error
+      });
+    }
+    else {
+
       let user = response;
+      
       let userTrimmed = {
         requestedPlayer: requestedPlayer,
         kd: _.get(user, "data.total.kd.value", "Not Available"),
@@ -375,16 +393,21 @@ console.log(url);
         user: user,
         user2: userTrimmed,
         requetedPlayer: requestedPlayer
-      });
+      }); }
   }).catch((err) => {
-      console.error(err);
+    console.log("hi")
+    let error = "invalid user/platform submitted. Try again!"
+    res.render("error", {
+      error : error
+    });
+
   });
 
 });
  
 
 app.get("/search", function (req, res) {
-  res.render("search.ejs")
+  res.render("search")
   
 })
 
