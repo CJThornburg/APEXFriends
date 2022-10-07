@@ -413,6 +413,13 @@ app.get("/search", function (req, res) {
 
 
 
+
+
+app.get("*", (req, res) => {
+  res.render("404")
+});
+
+
 app.listen(2000, function () {
   console.log("SEVER IS LIVE");
 });
