@@ -314,10 +314,16 @@
   height: fit-content;
    text-align: center;
  
-  /* margin-left: auto; */
+ 
 }
 
+@media (max-width: 1200px) { 
+  .innder404 {
+    padding: 5%;
+  }
 
+  
+}
 
 
 
