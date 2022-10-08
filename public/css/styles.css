@@ -209,6 +209,15 @@
   .player-name {
     font-size: 5rem;
    }
+  .player-plate {
+    font-size: 3rem;
+  }
+
+  .stat {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
 }
 
 

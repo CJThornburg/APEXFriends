@@ -95,12 +95,12 @@
          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 center row-padding personal-player-data ">
             <div class="player-sub">
                <p class="player-sub-cat"> Status</p>
-               <p> Currently banned:
+               <p class="stat"> Currently banned:
                   <!-- to do 
                   Lodash format this string -->
                   <%= user2.banned %>
                </p>
-               <p>
+               <p class="stat">
                   Reason for latest ban:
                   <!-- to do 
                   Lodash format this string 
@@ -109,7 +109,7 @@
                   <%= user2.banReason %>
                </p>
 
-               <p>Last Played Legend:
+               <p class="stat">Last Played Legend:
                   <%= user2.lastPlayedLegend %>
 
                </p>
@@ -118,10 +118,10 @@
 
             <div class="player-sub">
                <p class="player-sub-cat">Rank Stats</p>
-               <p>Rank:
+               <p class="stat">Rank:
                   <%= user2.rank %>
                </p>
-               <p> Rank Score: <%= user2.rankScore %>
+               <p class="stat"> Rank Score: <%= user2.rankScore %>
                </p>
 
             </div>
@@ -130,48 +130,48 @@
             <div class="player-sub">
                <p class="player-sub-cat"> Seasons Stats</p>
 
-               <p> Season 14 Wins:
+               <p class="stat"> Season 14 Wins:
                   <%= user2.seasonWins14 %>
                </p>
-               <p>Season 13 Wins:
+               <p class="stat">Season 13 Wins:
                   <%= user2.seasonWins13 %>
                </p>
-               <p> Season 12 Wins:
+               <p class="stat"> Season 12 Wins:
                   <%= user2.seasonWins12 %>
                </p>
 
-               <p>Season 14 Kills:
+               <p class="stat">Season 14 Kills:
                   <%= user2.seasonKills14 %>
                </p>
-               <p>Season 13 Kills:
+               <p class="stat">Season 13 Kills:
                   <%= user2.seasonKills13 %>
                </p>
-               <p>Season 12 Kills:
+               <p class="stat">Season 12 Kills:
                   <%= user2.seasonKills12 %>
                </p>
-               <p> Battle Pass Level:
+               <p class="stat"> Battle Pass Level:
                   <%= user2.battlePassLevel %>
                </p>
             </div>
 
             <div class="player-sub player-sub-last">
                <p class="player-sub-cat">Life Time Stats </p>
-               <p>Lifetime Kills:
+               <p class="stat">Lifetime Kills:
                   <%= user2.kills %>
                </p>
-               <p>Lifetime Damage:
+               <p class="stat">Lifetime Damage:
                   <%= user2.damage %>
                </p>
-               <p>Headshots:
+               <p class="stat">Headshots:
                   <%= user2.headshots %>
                </p>
-               <P>BR Games Played:
+               <p class="stat">BR Games Played:
                   <%= user2.gamesPlayed %>
-               </P>
-               <p>Executions:
+               </p>
+               <p class="stat">Executions:
                   <%= user2.executions %>
                </p>
-               <p>
+               <p class="stat">
                   Revives:
                   <%= user2.revives %>
                </p>
