@@ -71,7 +71,7 @@
    <body>
 
       <div class="row player">
-         <div class=" col-xl-6 col-lg-12 col-md-12 col-sm-12 row-padding center">
+         <div class=" col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 row-padding center">
             <div class="player-plate center">
                <h1 class="player-name">
                   <%= requetedPlayer %>
@@ -79,17 +79,22 @@
                <p>
                   KD : <%= user2.kd %>
                </p>
-
-
                <p>
-                  Online/offline
-                  <!-- realtime.currentState : "offline" or "online" -->
+                  Main : <%= user2.main.legend %>
                </p>
+               <p class="mb-0">
+                  <%= user2.currentStatus %>
+                     <!-- realtime.currentState : "offline" or "online" -->
+               </p>
+               <img class="mt-0 icon-image" src="<%= user2.main.urlIcon %>" alt="">
+
             </div>
          </div>
 
-         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 center row-padding personal-player-data ">
+
+         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 center row-padding personal-player-data ">
             <div class="player-sub">
+               <p class="player-sub-cat"> Status</p>
                <p> Currently banned:
                   <!-- to do 
                   Lodash format this string -->
@@ -112,7 +117,7 @@
             </div>
 
             <div class="player-sub">
-               <p>Rank Stats</p>
+               <p class="player-sub-cat">Rank Stats</p>
                <p>Rank:
                   <%= user2.rank %>
                </p>
@@ -123,7 +128,7 @@
 
 
             <div class="player-sub">
-               <p> Seasons Stats</p>
+               <p class="player-sub-cat"> Seasons Stats</p>
 
                <p> Season 14 Wins:
                   <%= user2.seasonWins14 %>
@@ -150,7 +155,7 @@
             </div>
 
             <div class="player-sub player-sub-last">
-               <p>Life Time Stats </p>
+               <p class="player-sub-cat">Life Time Stats </p>
                <p>Lifetime Kills:
                   <%= user2.kills %>
                </p>

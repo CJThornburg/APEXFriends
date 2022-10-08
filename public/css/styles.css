@@ -194,14 +194,47 @@
   width: fit-content;
 }
 
+@media (max-width: 1200px) {
+  .player-plate {
+    margin-top: 25px;
+   }
+}
+
+
 .player-name {
  font-size: 7rem;
 }
+
+@media (max-width: 1200px) {
+  .player-name {
+    font-size: 5rem;
+   }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1500px) { 
+  .icon-image {
+    width: 500px;
+  }
+  
+
+  
+}
+       
+@media (max-width: 1200px) {
+  .icon-image {
+    width: 90%;
+  }
+}
+
 
 .personal-player-data {
   font-family: 'spaceport';
 }
 
+.player-sub-cat{
+  font-size: 2rem;
+}
 .player-sub {
   font-size: 1.4rem;
   color:  white;
