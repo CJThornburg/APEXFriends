@@ -400,7 +400,7 @@ console.log(url);
         banReason: _.startCase(_.capitalize(_.get(user, "data.global.bans.last_banReason", "Not Available"))),
         lastPlayedLegend: _.get(user, "data.legends.selected.LegendName", "Not Available"),
         rank: _.get(user, "data.global.rank.rankName", "Not Available"),
-        rankScore:  _.get(user, "data.global.rank.rankScore", "Not Available"),
+        rankScore:  _.get(user, "data.global.rank.rankScore", "Not Available").toLocaleString(),
         seasonWins14  : _.get(user, "data.total.wins_season_14.value", "Not Available"),
         seasonWins13  : _.get(user, "data.total.wins_season_13.value", "Not Available"),
         seasonWins12  : _.get(user, "data.total.wins_season_12.value", "Not Available"),
@@ -408,12 +408,12 @@ console.log(url);
         seasonKills13: _.get(user, "data.total.kills_season_13.value", "Not Available"),
         seasonKills12: _.get(user, "data.total.kills_season_12.value", "Not Available"),
         battlePassLevel  : battlePassLevel,
-        kills : _.get(user, "data.total.kills.value", "Not Available"),
-        damage: _.get(user, "data.total.damage.value", "Not Available"),
-        headshots: _.get(user, "data.total.headshots.value", "Not Available"),
-        gamesPlayed  : _.get(user, "data.total.games_played.value", "Not Available"),
-        executions  : _.get(user, "data.total.executions.value", "Not Available"),
-        revives  : _.get(user, "data.total.revives.value", "Not Available")
+        kills : _.get(user, "data.total.kills.value", "Not Available").toLocaleString(),
+        damage: _.get(user, "data.total.damage.value", "Not Available").toLocaleString(),
+        headshots: _.get(user, "data.total.headshots.value", "Not Available").toLocaleString(),
+        gamesPlayed  : _.get(user, "data.total.games_played.value", "Not Available").toLocaleString(),
+        executions  : _.get(user, "data.total.executions.value", "Not Available").toLocaleString(),
+        revives  : _.get(user, "data.total.revives.value", "Not Available").toLocaleString()
             
 
       };
