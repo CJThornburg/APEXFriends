@@ -9,6 +9,9 @@
   },
   "author": "Chris Thornburg",
   "license": "ISC",
+  "engines": {
+    "node": "12.16.1"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "axios-rate-limit": "^1.3.0",
