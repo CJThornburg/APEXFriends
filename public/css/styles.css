@@ -143,7 +143,17 @@
   width: fit-content;
 }
 
-
+@media (max-width: 1200px) {
+  .smallFont {
+    font-size: 1.5rem;
+   }
+  .smallerFont {
+    font-size:  1.0rem;
+  }
+  .smallestFont {
+    font-size: .7rem;
+  }
+  }
 
 .data {
   padding-top: 3%;
@@ -162,6 +172,11 @@
   width: fit-content;
   
 }
+@media (max-width: 1200px) {
+  .data-text {
+    font-size: .7rem;
+   }
+  }
 .player-link {
   color: #c13327;
   
