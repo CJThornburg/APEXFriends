@@ -156,7 +156,7 @@
   width: fit-content;
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 1200px) {
   .smallFont {
     font-size: 1.5rem;
    }
@@ -167,6 +167,18 @@
     font-size: .7rem;
   }
   }
+
+
+  @media (min-width: 1200px) and (max-width: 2000px) { 
+    /* .smallFont {
+      font-size: 1.5rem;
+     } */
+    
+    .smallestFont {
+      font-size: 1.3rem;
+    }
+    }
+
 
 .data {
   padding-top: 3%;
