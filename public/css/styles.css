@@ -156,7 +156,7 @@
   width: fit-content;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 2000px) {
   .smallFont {
     font-size: 1.5rem;
    }
