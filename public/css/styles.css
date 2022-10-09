@@ -81,6 +81,19 @@
                         font-family: 'spaceport';
                         /* font-size: 3rem; */
                       }
+
+                      @media (max-width: 1200px) {
+                      .platform {
+                          font-size: .8rem;
+                          margin-top: 15px;
+                          margin-bottom: 20px;
+                         }
+                      .small-radio {
+                        margin-top: 15px;
+                        
+                      }
+                      
+                        }
                      
                       /* .form {
                         justify-content: center;
