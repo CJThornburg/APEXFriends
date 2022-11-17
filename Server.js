@@ -171,7 +171,23 @@ function getMain(user) {
 
 
 
+function trimResponse(user) {
 
+      
+    let trimmedUser = {
+        // name, kd, kills, damage, level, main
+        name: _.get(user, "data.global.name", "API ERROR"),
+        kd: _.get(user, "data.total.kd.value", "Not Available"),        
+        kills : _.get(user, "data.total.kills.value", "Not Available").toLocaleString(),
+        damage: _.get(user, "data.total.damage.value", "Not Available").toLocaleString(),
+        level: _.get(user, "data.global.level", "Not Available"),
+        main: getMain(user),
+        
+        
+       
+    }
+  return trimmedUser
+}
 
 
 app.get("/", function (req, res) {
@@ -180,7 +196,7 @@ app.get("/", function (req, res) {
   const url1 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Aeriu&platform=X1";
   const url2 =
-  "https://api.mozambiquehe.re/bridge?auth="+process.env.API + "&player=CGK0&platform=X1";
+  "https://api.mozambiquehe.re/bridge?auth="+process.env.API + "&player= &platform=X1";
   const url3 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
    
@@ -268,30 +284,37 @@ let mainSix = getMain( responseSix );
 let mainSeven = getMain( responseSeven );
 
 
+// function trimResponse (resoponse) {
 
+// }
+let trimmedZero  =trimResponse(responseZero);
+let trimmedOne  =trimResponse(responseOne);
+let trimmedTwo  =trimResponse(responseTwo);
+let trimmedThree  =trimResponse(responseThree);
+let trimmedFour  =trimResponse(responseFour);
+let trimmedFive  =trimResponse(responseFive);
+let trimmedSix  =trimResponse(responseSix);
+let trimmedSeven  =trimResponse(responseSeven);  
 
-
-
-  
-
+console.log(trimmedZero);
       // console.log(responseSeven);
       
     res.render("landingpage.ejs", {
-        playerZero: responseZero,
+        playerZero: trimmedZero,
         mainZero: mainZero,
-        playerOne: responseOne,
+        playerOne: trimmedOne,
         mainOne: mainOne,
-        playerTwo: responseTwo,
+        playerTwo: trimmedTwo,
         mainTwo: mainTwo,
-        playerThree: responseThree,
+        playerThree: trimmedThree,
         mainThree: mainThree,
-        playerFour: responseFour,
+        playerFour: trimmedFour,
         mainFour: mainFour,
-        playerFive: responseFive,
+        playerFive: trimmedFive,
         mainFive: mainFive,
-        playerSix: responseSix,
+        playerSix: trimmedSix,
         mainSix: mainSix,
-        playerSeven: responseSeven,
+        playerSeven: trimmedSeven,
         mainSeven: mainSeven
         
         
