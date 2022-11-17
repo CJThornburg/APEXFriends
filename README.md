@@ -11,7 +11,7 @@ API Used: https://portal.apexlegendsapi.com/
 # Getting started
 - Clone the repository
 ```
-git clone  https://github.com/CJThornburg/APEXFriends.git
+git clone https://github.com/CJThornburg/APEXFriends.git
 ```
 - Install dependencies
 ```
