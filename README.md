@@ -39,6 +39,3 @@ Deployed using Heroku
 
 
 
-## Running the project
-
-    $ node start
