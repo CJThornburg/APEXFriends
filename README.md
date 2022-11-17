@@ -1,5 +1,5 @@
 # APEXFriends
-UI for displaying stats from ex Legends. Landing page contains several pre-set players. 
+UI for displaying stats from online multiplayer game Apex Legends. Landing page contains several pre-set players. 
 Can search up yourself or friends detailed stats based on username and platform. 
 API Used: https://portal.apexlegendsapi.com/
 *API has a rpm limit which limits the speed of the website in its current form.
