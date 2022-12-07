@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express");
-const https = require("https");
-const request = require("request");
+// const https = require("https");
+// const request = require("request");
 const bodyParser = require("body-parser");
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 // const { json } = require("express");
 const axios = require('axios');
 const rateLimit = require('axios-rate-limit')
