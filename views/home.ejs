@@ -1,0 +1,97 @@
+<%- include("header"); -%>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-customclass  ">
+        <a class="navbar-brand brand" href="/">APEX Friends
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse space " id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item px-3 active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+                <li class="nav-item px-3 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Players
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/profile/Naff">Naff</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/Aeriu">Aeriu</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/CamThings">CamThings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/Imissedmygrapple">Imissedmygrapple</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/CGK0">CGK0</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/KingWonderBoy300">KingWonderBoy300</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/AGL%20WolveZ">AGL WolveZ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile/Parkesss">Parkesss</a>
+                    </div>
+
+                </li>
+                <li class="nav-item user px-3 nav-search">
+                    <form class="form-inline" action="/userlookup" method="post"">
+                       <input class=" form-control mr-sm-2" type="search" name="username" placeholder="username"
+                        aria-label="username">
+                        <div class="form-inline">
+                            <input type="radio" id="PC" name="platform" value="PC" class=" navbar ml-3 small-radio ">
+                            <label for="PC" class="platform  ml-2 mr-3 mb-0">PC</label>
+                        </div>
+                        <div class="form-inline">
+                            <input type="radio" id="Xbox" name="platform" value="X1" class="navbar ml-2 small-radio">
+                            <label for="Xbox" class="platform  ml-2 mr-3 mb-0">Xbox</label>
+                        </div>
+                        <div class="form-inline">
+                            <input type="radio" id="PS4" name="platform" value="PS4" class="navbar ml-2 small-radio">
+                            <label for="PS4" class="platform ml-2 mr-3 mb-0">PlayStation </label>
+                        </div>
+                        <button class="btn btn-outline-danger my-2 my-sm-0 px-4" type="submit">Search</button>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+
+
+    </nav>
+
+
+
+    </head>
+
+    <body>
+
+        <div class="main">
+                   <button onclick="location.href='/launch'" type="button">
+                        launch the Drop Ship</button>
+        </div>
+
+        <%- include("footer"); -%>
+
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>

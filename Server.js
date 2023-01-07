@@ -24,9 +24,9 @@ app.use(express.static("public"));
 
 function getMain(user) {
 
-  
 
-  let revenant = { 
+
+  let revenant = {
     legend: "Revenant",
     kills: _.get(user, "data.legends.all.Revenant.data[0].value", "0"),
     url:  "https://api.mozambiquehe.re/assets/banners/revenant.jpg",
@@ -34,7 +34,7 @@ function getMain(user) {
    }
 
   //  legends.all.Revenant.data[0].value
-   
+
   let crypto= { legend: "Crypto" ,
   kills: _.get(user, "data.legends.all.Crypto.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/crypto.jpg",
@@ -44,54 +44,54 @@ function getMain(user) {
   kills: _.get(user, "data.legends.all.Horizon.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/horizon.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/horizon.png"}
-   
+
   let gibraltar= { legend: "Girbraltar" ,
   kills: _.get(user, "data.legends.all.Gibraltar.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/gibraltar.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/gibraltar.png" }
-    
+
   let wattson= { legend: "Watson" ,
   kills: _.get(user, "data.legends.all.Wattson.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/wattson.jpg" ,
   urlIcon: "https://api.mozambiquehe.re/assets/icons/wattson.png"}
-  
+
   let fuse = { legend: "Fuse",
   kills: _.get(user, "data.legends.all.Fuse.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/fuse.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/fuse.png"}
-   
+
   let bangalore= { legend: "Bangalore",
   kills: _.get(user, "data.legends.all.Bangalore.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/bangalore.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/bangalore.png"
 
 }
-    
+
   let wraith= { legend: "Wraith",
   kills: _.get(user, "data.legends.all.Wraith.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/wraith.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/wraith.png"}
-    
+
   let octane= { legend: "Octane" ,
   kills: _.get(user, "data.legends.all.Octane.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/octane.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/octane.png"}
-    
+
   let bloodhound= { legend: "Bloodhound",
   kills: _.get(user, "data.legends.all.Bloodhound.data[0].value ", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/bloodhound.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/bloodhound.png"}
-       
+
   let caustic= { legend: "Caustic" ,
   kills: _.get(user, "data.legends.all.Caustic.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/caustic.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/caustic.png" }
-    
+
   let lifeline= { legend: "Lifeline" ,
   kills: _.get(user, "data.legends.all.Lifeline.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/lifeline.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/lifeline.png" }
-  
+
   let pathfinder= { legend: "Pathfinder" ,
   kills: _.get(user, "data.legends.all.Pathfinder.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/pathfinder.jpg",
@@ -101,14 +101,14 @@ function getMain(user) {
   kills: _.get(user, "data.legends.all.Loba.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/loba.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/loba.png" }
-  
+
   let mirage= { legend: "Mirage",
   kills: _.get(user, "data.legends.all.Mirage.data[0].value", "0"),
   url:  "https://api.mozambiquehe.re/assets/banners/mirage.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/mirage.png"
 }
   let rampart= { legend: "Rampart",
-  
+
   kills: _.get(user, "data.legends.all.Rampart.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/rampart.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/rampart.png" }
@@ -118,37 +118,37 @@ function getMain(user) {
   url: "https://api.mozambiquehe.re/assets/banners/valkyrie.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/valkrie.png" }
   let seer = { legend: "Seer",
-  
+
   kills: _.get(user, "data.legends.all.Seer.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/seer.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/seer.png"}
   let ash  = { legend: "Ash",
-  
+
   kills: _.get(user, "data.legends.all.Ash.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/ash.jpg",
   urlIcon: "https://api.mozambiquehe.re/assets/icons/ash.png" }
-  
+
   let madMaggie= { legend: "Mad Maggie",
   kills: _.get(user, "data.legends.all['Mad Maggie'].data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/mad%20maggie.jpg"
   ,
   urlIcon: "https://api.mozambiquehe.re/assets/icons/mad%20maggie.png" }
-  
+
   let newcastle= { legend: "Newcastle",
   kills: _.get(user, "data.legends.all.Newcastle.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/newcastle.jpg",
   urlIcon: "https://static.wikia.nocookie.net/titanfall/images/7/7d/AL_Newcastle.png/revision/latest/scale-to-width-down/350?cb=20220518142135"
  }
-        
+
   let vantage= { legend: "Vantage" ,
   kills: _.get(user, "data.legends.all.Vantage.data[0].value", "0"),
   url: "https://api.mozambiquehe.re/assets/banners/vantage.jpg",
   urlIcon: "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftitanfall.fandom.com%2Fwiki%2FVantage&psig=AOvVaw0ZAG6ftOcz5etPmsSmYbyF&ust=1665343436510000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIifqPCt0foCFQAAAAAdAAAAABAE"}
-   
+
   let legends = [revenant, crypto, horizon, gibraltar, wattson, fuse, bangalore, wraith, octane, bloodhound, caustic, lifeline, pathfinder, loba, mirage, rampart, valkyrie, seer, ash, madMaggie, newcastle, vantage ]
 
 
-  
+
   for (i = 1; i < legends.length; i++) {
     //         // if segments[i].stats.kills.value does not exist make it equal 0
   legends[i].kills
@@ -159,7 +159,7 @@ function getMain(user) {
               return o.kills;
             })
           );
-    
+
     //       //         // uses topKills values and looks throught array of onjects and returns the onbject with that value
           main = legends.find(function (o) {
             return o.kills == topKills;
@@ -173,21 +173,26 @@ function getMain(user) {
 
 function trimResponse(user) {
 
-      
+
     let trimmedUser = {
         // name, kd, kills, damage, level, main
         name: _.get(user, "data.global.name", "API ERROR"),
-        kd: _.get(user, "data.total.kd.value", "Not Available"),        
+        kd: _.get(user, "data.total.kd.value", "Not Available"),
         kills : _.get(user, "data.total.kills.value", "Not Available").toLocaleString(),
         damage: _.get(user, "data.total.damage.value", "Not Available").toLocaleString(),
         level: _.get(user, "data.global.level", "Not Available"),
         main: getMain(user),
-        
-        
-       
+
+
+
     }
   return trimmedUser
 }
+
+app.get("/hi", function (req, req) {
+  res.render("home")
+})
+
 
 
 app.get("/", function (req, res) {
@@ -199,35 +204,35 @@ app.get("/", function (req, res) {
   "https://api.mozambiquehe.re/bridge?auth="+process.env.API + "&player= &platform=X1";
   const url3 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=CamThings&platform=X1";
-   
+
   const url4 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Imissedmygrapple&platform=PS4";
-    
-  
+
+
   const url5 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=KingWonderBoy300&platform=PS4";
-   
-   
+
+
   const url6 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=AGL%20WolveZ&platform=X1";
-   
-   
+
+
   const url7 =
   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player=Parkesss&platform=X1";
-    
-  
-  
+
+
+
   const axiosRL = rateLimit(axios.create(), { maxRequests: 2, perMilliseconds: 3000 })
- 
-  
+
+
   const requestZero = axiosRL.get(url0);
   const requestOne = axiosRL.get(url1);
 
-          //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST) 
- 
+          //NEED TO SPREAD REQUEST OUT TO AVOID TIME REQ PER SECOND LIMIT. (2REQUEST)
+
   const requestTwo = axiosRL.get(url2);
 
- 
+
   const requestThree = axiosRL.get(url3);
   const requestFour = axiosRL.get(url4);
   const requestFive = axiosRL.get(url5);
@@ -235,7 +240,7 @@ app.get("/", function (req, res) {
   const requestSeven = axiosRL.get(url7);
 
 
-  
+
   axios.all([requestZero,
     requestOne,
     requestTwo,
@@ -248,9 +253,9 @@ app.get("/", function (req, res) {
     .then(axios.spread((...responses) => {
     const responseZero = responses[0]
     const responseOne= responses[1]
-   
+
       const responseTwo = responses[2]
-  
+
 
 
     const responseThree = responses[3]
@@ -258,8 +263,8 @@ app.get("/", function (req, res) {
     const responseFive= responses[5]
     const responseSix = responses[6]
     const responseSeven  = responses[7]
-  
-    //  console.log(reponses[0]); 
+
+    //  console.log(reponses[0]);
       // console.console.log(responses);
 
 
@@ -271,7 +276,7 @@ app.get("/", function (req, res) {
       //  KD  total.kd.value
 
 
-     
+
 
 
 let mainZero = getMain( responseZero );
@@ -294,11 +299,11 @@ let trimmedThree  =trimResponse(responseThree);
 let trimmedFour  =trimResponse(responseFour);
 let trimmedFive  =trimResponse(responseFive);
 let trimmedSix  =trimResponse(responseSix);
-let trimmedSeven  =trimResponse(responseSeven);  
+let trimmedSeven  =trimResponse(responseSeven);
 
 console.log(trimmedZero);
       // console.log(responseSeven);
-      
+
     res.render("landingpage.ejs", {
         playerZero: trimmedZero,
         mainZero: mainZero,
@@ -316,8 +321,8 @@ console.log(trimmedZero);
         mainSix: mainSix,
         playerSeven: trimmedSeven,
         mainSeven: mainSeven
-        
-        
+
+
 
     });
   })
@@ -328,7 +333,7 @@ console.log(trimmedZero);
     res.send("error");
   });
 
-  
+
 });
 
 
@@ -351,12 +356,12 @@ app.get("/profile/:user", function (req, res) {
   let platform = "";
   let requestedPlayer = req.params['user'];
   let url = ""
- 
- 
+
+
             // someone clicked a link
-          if (requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" ||requestedPlayer === "CamThings" || requestedPlayer ==="Imissedmygrapple" || requestedPlayer === "KingWonderBoy300" || requestedPlayer ==="Parkesss" ||requestedPlayer ===  "AGL WolveZ" || requestedPlayer ==="Parkesss" ) { 
+          if (requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" ||requestedPlayer === "CamThings" || requestedPlayer ==="Imissedmygrapple" || requestedPlayer === "KingWonderBoy300" || requestedPlayer ==="Parkesss" ||requestedPlayer ===  "AGL WolveZ" || requestedPlayer ==="Parkesss" ) {
             // console.log("hi 1")
-                
+
                   if(requestedPlayer === "Naff" || requestedPlayer === "Aeriu" || requestedPlayer === "CGK0" || requestedPlayer === "CamThings" || requestedPlayer === "AGL WolveZ" || requestedPlayer ==="Parkesss"){
                     platform = "X1";
                     // console.log(platform);
@@ -370,18 +375,18 @@ app.get("/profile/:user", function (req, res) {
                   url =
                   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+ requestedPlayer +"&platform=" + platform;
 
-           } 
+           }
           else if ( submittedUser === "" || submittedPlatform === "") {
             submittedUser = "";
             submittedPlatform = "";
             res.redirect("/search");
-            
+
             // requestedPlayer = submittedUser;
             // url =   "https://api.mozambiquehe.re/bridge?auth=" +process.env.API + "&player="+  submittedUser +"&platform=" + submittedPlatform;
           }
 
 
-    
+
            else  {
             // res.redirect("/search");
 
@@ -394,12 +399,12 @@ app.get("/profile/:user", function (req, res) {
 
 
 
-   
+
 console.log(url);
 
   axios.get(url)
   .then((response) => {
-    
+
 
     if(response.data.Error) {
 
@@ -412,7 +417,7 @@ console.log(url);
       let user = response;
       let battlePassLevel = ""
       if (0 > _.get(user, "data.global.battlepass.level", "Not Available") ) { battlePassLevel = "No Battle Pass"} else { battlePassLevel = _.get(user, "data.global.battlepass.level" )};
-      
+
 
       let userTrimmed = {
         requestedPlayer: requestedPlayer,
@@ -437,13 +442,13 @@ console.log(url);
         gamesPlayed  : _.get(user, "data.total.games_played.value", "Not Available").toLocaleString(),
         executions  : _.get(user, "data.total.executions.value", "Not Available").toLocaleString(),
         revives  : _.get(user, "data.total.revives.value", "Not Available").toLocaleString()
-            
+
 
       };
 
 
-      
-     
+
+
       res.render("playerprofile", {
         user: user,
         user2: userTrimmed,
@@ -459,11 +464,11 @@ console.log(url);
   });
 
 });
- 
+
 
 app.get("/search", function (req, res) {
   res.render("search")
-  
+
 })
 
 
@@ -483,4 +488,3 @@ if (port == null || port == "") {
 app.listen(port, function () {
   console.log("SEVER IS LIVE");
 });
-
