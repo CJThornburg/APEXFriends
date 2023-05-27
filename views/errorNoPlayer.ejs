@@ -70,15 +70,43 @@
 
     <body>
 
-        <div class="error404">
-            <div class="innder404">
-                <h1>
-                    You got bamboozled!
 
-                </h1>
-                <h2 class="mt-4">404 Error: Page Not Found</h2>
+
+
+
+        <body>
+            <div class="search-div">
+
+                <div class="search-form">
+                    <p class="">
+                        <%= err.message %>
+                    </p>
+                    <form class="form-inline error-form" action="/userlookup" method="post"">
+                        <input class=" form-control mr-sm-2 search-username" type="search" name="username"
+                        placeholder="username" aria-label="username">
+                        <div class="form-check m-3">
+                            <input type="radio" id="PC" name="platform" value="PC" class="form-check-input  ">
+                            <label for="PC" class="platform form-check-label">PC</label>
+                        </div>
+                        <div class="form-check m-3">
+                            <input type="radio" id="Xbox" name="platform" value="X1" class="form-check-input ">
+                            <label for="Xbox" class="platform form-check-label ">Xbox</label>
+                        </div>
+                        <div class="form-check m-3">
+                            <input type="radio" id="PS4" name="platform" value="PS4" class="form-check-input ">
+                            <label for="PS4" class="platform form-check-label ">PlayStation </label>
+                        </div>
+                        <div class="form-check">
+                            <button class="btn btn-outline-danger btn-lg my-2 my-sm-0 px-4 ml-2 search-button"
+                                type="submit">Search</button>
+                        </div>
+
+                    </form>
+                    <h3>
+
+                    </h3>
+                </div>
             </div>
-        </div>
 
 
 
@@ -91,19 +119,24 @@
 
 
 
-        <%- include("footer"); -%>
 
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
 
-    </body>
 
-    </html>
+
+            <%- include("footer"); -%>
+
+
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+
+        </body>
+
+        </html>
