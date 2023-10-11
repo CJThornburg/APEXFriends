@@ -4,48 +4,48 @@
                         src: url('/Fonts/blocktastic-webfont.woff') format('woff');
                         font-weight: normal;
                         font-style: normal;
-                    
-                    }
-                    
-                    
-                    
-                    
-                    @font-face {
+
+                      }
+
+
+
+
+                      @font-face {
                         font-family: 'blocktastic';
                         src: url('/Fonts/blocktastic-itl-webfont.woff') format('woff');
                         font-weight: normal;
                         font-style: italic;
-                    
-                    }
-                    
-                    
-                    
-                    
-                    @font-face {
+
+                      }
+
+
+
+
+                      @font-face {
                         font-family: 'spaceport';
-                        src:  url('/Fonts/spaceport_2006-webfont.woff') format('woff');
+                        src: url('/Fonts/spaceport_2006-webfont.woff') format('woff');
                         font-weight: normal;
                         font-style: normal;
-                    
-                    }
-                      
-                    
-                    .space {
-                      font-family: 'spaceport';
-                    }
-                      
-                      
-                      
+
+                      }
+
+
+                      .space {
+                        font-family: 'spaceport';
+                      }
+
+
+
                       /* NAVBAR  */
                       .navbar-customclass {
                         background-color: #171717;
-                        
-                    }
 
-                    .footer-customclass {
-                      
-                      background-color: #171717;
-                  }
+                      }
+
+                      .footer-customclass {
+
+                        background-color: #171717;
+                      }
 
 
                       .brand {
@@ -70,8 +70,8 @@
 
 
                       /* search  */
-                      @media (max-width: 992px) { 
-                        .nav-search{
+                      @media (max-width: 992px) {
+                        .nav-search {
                           padding-top: 3%
                         }
                       }
@@ -83,336 +83,370 @@
                       }
 
                       @media (max-width: 1200px) {
-                      .platform {
+                        .platform {
                           font-size: .8rem;
                           margin-top: 15px;
                           margin-bottom: 20px;
-                         }
-                      .small-radio {
-                        margin-top: 15px;
-                        
-                      }
-                      
                         }
-                     
+
+                        .small-radio {
+                          margin-top: 15px;
+
+                        }
+
+                      }
+
                       /* .form {
                         justify-content: center;
                       } */
 
-                      
+
                       /* LANDING PAGE  */
 
-                         
-/* banner */
-.cover {
-  background-color: #171717;
- 
-}
 
-.space {
-  background-color: #171717;
-}
+                      /* banner */
+                      .cover {
+                        background-color: #171717;
+
+                      }
+
+                      .space {
+                        background-color: #171717;
+                      }
 
 
-/* .img-center {
+                      /* .img-center {
   margin: auto;
   width: 50%
 } */
 
+                      a {
 
-.userrow {
-  max-height: fit-content;
-}
+                        text-decoration: none;
+                        color: unset;
+                      }
 
-.userplate {
-  background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* max-width: fit-content; */
-    max-height:fit-content;
-    border-radius: 30px;
-}
+                      a:hover {
+                        text-decoration: none;
+                        color: unset;
+                      }
 
-.center {
-  margin: auto;
-  width: 50%;
-  
+                      .dropdiv {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        text-decoration: none;
+                        color: #dc3545;
+                        background-image: url("../img/dropShipOpenTrimmed2.jpg");
+                      }
 
-}
-
-.name-plate {
-  text-align: center;
-}
-
-.username {
-  font-family: 'spaceport';
-  font-size: 3rem;
-  background-color: #2B2D30;
-  padding: 6%;
-  border-radius: 25px;
-  color:  white;
-  border-style: groove;
-  border-color: #2B2D30;
-  width: fit-content;
-}
-
-@media (max-width: 1200px) {
-  .smallFont {
-    font-size: 1.5rem;
-   }
-  .smallerFont {
-    font-size:  1.0rem;
-  }
-  .smallestFont {
-    font-size: .7rem;
-  }
-  }
+                      #droptext {
+                        color: #dc3545
+                      }
 
 
-  @media (min-width: 1200px) and (max-width: 2000px) { 
-    /* .smallFont {
+
+                      .nodec {
+                        text-decoration: none;
+                        color: #dc3545
+                      }
+
+                      .userrow {
+                        max-height: fit-content;
+                      }
+
+                      .userplate {
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        /* max-width: fit-content; */
+                        max-height: fit-content;
+                        border-radius: 30px;
+                      }
+
+                      .center {
+                        margin: auto;
+                        width: 50%;
+
+
+                      }
+
+                      .name-plate {
+                        text-align: center;
+                      }
+
+                      .username {
+                        font-family: 'spaceport';
+                        font-size: 3rem;
+                        background-color: #2B2D30;
+                        padding: 6%;
+                        border-radius: 25px;
+                        color: white;
+                        border-style: groove;
+                        border-color: #2B2D30;
+                        width: fit-content;
+                      }
+
+                      @media (max-width: 1200px) {
+                        .smallFont {
+                          font-size: 1.5rem;
+                        }
+
+                        .smallerFont {
+                          font-size: 1.0rem;
+                        }
+
+                        .smallestFont {
+                          font-size: .7rem;
+                        }
+                      }
+
+
+                      @media (min-width: 1200px) and (max-width: 2000px) {
+                        /* .smallFont {
       font-size: 1.5rem;
      } */
-    
-    .smallestFont {
-      font-size: 1.3rem;
-    }
-    }
+
+                        .smallestFont {
+                          font-size: 1.3rem;
+                        }
+                      }
 
 
-.data {
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
+                      .data {
+                        padding-top: 3%;
+                        padding-bottom: 3%;
+                      }
 
-.data-text {
-  font-size: 1.4rem;
-  color:  white;
-  background-color: #2B2D30;
-  padding: 5%;
-  border-radius: 25px;
- 
-  border-style: groove;
-  border-color: #2B2D30;
-  width: fit-content;
-  
-}
-@media (max-width: 1200px) {
-  .data-text {
-    font-size: .7rem;
-   }
-  }
-.player-link {
-  color: #c13327;
-  
-}
-.player-link:hover {
-  color: #932820;
-}
+                      .data-text {
+                        font-size: 1.4rem;
+                        color: white;
+                        background-color: #2B2D30;
+                        padding: 5%;
+                        border-radius: 25px;
 
+                        border-style: groove;
+                        border-color: #2B2D30;
+                        width: fit-content;
 
+                      }
 
-/*  PLAYER PAGE  */
+                      @media (max-width: 1200px) {
+                        .data-text {
+                          font-size: .7rem;
+                        }
+                      }
 
-.player {
-  background-color: #171717;
-  margin-left: 0;
-  margin-right: 0;
-}
+                      .player-link {
+                        color: #c13327;
 
-.player-plate {
-  font-family: 'blocktastic';
-  text-align: center;
-  font-size: 4rem;
-  color:  white;
-  background-color: #2B2D30;
-  padding: 4%;
-  border-radius: 25px;
-  
-  border-style: groove;
-  border-color: #2B2D30;
-  width: fit-content;
-}
+                      }
 
-@media (max-width: 1200px) {
-  .player-plate {
-    margin-top: 25px;
-   }
-}
-
-
-.player-name {
- font-size: 7rem;
-}
-
-@media (max-width: 1200px) {
-  .player-name {
-    font-size: 5rem;
-   }
-  .player-plate {
-    font-size: 3rem;
-  }
-
-  .stat {
-    margin-top: 35px;
-    margin-bottom: 35px;
-  }
-
-}
-
-
-@media (min-width: 1200px) and (max-width: 1500px) { 
-  .icon-image {
-    width: 500px;
-  }
-  
-
-  
-}
-       
-@media (max-width: 1200px) {
-  .icon-image {
-    width: 90%;
-  }
-}
-
-
-.personal-player-data {
-  font-family: 'spaceport';
-}
-
-.player-sub-cat{
-  font-size: 2rem;
-}
-.player-sub {
-  font-size: 1.4rem;
-  color:  white;
-  background-color: #2B2D30;
-  padding: 3%;
-  border-radius: 25px;
-  margin-top: 3%;
-  border-style: groove;
-  border-color: #2B2D30;
-  width: fit-content;
-}
-
-.player-sub-last {
-  margin-bottom: 3%;
-}
-
-@media (max-width: 1200px) { 
-  .player-sub{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-
-  }
-
-  
-}
-                        
-
-
-/* search page */
-
-
-.search-div {
-  height: 90vh;
-  background-color: #171717;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.find {
-  text-align: center;
-  margin-bottom: 30px;
-
-}
-
-
-@media (min-width: 1200px) { 
-  .find {
-    font-size: 3.5rem;
-  }
-
-  
-}
-
-
-.search-form {
-  font-family: 'spaceport';
-  font-size: 1.5rem;
-  background-color: #2B2D30;
-  padding: 4%;
-  border-radius: 25px;
-  color:  white;
-  border-style: groove;
-  border-color: #2B2D30;
-  width: fit-content;
-  height: fit-content;
-   text-align: center;
- 
-  /* margin-left: auto; */
-}
-
-.search-username {
-  font-size: 1.2rem;
-}
-
-.search-button {
-  margin-left: auto;
-}
+                      .player-link:hover {
+                        color: #932820;
+                      }
 
 
 
+                      /*  PLAYER PAGE  */
+
+                      .player {
+                        background-color: #171717;
+                        margin-left: 0;
+                        margin-right: 0;
+                      }
+
+                      .player-plate {
+                        font-family: 'blocktastic';
+                        text-align: center;
+                        font-size: 4rem;
+                        color: white;
+                        background-color: #2B2D30;
+                        padding: 4%;
+                        border-radius: 25px;
+
+                        border-style: groove;
+                        border-color: #2B2D30;
+                        width: fit-content;
+                      }
+
+                      @media (max-width: 1200px) {
+                        .player-plate {
+                          margin-top: 25px;
+                        }
+                      }
+
+
+                      .player-name {
+                        font-size: 7rem;
+                      }
+
+                      @media (max-width: 1200px) {
+                        .player-name {
+                          font-size: 5rem;
+                        }
+
+                        .player-plate {
+                          font-size: 3rem;
+                        }
+
+                        .stat {
+                          margin-top: 35px;
+                          margin-bottom: 35px;
+                        }
+
+                      }
+
+
+                      @media (min-width: 1200px) and (max-width: 1500px) {
+                        .icon-image {
+                          width: 500px;
+                        }
 
 
 
-.error404 {
-  height: 90vh;
-  background-color: #171717;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-  /* margin-left: auto; */
-}
+                      }
+
+                      @media (max-width: 1200px) {
+                        .icon-image {
+                          width: 90%;
+                        }
+                      }
+
+
+                      .personal-player-data {
+                        font-family: 'spaceport';
+                      }
+
+                      .player-sub-cat {
+                        font-size: 2rem;
+                      }
+
+                      .player-sub {
+                        font-size: 1.4rem;
+                        color: white;
+                        background-color: #2B2D30;
+                        padding: 3%;
+                        border-radius: 25px;
+                        margin-top: 3%;
+                        border-style: groove;
+                        border-color: #2B2D30;
+                        width: fit-content;
+                      }
+
+                      .player-sub-last {
+                        margin-bottom: 3%;
+                      }
+
+                      @media (max-width: 1200px) {
+                        .player-sub {
+                          text-align: center;
+                          margin-left: auto;
+                          margin-right: auto;
+
+                        }
+
+
+                      }
 
 
 
+                      /* search page */
 
 
-.innder404 {
-  font-family: 'spaceport';
-  font-size: 1.5rem;
-  background-color: #2B2D30;
-  padding: 3.5%;
-  border-radius: 25px;
-  color:  white;
-  border-style: groove;
-  border-color: #2B2D30;
-  width: fit-content;
-  height: fit-content;
-   text-align: center;
- 
- 
-}
+                      .search-div {
+                        height: 90vh;
+                        background-color: #171717;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
 
-@media (max-width: 1200px) { 
-  .innder404 {
-    padding: 5%;
-  }
+                      .find {
+                        text-align: center;
+                        margin-bottom: 30px;
 
-  
-}
+                      }
+
+
+                      @media (min-width: 1200px) {
+                        .find {
+                          font-size: 3.5rem;
+                        }
+
+
+                      }
+
+
+                      .search-form {
+                        font-family: 'spaceport';
+                        font-size: 1.5rem;
+                        background-color: #2B2D30;
+                        padding: 4%;
+                        border-radius: 25px;
+                        color: white;
+                        border-style: groove;
+                        border-color: #2B2D30;
+                        width: fit-content;
+                        height: fit-content;
+                        text-align: center;
+
+                        /* margin-left: auto; */
+                      }
+
+                      .search-username {
+                        font-size: 1.2rem;
+                      }
+
+                      .search-button {
+                        margin-left: auto;
+                      }
 
 
 
 
 
 
+                      .error404 {
+                        height: 90vh;
+                        background-color: #171717;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        /* margin-left: auto; */
+                      }
 
 
 
 
+
+                      .innder404 {
+                        font-family: 'spaceport';
+                        font-size: 1.5rem;
+                        background-color: #2B2D30;
+                        padding: 3.5%;
+                        border-radius: 25px;
+                        color: white;
+                        border-style: groove;
+                        border-color: #2B2D30;
+                        width: fit-content;
+                        height: fit-content;
+                        text-align: center;
+
+
+                      }
+
+                      @media (max-width: 1200px) {
+                        .innder404 {
+                          padding: 5%;
+                        }
+
+
+                      }
+
+                      #droptext:hover {
+                        text-decoration: none;
+                        color: white;
+                      }

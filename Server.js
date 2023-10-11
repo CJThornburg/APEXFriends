@@ -43,6 +43,13 @@ function trimResponse(user) {
 
 
 app.get("/", function (req, res, next) {
+  res.render("dropShip.ejs", {
+
+
+  });
+})
+
+app.get("/dropped", function (req, res, next) {
   const url0 =
     "https://api.mozambiquehe.re/bridge?auth=" + process.env.API + "&player=Naff&platform=X1";
   const url1 =
