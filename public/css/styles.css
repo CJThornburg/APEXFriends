@@ -137,12 +137,21 @@
                         align-items: center;
                         height: 100vh;
                         text-decoration: none;
-                        color: #dc3545;
+                        color: white;
                         background-image: url("../img/dropShipOpenTrimmed2.jpg");
                       }
 
+                      .dropdivdiv {
+                        background-color: #171717;
+                        padding: 5px;
+                        border-radius: 5px;
+                      }
+
                       #droptext {
-                        color: #dc3545
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                       }
 
 
