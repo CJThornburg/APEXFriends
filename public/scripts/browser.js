@@ -5,8 +5,10 @@ console.log(btn)
 
 btn.addEventListener("click", () => {
   console.log("in event listener")
-  
+  btn.setAttribute("disabled", "");
+  // btn.classList.add("invisClass");
   btn.classList.add("button--loading");
+
 });
 
 // alert("hi");

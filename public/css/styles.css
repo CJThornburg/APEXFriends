@@ -145,7 +145,14 @@
                         background-color: #171717;
                         padding: 5px;
                         border-radius: 5px;
+
                       }
+
+                      .invisClass {
+                        display: none
+                      }
+
+
 
                       #droptext {
                         color: white;
@@ -159,6 +166,7 @@
                       .button--loading .button__text {
                         visibility: hidden;
                         opacity: 0;
+
                       }
 
                       .button--loading::after {
@@ -166,7 +174,7 @@
                         position: absolute;
                         width: 80px;
                         height: 80px;
-                        top: 80vh;
+                        top: 120vh;
                         left: 0;
                         right: 0;
                         bottom: 0;
@@ -175,8 +183,13 @@
                         border-top-color: #ffffff;
                         border-radius: 50%;
                         animation: button-loading-spinner 1s ease infinite;
+
+
                       }
 
+                      .noDoubleClick {
+                        pointer-events: none
+                      }
 
                       @keyframes button-loading-spinner {
                         from {
