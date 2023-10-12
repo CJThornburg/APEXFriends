@@ -1,9 +1,18 @@
-browser.runtime.onMessage.addListener(message => {
-    console.log("background: onMessage", message);
+const btn = document.querySelector(".button");
+console.log(btn)
+// btn.classList.add("button--loading");
+// btn.classList.remove("button--loading");
 
-    // Add this line:
-    return Promise.resolve("Dummy response to keep the console quiet");
-  });
+btn.addEventListener("click", () => {
+  console.log("in event listener")
+  
+  btn.classList.add("button--loading");
+});
 
+// alert("hi");
+// browser.runtime.onMessage.addListener(message => {
+//   console.log("background: onMessage", message);
 
-alert("hi");
+//   // Add this line:
+//   return Promise.resolve("Dummy response to keep the console quiet");
+// });
