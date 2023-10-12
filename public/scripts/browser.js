@@ -1,4 +1,5 @@
 const btn = document.querySelector(".button");
+const btnText = document.querySelector(".dropBtn")
 console.log(btn)
 // btn.classList.add("button--loading");
 // btn.classList.remove("button--loading");
@@ -6,8 +7,9 @@ console.log(btn)
 btn.addEventListener("click", () => {
   console.log("in event listener")
   btn.setAttribute("disabled", "");
-  // btn.classList.add("invisClass");
+  btnText.innerText = "Dropped!"
   btn.classList.add("button--loading");
+  btn.classList.add("button__text");
 
 });
 
