@@ -2,7 +2,7 @@
 UI for displaying stats from online multiplayer game Apex Legends. Landing page contains several pre-set players. 
 Can search up yourself or friends detailed stats based on username and platform. 
 API Used: https://portal.apexlegendsapi.com/
-*API has a strict rpm limit.
+*API has a strict rpm limit. Spamming a request will result in a warning that you are over your limit.
 
 # Pre-requisites
 - Install [Node.js](https://nodejs.org/en/)
