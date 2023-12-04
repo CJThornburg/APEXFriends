@@ -33,7 +33,6 @@ npm start
 
 
 
-
 Deployed using Heroku
 [Apex Friends](https://apex-friends.herokuapp.com/)
 
