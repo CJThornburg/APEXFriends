@@ -13,6 +13,7 @@ API Used: https://portal.apexlegendsapi.com/
 ```
 git clone https://github.com/CJThornburg/APEXFriends.git
 ```
+
 - Install dependencies
 ```
 cd APEXFriends
