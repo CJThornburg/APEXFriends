@@ -25,7 +25,6 @@ touch .env
 API="XXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
-
 - Run the project
 ```
 npm start
