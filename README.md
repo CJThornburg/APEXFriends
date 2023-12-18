@@ -32,7 +32,6 @@ npm start
   Navigate to `http://localhost:3000`
 
 
-
 Deployed using Heroku
 [Apex Friends](https://apex-friends.herokuapp.com/)
 
