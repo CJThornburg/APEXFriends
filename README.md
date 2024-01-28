@@ -8,6 +8,7 @@ API Used: https://portal.apexlegendsapi.com/
 # Pre-requisites
 - Install [Node.js](https://nodejs.org/en/)
 
+
 # Getting started
 - Clone the repository
 ```
