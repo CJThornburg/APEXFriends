@@ -14,7 +14,7 @@ let url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" 
 
 
 // const url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" + process.env.API + "&Accept=json&Accept-Encoding=gzip";
-    
+
     https.get(url, function (response) {
 
         let chunks = [];
@@ -35,7 +35,7 @@ let url = "https://public-api.tracker.gg/v2/apex/standard/profile/origin/Naff?" 
             let data = Buffer.concat(chunks);
             let Naff = JSON.parse(data);
 
-            console.log(Naff);
+          
         }
         )
       });

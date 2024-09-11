@@ -2,7 +2,7 @@ var _ = require("lodash");
 
 function getMain(user) {
 
-  console.log("hi1")
+
 
   let revenant = {
     legend: "Revenant",
@@ -180,7 +180,7 @@ function getMain(user) {
     main = legends.find(function (o) {
       return o.kills == topKills;
     });
-    console.log("hi2")
+    
     return main;
   }
 }
